@@ -1,96 +1,111 @@
 "use client";
 
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
+import Image from 'next/image'
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
+import { ArrowRight, Phone, MapPin } from 'lucide-react'
 
-import Fade from "embla-carousel-fade";
-import Autoplay from "embla-carousel-autoplay";
-
-import Hero1 from "../public/hero1.jpg";
-import Hero2 from "../public/hero2.jpg";
-import Hero3 from "../public/hero3.jpg";
-
-import Image from "next/image";
-import { ArrowRightIcon } from "lucide-react";
-
-import Link from "next/link";
-
-import { motion } from "framer-motion";
-
-const Hero = () => {
+export default function Hero() {
   return (
-    <div className="relative flex min-h-[100dvh]">
-      <Carousel
-        className="absolute top-0 left-0 w-full h-[100dvh] z-[0]"
-        opts={{ loop: true }}
-        plugins={[
-          Autoplay({
-            stopOnInteraction: false,
-            stopOnFocusIn: false,
-            delay: 5000,
-          }),
-          Fade(),
-        ]}
-      >
-        <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-[1]" />
-        <CarouselContent>
-          <CarouselItem>
-            <Image
-              src={Hero1}
-              alt="Moderna dnevna soba"
-              className="w-full h-[100dvh] object-cover"
-            />
-          </CarouselItem>
-          <CarouselItem>
-            <Image
-              src={Hero2}
-              alt="Elegantna dnevna soba"
-              className="w-full h-[100dvh] object-cover"
-            />
-          </CarouselItem>
-          <CarouselItem>
-            <Image
-              src={Hero3}
-              alt="Luksuzni plakar"
-              className="w-full h-[100dvh] object-cover"
-            />
-          </CarouselItem>
-        </CarouselContent>
-      </Carousel>
-      <div className="relative flex flex-col gap-6 w-full items-center justify-center text-white z-[1] text-center">
-        <h1 className="text-primary md:text-[4rem] text-xl font-bold max-w-[900px] leading-[1.2] px-4">
-          NASLOV
-        </h1>
-        <h2 className="text-background font-medium md:text-[1.5rem] text-md max-w-[800px] px-4">
-          PRATECI TEXT
-        </h2>
-        <div className="flex flex-col gap-4 md:flex-row">
-          <Link href="/proizvodi">
-            <motion.button
-              whileHover={{ translateY: "-5px" }}
-              whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 bg-primary text-foreground px-4 py-2 md:px-8 md:py-3 rounded-lg font-medium"
-            >
-              Istražite naše proizvode
-              <ArrowRightIcon className="w-[18px]" />
-            </motion.button>
-          </Link>
-          <a href="tel:+3816000000">
-            <motion.button
-              whileHover={{ translateY: "-5px" }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-transparent border-background border-[1px] rounded-lg px-4 md:px-8 md:py-3 py-2 font-medium"
-            >
-              Pozovite odmah
-            </motion.button>
-          </a>
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-indigo-50 overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+        <div className="absolute top-40 right-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+      </div>
+
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Content */}
+          <div className="text-center lg:text-left space-y-8">
+            <div className="space-y-4">
+              <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+                <span className="text-primary">KUĆA ZNANJA</span>
+                <br />
+                <span className="text-2xl md:text-3xl text-muted-foreground font-medium">
+                  Centar za kreativnu edukaciju dece
+                </span>
+              </h1>
+              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0">
+                Pravo mesto za decu osnovce u Beogradu, gde na kreativan način mogu da ispune svoje vreme pre i posle škole!
+              </p>
+            </div>
+
+            {/* Features */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto lg:mx-0">
+              <div className="flex items-center space-x-3">
+                <div className="w-2 h-2 bg-primary rounded-full"></div>
+                <span className="text-muted-foreground">Boravak pre i posle škole</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <div className="w-2 h-2 bg-primary rounded-full"></div>
+                <span className="text-muted-foreground">Pomoć u izradi domaćih zadataka</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <div className="w-2 h-2 bg-primary rounded-full"></div>
+                <span className="text-muted-foreground">Kreativne radionice</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <div className="w-2 h-2 bg-primary rounded-full"></div>
+                <span className="text-muted-foreground">Edukativne aktivnosti</span>
+              </div>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <Link href="/program">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 py-3 text-lg">
+                  Pogledajte programe
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              <Link href="/kontakt">
+                <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 text-lg">
+                  <Phone className="mr-2 h-5 w-5" />
+                  Kontaktirajte nas
+                </Button>
+              </Link>
+            </div>
+
+            {/* Contact info */}
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 text-sm text-muted-foreground">
+              <div className="flex items-center space-x-2">
+                <Phone className="h-4 w-4" />
+                <span>+381 60 34 56 309</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <MapPin className="h-4 w-4" />
+                <span>Krunska 40, Vračar</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Logo Image */}
+          <div className="relative flex justify-center lg:justify-end">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-600 rounded-full blur-3xl opacity-20 animate-pulse"></div>
+              <div className="relative bg-white rounded-3xl shadow-2xl p-8 transform hover:scale-105 transition-transform duration-300">
+                <Image
+                  src="/kuca-znanja-logo.png"
+                  alt="Kuća znanja logo"
+                  width={400}
+                  height={400}
+                  className="w-full h-auto max-w-md"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  );
-};
 
-export default Hero;
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse"></div>
+        </div>
+      </div>
+    </section>
+  )
+}

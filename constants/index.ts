@@ -14,29 +14,50 @@ export const navList = [
     link: "/",
   },
   {
-    title: "Usluge",
-    list: [
+    title: "O nama",
+    link: "/o-nama",
+  },
+  {
+    title: "Program",
+    link: "/program",
+    dropdown: [
       {
-        title: "Kuhinje",
-        link: "",
+        title: "Mudre sove",
+        link: "/program/mudre-sove",
       },
       {
-        title: "Plakari",
-        link: "",
+        title: "Moj dan",
+        link: "/program/moj-dana",
       },
       {
-        title: "TV Komode",
-        link: "",
+        title: "Budi važan - spremi maturu",
+        link: "/program/budi-vazan-spremi-maturu",
       },
       {
-        title: "Projektovanje Enterijera",
-        link: "",
+        title: "Roditelj u trendu",
+        link: "/program/roditelj-u-trendu",
+      },
+      {
+        title: "Škola matematike",
+        link: "/program/dodatni-program/skola-matematike",
+      },
+      {
+        title: "Škola slikanja",
+        link: "/program/dodatni-program/skola-slikanja",
+      },
+      {
+        title: "Montesori program",
+        link: "/program/dodatni-program/montesori-program",
       },
     ],
   },
   {
-    title: "Proizvodi",
-    link: "/proizvodi",
+    title: "Blog",
+    link: "/blog",
+  },
+  {
+    title: "Shop",
+    link: "/shop",
   },
   {
     title: "Kontakt",
