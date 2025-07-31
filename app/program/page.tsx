@@ -112,11 +112,9 @@ export default function ProgramPage() {
               <ProgramCard
                 key={index}
                 title={program.title}
-                description={program.description}
-                age={program.age}
+                description={program.description}         
                 icon={program.icon}
                 link={program.link}
-                features={program.features}
                 variant="primary"
               />
             ))}
