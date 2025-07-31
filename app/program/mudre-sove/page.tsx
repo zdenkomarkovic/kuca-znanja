@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { CheckCircle, Users, BookOpen, Heart, Star, Clock } from 'lucide-react'
+import { CheckCircle, Clock } from 'lucide-react'
 import SectionHeader from '@/components/ui/SectionHeader'
 import CTASection from '@/components/ui/CTASection'
 
