@@ -156,7 +156,7 @@ export default function Header() {
         scrolled
           ? "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-md"
           : "bg-transparent"
-      }  fixed top-0 left-0 right-0 z-[10] transition-colors`}
+      }  fixed top-0 left-0 right-0 z-[30] transition-colors`}
     >
       <nav className="flex items-center justify-between px-8 py-4 max-w-[80rem] w-full text-primary font-bold">
         <Link href="/" className="flex items-center space-x-3">
@@ -168,7 +168,7 @@ export default function Header() {
             className="rounded-full"
           />
           <div className="hidden md:block">
-            <h1 className="text-lg font-bold ">KUCA ZNANJA</h1>
+            <h1 className="text-lg font-bold ">KUĆA ZNANJA</h1>
           </div>
         </Link>
         <DesktopNav />
