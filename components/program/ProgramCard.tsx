@@ -6,10 +6,8 @@ import { LucideIcon } from 'lucide-react'
 interface ProgramCardProps {
   title: string
   description: string
-  age: string
   icon: LucideIcon
   link: string
-  features: string[]
   variant?: 'primary' | 'secondary'
   image?: string
 }
@@ -20,7 +18,7 @@ export default function ProgramCard({
 
   icon: Icon, 
   link, 
-  features,
+
   variant = 'primary',
   image
 }: ProgramCardProps) {
@@ -54,16 +52,7 @@ export default function ProgramCard({
       </CardHeader>
       <CardContent className="space-y-4">
         <p className="text-sm md:text-lg">{description}</p>
-        {/* {isPrimary && (
-          <div className="space-y-2">
-            {features.map((feature, index) => (
-              <div key={index} className="flex items-center space-x-2">
-                                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                                        <span className="text-sm text-muted-foreground">{feature}</span>
-              </div>
-            ))}
-          </div>
-        )} */}
+
         {isPrimary && (
           <Link href={link}>
             <button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3 px-6 rounded-lg transition-colors">

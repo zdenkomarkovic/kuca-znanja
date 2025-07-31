@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Heart, Users, Target, Star, BookOpen, Brain } from 'lucide-react'
+import { Heart, Users, Star, BookOpen, Brain } from 'lucide-react'
 import SectionHeader from '@/components/ui/SectionHeader'
 import CTASection from '@/components/ui/CTASection'
 
@@ -60,7 +60,7 @@ export default function MontesoriProgramPage() {
                 </p>
                 <div className="bg-primary/10 p-4 rounded-lg">
                   <p className="font-semibold text-primary">
-                    "Pomozi mi da sebi ovo napravim."
+                    Pomozi mi da sebi ovo napravim.
                   </p>
                 </div>
               </CardContent>

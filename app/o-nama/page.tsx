@@ -31,8 +31,8 @@ export default function ONamaPage() {
             </CardHeader>
             <CardContent className="space-y-6">
               <p className="text-lg text-gray-700 leading-relaxed text-center italic">
-                "Naša misija je da svako dete pronađe svoj put do uspeha kroz kreativnu edukaciju. 
-                Verujemo da svako dete ima jedinstveni potencijal koji treba da se razvija na pravi način."
+                Naša misija je da svako dete pronađe svoj put do uspeha kroz kreativnu edukaciju. 
+                Verujemo da svako dete ima jedinstveni potencijal koji treba da se razvija na pravi način.
               </p>
               <div className="text-center">
                 <p className="font-semibold text-blue-600">- Osnivač centra</p>

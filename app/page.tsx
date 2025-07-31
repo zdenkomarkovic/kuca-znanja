@@ -15,7 +15,6 @@ export default function Home() {
    
       icon: BookOpen,
       link: "/program/mudre-sove",
-      features: ["Boravak pre i posle škole", "Pomoć u domaćim zadacima", "Kreativne radionice"],
       image: "/Mudre sove.png"
     },
           {
@@ -24,7 +23,6 @@ export default function Home() {
     
         icon: Heart,
         link: "/program/moj-dana",
-        features: ["Organizacija rođendana", "Prezentacija knjige", "Izložbe radova"],
         image: "/Moj dan.png"
       },
     {
@@ -33,16 +31,13 @@ export default function Home() {
      
       icon: GraduationCap,
       link: "/program/budi-vazan-spremi-maturu",
-      features: ["Srpski jezik", "Matematika", "Izborni predmeti"],
       image: "/Završni ispit (1).png"
     },
     {
       title: "Roditelj u trendu",
       description: "Tamo gde su deca, tu su i roditelji! Posebnu pažnju posvećujemo roditeljima. Danas je izazov biti roditelj.",
-  
       icon: Users,
       link: "/program/roditelj-u-trendu",
-      features: ["Savetovalište", "Predavanja", "Individualni sastanci"],
       image: "/Roditelj u trendu.jpg"
     }
   ]
@@ -139,7 +134,6 @@ export default function Home() {
             
                 icon={program.icon}
                 link={program.link}
-                features={program.features}
                 variant="primary"
                 image={program.image}
               />
