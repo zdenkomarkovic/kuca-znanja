@@ -15,11 +15,11 @@ export default function Hero() {
         <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 container mx-auto px-2 md:px-32">
+        <div className="grid lg:grid-cols-2 items-center">
           {/* Content */}
-          <div className="text-center lg:text-left space-y-8">
-            <div className="space-y-4">
+          <div className="text-center px-2 space-y-8 order-2 lg:order-1">
+            <div className="mt-4 md:mt-0 md:space-y-4 mx-auto text-center">
               <h1 className="text-4xl md:text-6xl font-bold leading-tight">
                 <span className="text-primary">KUĆA ZNANJA</span>
                 <br />
@@ -33,27 +33,34 @@ export default function Hero() {
             </div>
 
             {/* Features */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto lg:mx-0">
-              <div className="flex items-center space-x-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 max-w-2xl mx-auto  text-lg md:text-lg">
+             <div className='mx-auto'>
+             <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-primary rounded-full"></div>
                 <span className="text-muted-foreground">Boravak pre i posle škole</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-primary rounded-full"></div>
-                <span className="text-muted-foreground">Pomoć u izradi domaćih zadataka</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-primary rounded-full"></div>
                 <span className="text-muted-foreground">Kreativne radionice</span>
               </div>
+              </div> 
+              <div className='mx-auto'>
+
+
+              <div className="flex items-center space-x-3">
+                <div className="w-2 h-2 bg-primary rounded-full"></div>
+                <span className="text-muted-foreground">Pomoć u izradi domaćih zadataka</span>
+              </div>
+
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-primary rounded-full"></div>
                 <span className="text-muted-foreground">Edukativne aktivnosti</span>
               </div>
+              </div>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/program">
                 <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 py-3 text-lg">
                   Pogledajte programe
@@ -69,7 +76,7 @@ export default function Hero() {
             </div>
 
             {/* Contact info */}
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 text-sm text-muted-foreground">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-muted-foreground">
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4" />
                 <span>+381 60 34 56 309</span>
@@ -82,16 +89,16 @@ export default function Hero() {
           </div>
 
           {/* Logo Image */}
-          <div className="relative flex justify-center lg:justify-end">
+          <div className="relative flex justify-center lg:justify-end order-1 lg:order-2">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-600 rounded-full blur-3xl opacity-20 animate-pulse"></div>
-              <div className="relative bg-white rounded-3xl shadow-2xl p-8 transform hover:scale-105 transition-transform duration-300">
+              <div className="z-0 bg-white/20  transform hover:scale-105 transition-transform duration-300">
                 <Image
                   src="/kuca-znanja-logo.png"
                   alt="Kuća znanja logo"
-                  width={400}
-                  height={400}
-                  className="w-full h-auto max-w-md"
+                  width={700}
+                  height={700}
+                  className="w-full h-auto max-w-md z-0"
                   priority
                 />
               </div>
