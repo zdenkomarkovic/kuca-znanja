@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Logo from "../public/manikam.png";
+import Logo from "../public/kuca-znanja-logo.png";
 import Link from "next/link";
 import { ChevronDownIcon, MenuIcon, PhoneIcon } from "lucide-react";
 
@@ -37,7 +37,7 @@ const MobileMenu = () => (
         <SheetContent>
           <ul>
             {navList.map((item, index) => {
-              if (item.list)
+              if (item.dropdown)
                 return (
                   <Fragment key={index}>
                     <Accordion type="single" collapsible>
@@ -52,7 +52,7 @@ const MobileMenu = () => (
                           </AccordionTrigger>
                         </motion.div>
                         <AccordionContent>
-                          {item.list.map((link, index2) => (
+                          {item.dropdown.map((link, index2) => (
                             <Link
                               className="pl-6 block font-light py-2"
                               key={`${index}.${index2}`}
@@ -91,7 +91,7 @@ const MobileMenu = () => (
 const DesktopNav = () => (
   <ul className="hidden gap-8 lg:flex  text-xl">
     {navList.map((item, index) => {
-      if (item.list)
+      if (item.dropdown)
         return (
           <HoverCard key={index} openDelay={0} closeDelay={50}>
             <HoverCardTrigger>
@@ -104,7 +104,7 @@ const DesktopNav = () => (
               </motion.div>
             </HoverCardTrigger>
             <HoverCardContent className="p-0">
-              {item.list.map((link, index2) => (
+              {item.dropdown.map((link, index2) => (
                 <motion.li
                   key={`${index}.${index2}`}
                   whileHover={{
@@ -159,14 +159,17 @@ export default function Header() {
       }  fixed top-0 left-0 right-0 z-[10] transition-colors`}
     >
       <nav className="flex items-center justify-between px-8 py-4 max-w-[80rem] w-full text-primary font-bold">
-        <Link href="/" className="">
+        <Link href="/" className="flex items-center space-x-3">
           <Image
             src={Logo}
-            alt="dm rustic 24"
+            alt="Centar za kreativnu edukaciju dece"
             width={50}
             height={50}
             className="rounded-full"
           />
+          <div className="hidden md:block">
+            <h1 className="text-lg font-bold ">KUCA ZNANJA</h1>
+          </div>
         </Link>
         <DesktopNav />
         <Link href="tel:+3816">
@@ -175,10 +178,10 @@ export default function Header() {
               color: "hsl(var(--foreground))",
               backgroundColor: "hsl(var(--primary))",
             }}
-            className=" items-center justify-center rounded-full text-primary border-primary border-2 text-sm md:text-lg py-1 px-2 md:py-2 md:px-4 transition-colors flex"
+            className="items-center justify-center rounded-full text-primary border-primary border-2 text-sm md:text-lg py-1 px-2 md:py-2 md:px-4 transition-colors flex"
           >
             <PhoneIcon />
-            <p className="">+38160 000 000</p>
+            <p className="hidden sm:block">Kontakt</p>
           </motion.button>
         </Link>
         <MobileMenu />

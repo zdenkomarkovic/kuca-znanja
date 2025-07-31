@@ -1,49 +1,42 @@
-
-import Hero from "@/components/Hero";
-import CTASection from "@/components/ui/CTASection";
-import Image from "next/image";
 import { BookOpen, Users, GraduationCap, Heart, Star, Calendar } from 'lucide-react'
 import ProgramCard from '@/components/program/ProgramCard'
 import AdditionalProgramCard from '@/components/program/AdditionalProgramCard'
 import SectionHeader from '@/components/ui/SectionHeader'
+import CTASection from '@/components/ui/CTASection'
 
-export default function Home() {
+export default function ProgramPage() {
   const programs = [
     {
       title: "Mudre sove",
-      description: "Pravo mesto za decu osnovce u Beogradu, gde na kreativan način mogu da ispune svoje vreme pre i posle škole! Namenjeno je deci uzrasta od 7 do 15 godina.",
-   
+      description: "Pravo mesto za decu osnovce u Beogradu, gde na kreativan način mogu da ispune svoje vreme pre i posle škole!",
+      age: "7-15 godina",
       icon: BookOpen,
       link: "/program/mudre-sove",
-      features: ["Boravak pre i posle škole", "Pomoć u domaćim zadacima", "Kreativne radionice"],
-      image: "/Mudre sove.png"
+      features: ["Boravak pre i posle škole", "Pomoć u domaćim zadacima", "Kreativne radionice"]
     },
-          {
-        title: "Moj dan",
-        description: "MOJ DAN je dan kada proslavljam svoj rođendan. MOJ DAN je prezentacija moje knjige. MOJ DAN je organizacija izložbe mojih radova.",
-    
-        icon: Heart,
-        link: "/program/moj-dana",
-        features: ["Organizacija rođendana", "Prezentacija knjige", "Izložbe radova"],
-        image: "/Moj dan.png"
-      },
+    {
+      title: "Moj dan",
+      description: "Program za najmlađe - kreativno i zabavno učenje kroz igru i istraživanje.",
+      age: "3-6 godina",
+      icon: Heart,
+      link: "/program/moj-dana",
+      features: ["Kreativne aktivnosti", "Razvoj veština", "Igra i učenje"]
+    },
     {
       title: "Budi važan - spremi maturu",
-      description: "Neka ti Mala matura bude zadovoljstvo! Ovde ćeš korigovati propušteno i utvrditi već usvojeno gradivo. Bez opterećenja se spremi za završni ispit!",
-     
+      description: "Stručna priprema za maturu uz individualni pristup i sistematsko učenje.",
+      age: "17-19 godina",
       icon: GraduationCap,
       link: "/program/budi-vazan-spremi-maturu",
-      features: ["Srpski jezik", "Matematika", "Izborni predmeti"],
-      image: "/Završni ispit (1).png"
+      features: ["Priprema za maturu", "Individualni pristup", "Testovi i vežbe"]
     },
     {
       title: "Roditelj u trendu",
-      description: "Tamo gde su deca, tu su i roditelji! Posebnu pažnju posvećujemo roditeljima. Danas je izazov biti roditelj.",
-  
+      description: "Program za roditelje - kako da podržite razvoj svoje dece u modernom svetu.",
+      age: "Roditelji",
       icon: Users,
       link: "/program/roditelj-u-trendu",
-      features: ["Savetovalište", "Predavanja", "Individualni sastanci"],
-      image: "/Roditelj u trendu.jpg"
+      features: ["Saveti za roditelje", "Moderne metode", "Podrška u odgoju"]
     }
   ]
 
@@ -93,28 +86,12 @@ export default function Home() {
   ]
 
   return (
-    <div className="">
-      <Hero />
-      
-      {/* Hero Image Section */}
-      <section className="bg-[#FFE5B7]">
-        <div className="container mx-auto">
-          <Image
-            src="/KZ.jpg"
-            alt="Kuća znanja - centar za kreativnu edukaciju"
-            width={1000}
-            height={1000}
-            className=" w-full h-full object-cover"
-            priority
-          />
-        </div>
-      </section>
-
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       {/* Hero Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-white to-[#f1f1f1]">
+      <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Naši <span className="text-primary">Programi</span>
+            Naši <span className="text-blue-600">Programi</span>
           </h1>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
             Kreativna edukacija dece kroz različite programe prilagođene svim uzrastima. 
@@ -124,24 +101,23 @@ export default function Home() {
       </section>
 
       {/* Osnovni programi */}
-      <section className="py-16 px-4 bg-gradient-to-br from-white to-[#f1f1f1] ">
+      <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <SectionHeader 
             title="Osnovni programi"
             subtitle="Naši glavni programi prilagođeni različitim uzrastima dece"
           />
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-4 gap-8">
             {programs.map((program, index) => (
               <ProgramCard
                 key={index}
                 title={program.title}
                 description={program.description}
-            
+                age={program.age}
                 icon={program.icon}
                 link={program.link}
                 features={program.features}
                 variant="primary"
-                image={program.image}
               />
             ))}
           </div>
@@ -149,7 +125,7 @@ export default function Home() {
       </section>
 
       {/* Dodatni programi */}
-      <section className="py-16 px-4 bg-gradient-to-br from-white to-[#f1f1f1]">
+      <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <SectionHeader 
             title="Dodatni programi"
@@ -169,10 +145,11 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
+
+      {/* CTA Section */}
       <CTASection
         title="Prijavite svoje dete u program"
-        subtitle="Kontaktirajte nas za više informacija o programima"
+        subtitle="Kontaktirajte nas da saznamo više o vašem detetu i pronađemo najbolji program"
         primaryButton={{
           text: "0653237267",
           link: "/kontakt"
@@ -188,5 +165,5 @@ export default function Home() {
         }}
       />
     </div>
-  );
-}
+  )
+} 

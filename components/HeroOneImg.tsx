@@ -1,6 +1,6 @@
 "use client";
 
-import Hero3 from "../public/hero3.jpg";
+import Hero3 from "../public/kuca-znanja-logo.png";
 import Image from "next/image";
 import { ArrowRightIcon } from "lucide-react";
 import Link from "next/link";
@@ -12,7 +12,7 @@ const Hero = () => {
       <div className="absolute top-0 left-0 w-full h-full bg-black/20 z-[1]" />
       <Image
         src={Hero3}
-        alt="slep puric"
+        alt="kuca znanja rucnov"
         fill
         className="w-full h-[100dvh] object-cover"
       />
