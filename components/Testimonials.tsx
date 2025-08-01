@@ -67,7 +67,7 @@ export default function Testemonials() {
                     </div>
                   </div>
                   <p className=" italic mb-6 text-center text-primary">
-                    "{testimonial.quote}
+                    {testimonial.quote}
                   </p>
                   <div className="text-center">
                     <p className="font-semibold text-gray-900">
