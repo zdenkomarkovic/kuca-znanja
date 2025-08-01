@@ -18,7 +18,7 @@ export default function AdditionalProgramCard({
   link
 }: AdditionalProgramCardProps) {
   const cardContent = (
-    <Card className="text-center hover:shadow-lg transition-shadow border-2 border-gray-100">
+    <Card className="text-center hover:shadow-lg transition-shadow border-2 border-gray-100 h-full">
       <CardContent className="p-6">
         <div className="flex justify-center mb-4">
           <Icon className={`h-6 w-6 ${color}`} />

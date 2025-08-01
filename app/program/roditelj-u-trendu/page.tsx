@@ -8,7 +8,7 @@ export default function RoditeljUTrenduPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-white via-[#f1f1f1] to-[#e0e0e0]">
+      <section className="py-20 px-4 bg-gradient-to-r from-white to-[#f1f1f1]">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
@@ -31,7 +31,7 @@ export default function RoditeljUTrenduPage() {
                 alt="Roditelj u trendu program"
                 width={600}
                 height={400}
-                className="rounded-lg shadow-2xl"
+                className=" hover:scale-105 transition-all duration-300"
                 priority
               />
             </div>
@@ -40,7 +40,7 @@ export default function RoditeljUTrenduPage() {
       </section>
 
       {/* Oblici saradnje */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-16 px-4 bg-gradient-to-br from-white to-[#f1f1f1]">
         <div className="max-w-6xl mx-auto">
           <SectionHeader 
             title="Oblici saradnje sa roditeljima"
@@ -93,7 +93,7 @@ export default function RoditeljUTrenduPage() {
       </section>
 
       {/* Sa nama je RODITELJ U TRENDU */}
-      <section className="py-16 px-4">
+      <section className="py-16 px-4 bg-gradient-to-br from-white to-[#f1f1f1]">
         <div className="max-w-6xl mx-auto">
           <SectionHeader 
             title="Sa nama je RODITELJ U TRENDU"
@@ -138,7 +138,7 @@ export default function RoditeljUTrenduPage() {
       </section>
 
       {/* Dodatne informacije */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-16 px-4 bg-gradient-to-br from-white to-[#f1f1f1]">
         <div className="max-w-4xl mx-auto">
           <div className="text-center space-y-6">
             <h2 className="text-3xl font-bold">Zašto je važno biti u trendu?</h2>

@@ -30,12 +30,50 @@ export default function ONamaPage() {
               <CardTitle className="text-3xl text-gray-900">Reč osnivača</CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
-              <p className="text-lg text-gray-700 leading-relaxed text-center italic">
-                Naša misija je da svako dete pronađe svoj put do uspeha kroz kreativnu edukaciju. 
-                Verujemo da svako dete ima jedinstveni potencijal koji treba da se razvija na pravi način.
-              </p>
-              <div className="text-center">
-                <p className="font-semibold text-blue-600">- Osnivač centra</p>
+              <div className="text-lg text-gray-700 leading-relaxed space-y-4">
+                <p>
+                  U vremenu u kojem živimo pregalaštvo u obrazovanju je posebno dragoceno, budući da životu
+                  daje smisao i svakodnevicu čini vrednijom. KUĆA ZNANJA nastala je kao odgovor na posebnu
+                  potrebu zaposlenih roditelja, da svoju decu predaju u sigurne ruke profesionalaca, koji će u
+                  potpunosti biti partner porodici u vaspitanju i obrazovanju dece od 7 do 15 godina.
+                </p>
+                
+                <p>
+                  KUĆA ZNANJA je koncipirana kao mesto za decu osnovce, gde na kreativan način mogu da
+                  ispune svoje vreme pre i posle škole!
+                  Mesto ispunjeno pažnjom, kreativnim radom i veselom grajom!
+                  Deca se igraju, uče jezike, kreiraju mape uma, slikaju, pevaju…
+                </p>
+                
+                <p className="text-center font-semibold text-blue-600">
+                  Naš moto je kreativno dete!
+                </p>
+                
+                <p>
+                  Detetu je potrebna podrška za jedan mali korak, koji daje veliki učinak u stvaralaštvu.
+                </p>
+                
+                <p>
+                  Probuditi kreativni moment kod deteta, probuditi emocije, koje će poneti svu složenost
+                  stvaralaštva, pronaći motiv na putu do uspeha – jesu načela rada tima profesionalaca zaposlenih
+                  u KUĆI ZNANJA.
+                </p>
+                
+                <p className="text-center">
+                  Za roditelje spremne da ulažu u obrazovanje svoje dece!
+                </p>
+                
+                <p className="text-center">
+                  Za sve one koji shvataju značaj obrazovanja!
+                </p>
+                
+                <p className="text-center font-semibold">
+                  Dobro došli!
+                </p>
+              </div>
+              
+              <div className="text-center pt-4">
+                <p className="font-semibold text-blue-600">Ramona Ručnov</p>
               </div>
             </CardContent>
           </Card>
@@ -54,20 +92,34 @@ export default function ONamaPage() {
           <div className="grid md:grid-cols-2 gap-8">
             <Card className="border-2 border-blue-100">
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Vizija</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">MISIJA</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Da postanemo vodeći centar za kreativnu edukaciju dece u regionu, 
-                  gde će svako dete moći da razvije svoj potencijal u sigurnom i podržavajućem okruženju.
+                  Partner porodici u vaspitavanju i obrazovanju dece osnovne škole!
                 </p>
               </CardContent>
             </Card>
             <Card className="border-2 border-blue-100">
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Ciljevi</h3>
-                <p className="text-gray-700 leading-relaxed">
-                  Pružiti kvalitetnu edukaciju kroz kreativne metode, razviti individualne talente dece 
-                  i pripremiti ih za uspešnu budućnost u modernom svetu.
-                </p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">VIZIJA</h3>
+                <div className="text-gray-700 leading-relaxed space-y-3">
+                  <p>
+                    Svojim jedinstvenim programom želimo da stvorimo najbolje uslove za stvaralaštvo deteta u
+                    vreme pre i posle škole.
+                  </p>
+                  <p>
+                    Kao partner porodici u vaspitanju i obrazovnju dece vodimo računa o: celokupnoj organizaciji
+                    slobodnog vremena, razvoju potencijala deteta i oblikovanju mlađe generacije kao korisnog
+                    člana društvene zajednice.
+                  </p>
+                  <p>
+                    Uz stručan i kreativan kadar pružamo uslove prilagođene individualnom razvoju deteta u
+                    osnovnoškolskom periodu.
+                  </p>
+                  <p>
+                    Posebnim pristupom detetu doprinosimo poboljšanju kvaliteta njegovog rada i ličnog razvoja u
+                    socijalnom okruženju.
+                  </p>
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -83,34 +135,196 @@ export default function ONamaPage() {
             </div>
             <h2 className="text-3xl font-bold text-gray-900">Drugi o nama</h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Roditelji",
-                description: "Naši roditelji su zadovoljni rezultatima koje postižu njihova deca u našem centru.",
-                icon: <Users className="h-8 w-8 text-blue-600" />
-              },
-              {
-                title: "Deca",
-                description: "Deca uživaju u našim programima i raduju se svakom novom danu u centru.",
-                icon: <Heart className="h-8 w-8 text-red-600" />
-              },
-              {
-                title: "Edukatori",
-                description: "Naš tim edukatora je posvećen razvoju dece i kontinuirano se usavršava.",
-                icon: <Award className="h-8 w-8 text-green-600" />
-              }
-            ].map((item, index) => (
-              <Card key={index} className="text-center border-2 border-blue-100">
-                <CardContent className="p-6">
+          
+          {/* UTISCI ĐAKA */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-gray-900 text-center mb-12">UTISCI ĐAKA</h3>
+            <div className="grid md:grid-cols-3 gap-8">
+              <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 border-0">
+                <CardContent className="p-8">
                   <div className="flex justify-center mb-4">
-                    {item.icon}
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                      J
+                    </div>
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-2">{item.title}</h3>
-                  <p className="text-gray-600 text-sm">{item.description}</p>
+                  <div className="flex justify-center mb-4">
+                    <div className="flex space-x-1">
+                      {[1, 2, 3, 4, 5].map((i) => (
+                        <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed italic mb-6 text-center">
+                    "Mudra Sova je dobra škola!!! Lepu kulturu ima i mnogo znanja pritom,
+                    a i mnogo drugara, i lepu hranu, nove i nove lepe stvari!!!"
+                  </p>
+                  <div className="text-center">
+                    <p className="font-semibold text-gray-900">Jovana</p>
+                    <p className="text-sm text-gray-600">1. razred</p>
+                  </div>
                 </CardContent>
               </Card>
-            ))}
+              
+              <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 border-0">
+                <CardContent className="p-8">
+                  <div className="flex justify-center mb-4">
+                    <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-blue-600 rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                      M
+                    </div>
+                  </div>
+                  <div className="flex justify-center mb-4">
+                    <div className="flex space-x-1">
+                      {[1, 2, 3, 4, 5].map((i) => (
+                        <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed italic mb-6 text-center">
+                    "Ja volim da idem u "Mudre sove", zato što sam upoznao drugare. 
+                    Preporučujem Vama da dovedete decu. :)"
+                  </p>
+                  <div className="text-center">
+                    <p className="font-semibold text-gray-900">Martin</p>
+                    <p className="text-sm text-gray-600">1. razred</p>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 border-0">
+                <CardContent className="p-8">
+                  <div className="flex justify-center mb-4">
+                    <div className="w-16 h-16 bg-gradient-to-br from-pink-400 to-red-600 rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                      S
+                    </div>
+                  </div>
+                  <div className="flex justify-center mb-4">
+                    <div className="flex space-x-1">
+                      {[1, 2, 3, 4, 5].map((i) => (
+                        <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed italic mb-6 text-center">
+                    "Volim "Mudre sove", jer se uvek zabavljamo i stvaramo kreativne stvari. 
+                    Imamo mnogo prijatelja i drugara! Često idemo u razne posete: muzeja, akvarijuma, parkova… 
+                    Volim "Mudre sove", jer tamo vreme provodi sa nama najbolja učiteljica Ramona Ručnov i još neke druge odlične učiteljice!"
+                  </p>
+                  <div className="text-center">
+                    <p className="font-semibold text-gray-900">Sofija</p>
+                    <p className="text-sm text-gray-600">III razred</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+          
+          {/* UTISCI RODITELJA */}
+          <div>
+            <h3 className="text-2xl font-bold text-gray-900 text-center mb-12">UTISCI RODITELJA</h3>
+            <div className="grid md:grid-cols-3 gap-8">
+              <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 border-0">
+                <CardContent className="p-8">
+                  <div className="flex justify-center mb-4">
+                    <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-indigo-600 rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                      A
+                    </div>
+                  </div>
+                  <div className="flex justify-center mb-4">
+                    <div className="flex space-x-1">
+                      {[1, 2, 3, 4, 5].map((i) => (
+                        <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed italic mb-6 text-center">
+                    "Za "Mudre sove" je karakteristično: kvalitetan rad i dobro izabran kadar. 
+                    Zadovoljni smo odnosom prema deci i trudom koji ulažete. 
+                    Sviđa nam se što su deca u manjoj grupi, skoncentrisana na rad domaćih zadataka."
+                  </p>
+                  <div className="text-center">
+                    <p className="font-semibold text-gray-900">Aleksandra Bogdanović</p>
+                    <p className="text-sm text-gray-600">Privatni preduzetnik</p>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 border-0">
+                <CardContent className="p-8">
+                  <div className="flex justify-center mb-4">
+                    <div className="w-16 h-16 bg-gradient-to-br from-teal-400 to-cyan-600 rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                      D
+                    </div>
+                  </div>
+                  <div className="flex justify-center mb-4">
+                    <div className="flex space-x-1">
+                      {[1, 2, 3, 4, 5].map((i) => (
+                        <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed italic mb-6 text-center">
+                    "Zadovoljni smo kvalitetom rada, prilagođenim konkretnim potrebama svakog deteta. 
+                    Našoj devojčici odgovara kvalitetna pomoć pri učenju i završavanju domaćih zadataka. 
+                    Posebno bismo istakli mogućnost da dete kvalitetno iskoristi slobodno vreme nakon škole."
+                  </p>
+                  <div className="text-center">
+                    <p className="font-semibold text-gray-900">Dragana Poznanić</p>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 border-0">
+                <CardContent className="p-8">
+                  <div className="flex justify-center mb-4">
+                    <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-red-600 rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                      T
+                    </div>
+                  </div>
+                  <div className="flex justify-center mb-4">
+                    <div className="flex space-x-1">
+                      {[1, 2, 3, 4, 5].map((i) => (
+                        <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed italic mb-6 text-center">
+                    "Prioritetnim u centru smatramo individualni rad sa detetom i stalan kvalitetan kadar. 
+                    Zadovoljni smo što vidimo da naše dete napreduje. 
+                    Najviše nam se dopada organizovanost u centru."
+                  </p>
+                  <div className="text-center">
+                    <p className="font-semibold text-gray-900">Tanja Jovanović</p>
+                    <p className="text-sm text-gray-600">Prof. biologije</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+            
+            <div className="mt-8">
+              <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 border-0 max-w-2xl mx-auto">
+                <CardContent className="p-8">
+                  <div className="flex justify-center mb-4">
+                    <div className="w-16 h-16 bg-gradient-to-br from-indigo-400 to-purple-600 rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                      A
+                    </div>
+                  </div>
+                  <div className="flex justify-center mb-4">
+                    <div className="flex space-x-1">
+                      {[1, 2, 3, 4, 5].map((i) => (
+                        <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed italic mb-6 text-center">
+                    "Samo da Vam prenesem Unine utiske sa časa biologije. Oduševljena je načinom na koji radite."
+                  </p>
+                  <div className="text-center">
+                    <p className="font-semibold text-gray-900">Aleksandra Ilić</p>
+                    <p className="text-sm text-gray-600">Ekonomista</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
@@ -311,49 +525,8 @@ export default function ONamaPage() {
         </div>
       </section>
 
-      {/* Prvih 10 godina */}
-      <section className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <div className="flex justify-center mb-4">
-              <Calendar className="h-12 w-12 text-blue-600" />
-            </div>
-            <h2 className="text-3xl font-bold text-gray-900">Prvih 10 godina</h2>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                year: "2014",
-                title: "Osnivanje",
-                description: "Početak rada centra sa prvim programima"
-              },
-              {
-                year: "2016",
-                title: "Prva franšiza",
-                description: "Otvaranje prve franšize u Novom Sadu"
-              },
-              {
-                year: "2018",
-                title: "Ekspanzija",
-                description: "Proširenje programa i dodavanje novih aktivnosti"
-              },
-              {
-                year: "2024",
-                title: "10 godina",
-                description: "Proslava 10 godina uspešnog rada"
-              }
-            ].map((milestone, index) => (
-              <Card key={index} className="text-center border-2 border-blue-100">
-                <CardContent className="p-6">
-                  <div className="text-3xl font-bold text-blue-600 mb-2">{milestone.year}</div>
-                  <h3 className="font-semibold text-gray-900 mb-2">{milestone.title}</h3>
-                  <p className="text-gray-600 text-sm">{milestone.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+     
+    
 
       <CTASection
         title="Pridružite se našoj porodici"
