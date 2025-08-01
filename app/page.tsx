@@ -1,5 +1,4 @@
 import CTASection from "@/components/ui/CTASection";
-import Image from "next/image";
 import Cilj from "@/components/Cilj";
 import Testemonials from "@/components/Testimonials";
 import Hero2 from "@/components/Hero2";
