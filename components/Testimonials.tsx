@@ -23,7 +23,7 @@ export default function Testemonials() {
                 initial: "J",
                 gradient: "from-blue-400 to-purple-600",
                 quote:
-                  "&quot;Mudra Sova&quot; je dobra škola!!! Lepu kulturu ima i mnogo znanja pritom, a i mnogo drugara, i lepu hranu, nove i nove lepe stvari!!!",
+                  "Mudra Sova je dobra škola!!! Lepu kulturu ima i mnogo znanja pritom, a i mnogo drugara, i lepu hranu, nove i nove lepe stvari!!!",
                 name: "Jovana",
                 position: "1. razred",
               },
@@ -31,7 +31,7 @@ export default function Testemonials() {
                 initial: "M",
                 gradient: "from-green-400 to-blue-600",
                 quote:
-                  "Ja volim da idem u &quot;Mudre sove&quot;, zato što sam upoznao drugare. Preporučujem Vama da dovedete decu. :)",
+                  "Ja volim da idem u Mudre sove, zato što sam upoznao drugare. Preporučujem Vama da dovedete decu. :)",
                 name: "Martin",
                 position: "1. razred",
               },
@@ -39,7 +39,7 @@ export default function Testemonials() {
                 initial: "S",
                 gradient: "from-pink-400 to-red-600",
                 quote:
-                  'Volim &quot;Mudre sove&quot;, jer se uvek zabavljamo i stvaramo kreativne stvari. Imamo mnogo prijatelja i drugara! Često idemo u razne posete: muzeja, akvarijuma, parkova… Volim "Mudre sove", jer tamo vreme provodi sa nama najbolja učiteljica Ramona Ručnov i još neke druge odlične učiteljice!',
+                  "Volim Mudre sove, jer se uvek zabavljamo i stvaramo kreativne stvari. Imamo mnogo prijatelja i drugara! Često idemo u razne posete: muzeja, akvarijuma, parkova… Volim Mudre sove, jer tamo vreme provodi sa nama najbolja učiteljica Ramona Ručnov i još neke druge odlične učiteljice!",
                 name: "Sofija",
                 position: "III razred",
               },
@@ -92,7 +92,7 @@ export default function Testemonials() {
                 initial: "A",
                 gradient: "from-purple-400 to-indigo-600",
                 quote:
-                  "Za &quot;Mudre sove&quot; je karakteristično: kvalitetan rad i dobro izabran kadar. Zadovoljni smo odnosom prema deci i trudom koji ulažete. Sviđa nam se što su deca u manjoj grupi, skoncentrisana na rad domaćih zadataka.",
+                  "Za Mudre sove je karakteristično: kvalitetan rad i dobro izabran kadar. Zadovoljni smo odnosom prema deci i trudom koji ulažete. Sviđa nam se što su deca u manjoj grupi, skoncentrisana na rad domaćih zadataka.",
                 name: "Aleksandra Bogdanović",
                 position: "Privatni preduzetnik",
               },
