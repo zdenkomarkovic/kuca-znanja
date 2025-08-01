@@ -1,9 +1,5 @@
-"use client"
+import React from "react";
 
-import React, { use } from "react";
-
-
-import { motion } from "framer-motion";
 import {
   Card,
   CardContent,
