@@ -8,7 +8,7 @@ export default function MojDanaPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-white via-[#f1f1f1] to-[#e0e0e0]">
+      <section className="py-20 px-4 bg-gradient-to-r from-white to-[#f1f1f1]">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
@@ -33,7 +33,7 @@ export default function MojDanaPage() {
                 alt="Moj dan program"
                 width={600}
                 height={400}
-                className="rounded-lg shadow-2xl"
+                className=" hover:scale-105 transition-all duration-300"
                 priority
               />
             </div>

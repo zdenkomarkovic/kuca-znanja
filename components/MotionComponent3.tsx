@@ -8,8 +8,8 @@ interface MotionComponent1Props {
   direction?: "left" | "right";
 }
 
-const MotionComponent1 = ({ children, direction = "left" }: MotionComponent1Props) => {
-  const initialX = direction === "left" ? -100 : 100;
+const MotionComponent3= ({ children, direction = "right" }: MotionComponent1Props) => {
+  const initialX = direction === "right" ? 100 : -100;
   
   return (
     <motion.div
@@ -23,4 +23,4 @@ const MotionComponent1 = ({ children, direction = "left" }: MotionComponent1Prop
   );
 };
 
-export default MotionComponent1;
+export default MotionComponent3;

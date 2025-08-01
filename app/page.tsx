@@ -6,6 +6,8 @@ import { BookOpen, Users, GraduationCap, Heart, Star, Calendar } from 'lucide-re
 import ProgramCard from '@/components/program/ProgramCard'
 import AdditionalProgramCard from '@/components/program/AdditionalProgramCard'
 import SectionHeader from '@/components/ui/SectionHeader'
+import Cilj from "@/components/Cilj";
+import Testemonials from "@/components/Testimonials";
 
 export default function Home() {
   const programs = [
@@ -92,7 +94,7 @@ export default function Home() {
       <Hero />
       
       {/* Hero Image Section */}
-      <section className="bg-[#FFE5B7]">
+      <section className="hidden  bg-[#FFE5B7]">
         <div className="container mx-auto">
           <Image
             src="/KZ.jpg"
@@ -106,7 +108,7 @@ export default function Home() {
       </section>
 
       {/* Hero Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-white to-[#f1f1f1]">
+      <section id="programi" className="py-20 px-4 bg-gradient-to-br from-white to-[#f1f1f1]">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Naši <span className="text-primary">Programi</span>
@@ -181,6 +183,8 @@ export default function Home() {
           url: "https://maps.google.com/?q=Krunska+40+Beograd+Serbia"
         }}
       />
+      <Cilj />
+      <Testemonials/>
     </div>
   );
 }

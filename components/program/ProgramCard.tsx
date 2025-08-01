@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { LucideIcon } from 'lucide-react'
 
 interface ProgramCardProps {
@@ -25,7 +25,7 @@ export default function ProgramCard({
   const isPrimary = variant === 'primary'
   
   return (
-    <Card className={`hover:shadow-xl transition-shadow duration-300 ${
+    <Card className={`hover:shadow-xl h-full transition-shadow duration-300 flex flex-col ${
       isPrimary ? 'border-2 border-blue-100' : 'border-2 border-gray-100'
     }`}>
       {image && (
@@ -44,23 +44,25 @@ export default function ProgramCard({
           <div className="flex items-center space-x-3">
             <Icon className={`h-8 w-8 ${isPrimary ? 'text-primary' : 'text-muted-foreground'}`} />
             <div>
-              <CardTitle className="text-2xl text-primary">{title}</CardTitle>
-          
+              <CardTitle className=" text-primary">{title}</CardTitle>
+              
             </div>
           </div>
         </div>
       </CardHeader>
-      <CardContent className="space-y-4">
+      <CardContent className="flex-1">
         <p className="text-sm md:text-lg">{description}</p>
-
-        {isPrimary && (
-          <Link href={link}>
-            <button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3 px-6 rounded-lg transition-colors">
+      </CardContent>
+      {isPrimary && (
+        <CardFooter>
+          <Link href={link} className="w-full">
+            <button className="w-full bg-primary hover:bg-blue-500/70 text-primary-foreground font-semibold py-3 px-6 rounded-lg transition-colors">
               Saznaj više
             </button>
           </Link>
-        )}
-      </CardContent>
+        </CardFooter>
+      )}
+
     </Card>
   )
 } 

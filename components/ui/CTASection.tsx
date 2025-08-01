@@ -27,19 +27,19 @@ export default function CTASection({
   secondaryButton,
   workingHours,
   addressLink,
-  bgColor = "bg-gradient-to-r from-blue-600 to-indigo-700"
+  bgColor = "bg-gradient-to-br from-blue-400 via-[#00aceb] to-indigo-600"
 }: CTASectionProps) {
   return (
-    <section className={`py-16 px-4 ${bgColor} text-white`}>
+    <section className={`py-6 px-4 ${bgColor} text-white`}>
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-6">{title}</h2>
-        <p className="text-xl text-blue-100 mb-8">{subtitle}</p>
+        <h2 className="text-white mb-2">{title}</h2>
+        <p className="mb-4">{subtitle}</p>
         {workingHours && (
           <p className="text-lg text-blue-200 mb-6">
             <strong>Radno vreme:</strong> {workingHours}
           </p>
         )}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
           <Link href={`tel:${primaryButton.text}`}>
             <button className="bg-white text-blue-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg transition-colors">
               {primaryButton.text}
@@ -59,7 +59,7 @@ export default function CTASection({
               href={addressLink.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-blue-200 hover:text-white transition-colors"
+              className="inline-flex items-center gap-2  hover:text-blue-200 transition-colors"
             >
               <MapPin className="h-5 w-5" />
               {addressLink.text}
