@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/sheet";
 
 import { motion } from "framer-motion";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment } from "react";
 import { navList } from "@/constants/index";
 import {
   Accordion,
@@ -135,20 +135,20 @@ const DesktopNav = () => (
 );
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
+  // const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    const HandleScroll = () => {
-      if (window.scrollY > 0) setScrolled(true);
-      else setScrolled(false);
-    };
+  // useEffect(() => {
+  //   const HandleScroll = () => {
+  //     if (window.scrollY > 0) setScrolled(true);
+  //     else setScrolled(false);
+  //   };
 
-    document.addEventListener("scroll", HandleScroll);
+  //   document.addEventListener("scroll", HandleScroll);
 
-    return () => {
-      document.removeEventListener("scroll", HandleScroll);
-    };
-  }, []);
+  //   return () => {
+  //     document.removeEventListener("scroll", HandleScroll);
+  //   };
+  // }, []);
 
   return (
     <header

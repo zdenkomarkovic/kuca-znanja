@@ -30,7 +30,7 @@ export default function Hero() {
                 Pravo mesto za decu osnovce u Beogradu, gde na kreativan način
                 mogu da ispune svoje vreme pre i posle škole!
               </p>
-            </div
+            </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
