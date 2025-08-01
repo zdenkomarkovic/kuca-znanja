@@ -30,40 +30,7 @@ export default function Hero() {
                 Pravo mesto za decu osnovce u Beogradu, gde na kreativan način
                 mogu da ispune svoje vreme pre i posle škole!
               </p>
-            </div>
-
-            {/* Features */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 max-w-2xl mx-auto  text-sm md:text-lg">
-              <div className="mx-auto">
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-muted-foreground">
-                    Boravak pre i posle škole
-                  </span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-muted-foreground">
-                    Kreativne radionice
-                  </span>
-                </div>
-              </div>
-              <div className="mx-auto">
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-muted-foreground">
-                    Pomoć u izradi domaćih zadataka
-                  </span>
-                </div>
-
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-muted-foreground">
-                    Edukativne aktivnosti
-                  </span>
-                </div>
-              </div>
-            </div>
+            </div
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

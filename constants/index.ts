@@ -18,7 +18,7 @@ export const navList = [
     link: "/o-nama",
   },
   {
-    title: "Program",
+    title: "Osnovni program",
     link: "/program",
     dropdown: [
       {
@@ -37,6 +37,12 @@ export const navList = [
         title: "Roditelj u trendu",
         link: "/program/roditelj-u-trendu",
       },
+    ],
+  },
+  {
+    title: "Dopunski program",
+    link: "/program",
+    dropdown: [
       {
         title: "Škola matematike",
         link: "/program/dodatni-program/skola-matematike",
@@ -54,10 +60,6 @@ export const navList = [
   {
     title: "Blog",
     link: "/blog",
-  },
-  {
-    title: "Shop",
-    link: "/shop",
   },
   {
     title: "Kontakt",
