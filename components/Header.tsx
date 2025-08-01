@@ -61,7 +61,7 @@ const MobileMenu = () => (
                               <motion.li
                                 whileHover={{ color: "hsl(var(--primary))" }}
                               >
-                                {link.title}
+                                <SheetTrigger>{link.title}</SheetTrigger>
                               </motion.li>
                             </Link>
                           ))}
