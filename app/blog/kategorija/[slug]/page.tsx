@@ -9,12 +9,13 @@ import Image from "next/image";
 import { Category, Post } from "@/lib/types";
 
 interface CategoryPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export default async function CategoryPage({ params }: CategoryPageProps) {
+  const { slug } = await params;
   try {
     // Dohvati sve kategorije da pronađemo odgovarajuću
     const categories: Category[] = await client.fetch(`
@@ -27,7 +28,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
     // Pronađi kategoriju koja odgovara slug-u
     const category = categories.find((cat: Category) => 
-      cat.slug.toLowerCase().replace(/\s+/g, '-') === params.slug
+      cat.slug.toLowerCase().replace(/\s+/g, '-') === slug
     );
     
     if (!category) {
@@ -115,6 +116,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                 <CardContent>
                   {post.body && (
                     <div className="text-muted-foreground mb-4 line-clamp-3">
+                      {/* @ts-expect-error PortableText type mismatch with Sanity data */}
                       <PortableText value={post.body} />
                     </div>
                   )}
