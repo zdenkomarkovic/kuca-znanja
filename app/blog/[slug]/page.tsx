@@ -15,6 +15,11 @@ interface BlogPostPageProps {
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
   try {
+    // Proveri da li je Sanity konfigurisan
+    if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID === "demo-project") {
+      throw new Error("Sanity not configured");
+    }
+    
     const post: Post = await client.fetch(`
       *[_type == "post" && slug.current == $slug][0] {
         _id,

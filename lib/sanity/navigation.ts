@@ -2,6 +2,11 @@ import { client } from "./client";
 
 export async function getNavigationWithCategories() {
   try {
+    // Proveri da li je Sanity konfigurisan
+    if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID === "demo-project") {
+      throw new Error("Sanity not configured");
+    }
+    
     const categories = await client.fetch(`
       *[_type == "category"] {
         _id,

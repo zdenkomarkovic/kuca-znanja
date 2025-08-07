@@ -10,6 +10,11 @@ import Image from "next/image";
 import { Category, Post } from "@/lib/types";
 export default async function BlogPage() {
   try {
+    // Proveri da li je Sanity konfigurisan
+    if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID === "demo-project") {
+      throw new Error("Sanity not configured");
+    }
+    
     const [posts, categories] = await Promise.all([
       client.fetch(`
         *[_type == "post"] | order(publishedAt desc) {

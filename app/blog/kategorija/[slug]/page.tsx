@@ -17,6 +17,11 @@ interface CategoryPageProps {
 export default async function CategoryPage({ params }: CategoryPageProps) {
   const { slug } = await params;
   try {
+    // Proveri da li je Sanity konfigurisan
+    if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID === "demo-project") {
+      throw new Error("Sanity not configured");
+    }
+    
     // Dohvati sve kategorije da pronađemo odgovarajuću
     const categories: Category[] = await client.fetch(`
       *[_type == "category"] {
