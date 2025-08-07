@@ -3,7 +3,7 @@ import { PortableText } from "@portabletext/react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import SectionHeader from "@/components/ui/SectionHeader";
-import { BookOpen, Filter } from "lucide-react";
+import { BookOpen } from "lucide-react";
 import { getCategories } from "@/lib/sanity/categories";
 import Link from "next/link";
 import Image from "next/image";
@@ -11,7 +11,6 @@ import { Category, Post } from "@/lib/types";
 export default async function BlogPage() {
   try {
     const [posts, categories] = await Promise.all([
-      // @ts-ignore
       client.fetch(`
         *[_type == "post"] | order(publishedAt desc) {
           _id,
@@ -24,27 +23,26 @@ export default async function BlogPage() {
           "categories": categories[]->title
         }
       `),
-      getCategories()
+      getCategories(),
     ]);
 
     return (
       <div className="container mx-auto px-4 py-8 pt-20">
-        <SectionHeader
-          title="Blog"
-          icon={BookOpen}
-        />
-        
+        <SectionHeader title="Blog" icon={BookOpen} />
+
         {/* Filter dugmad */}
         <div className="flex flex-wrap gap-2 mt-8 mb-6">
           {categories.map((category: Category) => (
             <Button key={category._id} variant="outline" size="sm" asChild>
-              <Link href={`/blog/kategorija/${category.slug.toLowerCase().replace(/\s+/g, '-')}`}>
+              <Link
+                href={`/blog/kategorija/${category.slug.toLowerCase().replace(/\s+/g, "-")}`}
+              >
                 {category.title}
               </Link>
             </Button>
           ))}
         </div>
-        
+
         {posts.length === 0 ? (
           <div className="text-center py-12">
             <h3 className="text-xl font-semibold text-muted-foreground mb-4">
@@ -57,11 +55,14 @@ export default async function BlogPage() {
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
             {posts.map((post: Post) => (
-              <Card key={post._id} className="hover:shadow-lg transition-shadow">
+              <Card
+                key={post._id}
+                className="hover:shadow-lg transition-shadow"
+              >
                 {post.image && (
                   <div className="aspect-video overflow-hidden rounded-t-lg">
-                    <Image 
-                      src={post.image} 
+                    <Image
+                      src={post.image}
                       alt={post.title}
                       width={800}
                       height={450}
@@ -78,13 +79,13 @@ export default async function BlogPage() {
                   )}
                   {post.publishedAt && (
                     <p className="text-sm text-muted-foreground">
-                      {new Date(post.publishedAt).toLocaleDateString('sr-RS')}
+                      {new Date(post.publishedAt).toLocaleDateString("sr-RS")}
                     </p>
                   )}
                   {post.categories && post.categories.length > 0 && (
                     <div className="flex flex-wrap gap-1 mt-2">
                       {post.categories.map((cat: string, index: number) => (
-                        <span 
+                        <span
                           key={index}
                           className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full"
                         >
@@ -97,11 +98,10 @@ export default async function BlogPage() {
                 <CardContent>
                   {post.body && (
                     <div className="text-muted-foreground mb-4 line-clamp-3">
-                      {/* @ts-ignore */}
                       <PortableText value={post.body} />
                     </div>
                   )}
-                  <Link 
+                  <Link
                     href={`/blog/${post.slug?.current}`}
                     className="text-primary hover:underline font-medium"
                   >
@@ -115,8 +115,8 @@ export default async function BlogPage() {
       </div>
     );
   } catch (error) {
-    console.error('Error fetching blog posts:', error);
-    
+    console.error("Error fetching blog posts:", error);
+
     return (
       <div className="container mx-auto px-4 py-8 pt-20">
         <SectionHeader
@@ -124,7 +124,7 @@ export default async function BlogPage() {
           subtitle="Dete i zdravlje"
           icon={BookOpen}
         />
-        
+
         <div className="text-center py-12">
           <h3 className="text-xl font-semibold text-muted-foreground mb-4">
             Greška pri učitavanju bloga
