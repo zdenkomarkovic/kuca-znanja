@@ -14,7 +14,8 @@ interface BlogPostPageProps {
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   try {
-    const post: Post = await client.fetch(`
+    const post: Post = await client.fetch(
+      `
       *[_type == "post" && slug.current == $slug][0] {
         _id,
         title,
@@ -25,7 +26,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         "author": author->name,
         "categories": categories[]->title
       }
-    `, { slug: params.slug });
+    `,
+      { slug: params.slug }
+    );
 
     if (!post) {
       notFound();
@@ -37,8 +40,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <Card className="mb-8">
             {post.image && (
               <div className="aspect-video overflow-hidden rounded-t-lg">
-                <Image 
-                  src={post.image} 
+                <Image
+                  src={post.image}
                   alt={post.title}
                   width={800}
                   height={450}
@@ -47,21 +50,22 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </div>
             )}
             <CardHeader>
-              <CardTitle className="text-3xl text-primary text-center">{post.title}</CardTitle>
+              <CardTitle className="text-3xl text-primary text-center">
+                {post.title}
+              </CardTitle>
               {post.author && (
-                <p className="text-muted-foreground">
-                  Autor: {post.author}
-                </p>
+                <p className="text-muted-foreground">Autor: {post.author}</p>
               )}
               {post.publishedAt && (
                 <p className="text-muted-foreground">
-                  Objavljeno: {new Date(post.publishedAt).toLocaleDateString('sr-RS')}
+                  Objavljeno:{" "}
+                  {new Date(post.publishedAt).toLocaleDateString("sr-RS")}
                 </p>
               )}
               {post.categories && post.categories.length > 0 && (
                 <div className="flex flex-wrap gap-2 mt-4">
                   {post.categories.map((cat: string, index: number) => (
-                    <span 
+                    <span
                       key={index}
                       className="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full"
                     >
@@ -79,9 +83,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               )}
             </CardContent>
           </Card>
-          
+
           <div className="text-center">
-            <Link 
+            <Link
               href="/blog"
               className="text-primary hover:underline font-medium"
             >
@@ -92,7 +96,19 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       </div>
     );
   } catch (error) {
-    console.error('Error fetching blog post:', error);
+    console.error("Error fetching blog post:", error);
     notFound();
   }
-} 
+}
+
+export async function generateStaticParams() {
+  const slugs: { slug: { current: string } }[] = await client.fetch(`
+    *[_type == "post"] {
+      slug { current }
+    }
+  `);
+
+  return slugs.map((slugObj) => ({
+    slug: slugObj.slug.current,
+  }));
+}
