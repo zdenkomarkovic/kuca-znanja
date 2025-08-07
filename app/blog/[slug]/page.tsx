@@ -75,7 +75,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <CardContent>
               {post.body && (
                 <div className="prose prose-lg max-w-none">
-                  {/* @ts-expect-error */}
+                  {/* @ts-expect-error PortableText type mismatch with Sanity data */}
                   <PortableText value={post.body} />
                 </div>
               )}
