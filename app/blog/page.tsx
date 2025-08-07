@@ -98,6 +98,7 @@ export default async function BlogPage() {
                 <CardContent>
                   {post.body && (
                     <div className="text-muted-foreground mb-4 line-clamp-3">
+                      {/* @ts-expect-error PortableText type mismatch with Sanity data */}
                       <PortableText value={post.body} />
                     </div>
                   )}
