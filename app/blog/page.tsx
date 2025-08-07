@@ -32,7 +32,7 @@ export default async function BlogPage() {
         />
 
         {/* Filter dugmad */}
-        <div className="flex flex-wrap gap-2 mt-8 mb-6">
+        <div className="flex flex-wrap gap-2 mt-8 mb-5">
           {categories.map((category: any) => (
             <Button key={category._id} variant="outline" size="sm" asChild>
               <a
