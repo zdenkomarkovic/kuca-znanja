@@ -1,6 +1,12 @@
 import { client } from "./client";
 
-export async function getCategories() {
+interface Category {
+  _id: string;
+  title: string;
+  slug: string;
+}
+
+export async function getCategories(): Promise<Category[]> {
   try {
     const categories = await client.fetch(`
       *[_type == "category"] {

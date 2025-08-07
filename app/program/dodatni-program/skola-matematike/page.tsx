@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calculator, Target, Users, BookOpen, Star, Clock } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";

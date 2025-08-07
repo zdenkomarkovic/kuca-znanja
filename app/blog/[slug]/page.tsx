@@ -2,6 +2,7 @@ import { client } from "@/lib/sanity/client";
 import { PortableText } from "@portabletext/react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 
 interface BlogPostPageProps {
   params: {
@@ -9,9 +10,20 @@ interface BlogPostPageProps {
   };
 }
 
+interface Post {
+  _id: string;
+  title: string;
+  slug: { current: string };
+  body: any;
+  publishedAt: string;
+  image: string;
+  author: string;
+  categories: string[];
+}
+
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   try {
-    const post = await client.fetch(`
+    const post: Post = await client.fetch(`
       *[_type == "post" && slug.current == $slug][0] {
         _id,
         title,
@@ -76,12 +88,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </Card>
           
           <div className="text-center">
-            <a 
+            <Link 
               href="/blog"
               className="text-primary hover:underline font-medium"
             >
               ← Nazad na blog
-            </a>
+            </Link>
           </div>
         </article>
       </div>

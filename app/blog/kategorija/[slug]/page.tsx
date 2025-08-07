@@ -4,6 +4,24 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { BookOpen } from "lucide-react";
 import { notFound } from "next/navigation";
+import Link from "next/link";
+
+interface Category {
+  _id: string;
+  title: string;
+  slug: string;
+}
+
+interface Post {
+  _id: string;
+  title: string;
+  slug: { current: string };
+  body: any;
+  publishedAt: string;
+  image: string;
+  author: string;
+  categories: string[];
+}
 
 interface CategoryPageProps {
   params: {
@@ -14,7 +32,7 @@ interface CategoryPageProps {
 export default async function CategoryPage({ params }: CategoryPageProps) {
   try {
     // Dohvati sve kategorije da pronađemo odgovarajuću
-    const categories = await client.fetch(`
+    const categories: Category[] = await client.fetch(`
       *[_type == "category"] {
         _id,
         title,
@@ -23,7 +41,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     `);
 
     // Pronađi kategoriju koja odgovara slug-u
-    const category = categories.find((cat: any) => 
+    const category = categories.find((cat: Category) => 
       cat.slug.toLowerCase().replace(/\s+/g, '-') === params.slug
     );
     
@@ -33,7 +51,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
     const categoryTitle = category.title;
 
-    const posts = await client.fetch(`
+    const posts: Post[] = await client.fetch(`
       *[_type == "post" && $categoryTitle in categories[]->title] | order(publishedAt desc) {
         _id,
         title,
@@ -62,16 +80,16 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             <p className="text-muted-foreground mb-6">
               Pratite nas za najnovije članke iz kategorije {categoryTitle}.
             </p>
-            <a 
+            <Link 
               href="/blog"
               className="text-primary hover:underline font-medium"
             >
               ← Nazad na blog
-            </a>
+            </Link>
           </div>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-            {posts.map((post: any) => (
+            {posts.map((post: Post) => (
               <Card key={post._id} className="hover:shadow-lg transition-shadow">
                 {post.image && (
                   <div className="aspect-video overflow-hidden rounded-t-lg">
@@ -113,12 +131,12 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                       <PortableText value={post.body} />
                     </div>
                   )}
-                  <a 
+                  <Link 
                     href={`/blog/${post.slug?.current}`}
                     className="text-primary hover:underline font-medium"
                   >
                     Pročitaj više →
-                  </a>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
@@ -126,12 +144,12 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         )}
         
         <div className="text-center mt-8">
-          <a 
+          <Link 
             href="/blog"
             className="text-primary hover:underline font-medium"
           >
             ← Nazad na blog
-          </a>
+          </Link>
         </div>
       </div>
     );
