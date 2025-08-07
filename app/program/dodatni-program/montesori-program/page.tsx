@@ -1,52 +1,23 @@
-import Image from 'next/image'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Heart, Users, Star, BookOpen, Brain } from 'lucide-react'
-import SectionHeader from '@/components/ui/SectionHeader'
-import CTASection from '@/components/ui/CTASection'
+import Image from "next/image";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Heart, Users, Star, BookOpen, Brain } from "lucide-react";
+import SectionHeader from "@/components/ui/SectionHeader";
+import CTASection from "@/components/ui/CTASection";
+import HeroProgrami from "@/components/HeroProgrami";
 
 export default function MontesoriProgramPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-white via-[#f1f1f1] to-[#e0e0e0]">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
-                <span className="text-primary">MONTESORI PROGRAM</span>
-              </h1>
-              <div className="space-y-4">
-                <p className="text-lg leading-relaxed">
-                  Časovi prema Montesori programu se održavaju dva puta nedeljno u Kući znanja.
-                </p>
-                <p className="text-lg leading-relaxed">
-                  Roditelji mogu da prijave svoje dete samo za ove časove. Svakako, metodika rad prema
-                  Mariji Montesori se svakodnevno primenjuje u produženom boravku, kao i u drugim
-                  aktivnostima i programima.
-                </p>
-              </div>
-            </div>
-            <div className="relative">
-              <Image
-                src="/montessory.jpg"
-                alt="Montesori program"
-                width={600}
-                height={400}
-                className="rounded-lg shadow-2xl"
-                priority
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
+      <HeroProgrami
+        Hero01={"/Montesori program.jpg"}
+        word={"MONTESORI PROGRAM"}
+        text={[]}
+      />
       {/* Osnova metode */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <SectionHeader 
-            title="Osnova Montesori metode"
-            icon={Heart}
-          />
+          <SectionHeader title="Osnova Montesori metode" icon={Heart} />
           <div className="grid lg:grid-cols-2 gap-8">
             <Card className="border-2 border-primary/20">
               <CardHeader>
@@ -54,9 +25,10 @@ export default function MontesoriProgramPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p>
-                  Naši časovi se realizuju prema programu Marije Montesori. Osnova Montesori metode
-                  leži u ideji da se dete maksimalno uključi u aktivnost, jer formirana sredina omogućava
-                  detetu da razvije svoje potencijale.
+                  Naši časovi se realizuju prema programu Marije Montesori.
+                  Osnova Montesori metode leži u ideji da se dete maksimalno
+                  uključi u aktivnost, jer formirana sredina omogućava detetu da
+                  razvije svoje potencijale.
                 </p>
                 <div className="bg-primary/10 p-4 rounded-lg">
                   <p className="font-semibold text-primary">
@@ -71,12 +43,12 @@ export default function MontesoriProgramPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p>
-                  Naši časovi ne liče na tradicionalnu nastavu. Marija Montesori je bila uverena da svako
-                  dete može da otkrije svoju snagu.
+                  Naši časovi ne liče na tradicionalnu nastavu. Marija Montesori
+                  je bila uverena da svako dete može da otkrije svoju snagu.
                 </p>
                 <p>
-                  Uloga nastavnika na časovima nije da predaje, već da podržavam samostalnost u radu
-                  deteta.
+                  Uloga nastavnika na časovima nije da predaje, već da podržavam
+                  samostalnost u radu deteta.
                 </p>
               </CardContent>
             </Card>
@@ -87,10 +59,7 @@ export default function MontesoriProgramPage() {
       {/* Razvijaju se */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <SectionHeader 
-            title="Razvijaju se"
-            icon={Brain}
-          />
+          <SectionHeader title="Razvijaju se" icon={Brain} />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               "Pažnja",
@@ -98,9 +67,12 @@ export default function MontesoriProgramPage() {
               "Pamćenje",
               "Govor",
               "Mašta",
-              "Motorika"
+              "Motorika",
             ].map((skill, index) => (
-              <Card key={index} className="border-2 border-primary/20 text-center">
+              <Card
+                key={index}
+                className="border-2 border-primary/20 text-center"
+              >
                 <CardContent className="p-6">
                   <div className="flex justify-center mb-4">
                     <Star className="h-8 w-8 text-primary" />
@@ -116,17 +88,15 @@ export default function MontesoriProgramPage() {
       {/* Timski rad */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <SectionHeader 
-            title="Timski rad"
-            icon={Users}
-          />
+          <SectionHeader title="Timski rad" icon={Users} />
           <Card className="border-2 border-primary/20">
             <CardContent className="p-8 text-center">
               <div className="flex justify-center mb-4">
                 <Users className="h-12 w-12 text-primary" />
               </div>
               <p className="text-lg font-semibold">
-                Tokom timskog rada deca se uče da misle, donose zaključke, utiču na tok aktivnosti.
+                Tokom timskog rada deca se uče da misle, donose zaključke, utiču
+                na tok aktivnosti.
               </p>
             </CardContent>
           </Card>
@@ -136,10 +106,7 @@ export default function MontesoriProgramPage() {
       {/* Ključ rada */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <SectionHeader 
-            title="Ključ rada sa decom"
-            icon={Heart}
-          />
+          <SectionHeader title="Ključ rada sa decom" icon={Heart} />
           <div className="grid lg:grid-cols-2 gap-8">
             <Card className="border-2 border-primary/20">
               <CardHeader>
@@ -147,9 +114,10 @@ export default function MontesoriProgramPage() {
               </CardHeader>
               <CardContent>
                 <p>
-                  Ključ moga rada sa decom, a prema metodici Marije Montesori, je odnos prema detetu
-                  kao jedinstvenoj neponovljivoj ličnosti, sa svojim ličnim planom razvoja, svojim
-                  sopstvenim pristupom i rokovima osvajanja sveta koji ga okružuje.
+                  Ključ moga rada sa decom, a prema metodici Marije Montesori,
+                  je odnos prema detetu kao jedinstvenoj neponovljivoj ličnosti,
+                  sa svojim ličnim planom razvoja, svojim sopstvenim pristupom i
+                  rokovima osvajanja sveta koji ga okružuje.
                 </p>
               </CardContent>
             </Card>
@@ -159,9 +127,10 @@ export default function MontesoriProgramPage() {
               </CardHeader>
               <CardContent>
                 <p>
-                  Korišćenje elemenata metodike Marije Montesori u radu pruža kroz senzomotorni
-                  razvoj deteta mogućnost da usredsredi pažnju i pažljivo radi, da se skoncentriše, da
-                  usmerava svoju aktivnost i ponašanje, kao i da formira govor i maštu.
+                  Korišćenje elemenata metodike Marije Montesori u radu pruža
+                  kroz senzomotorni razvoj deteta mogućnost da usredsredi pažnju
+                  i pažljivo radi, da se skoncentriše, da usmerava svoju
+                  aktivnost i ponašanje, kao i da formira govor i maštu.
                 </p>
               </CardContent>
             </Card>
@@ -172,17 +141,15 @@ export default function MontesoriProgramPage() {
       {/* Predavač */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <SectionHeader 
-            title="Predavač"
-            icon={Star}
-          />
+          <SectionHeader title="Predavač" icon={Star} />
           <Card className="border-2 border-primary/20">
             <CardContent className="p-8 text-center">
               <div className="flex justify-center mb-4">
                 <BookOpen className="h-12 w-12 text-primary" />
               </div>
               <p className="text-lg font-semibold">
-                Jelena Skvorcova, defektolog – logoped sa višegodišnjim iskustvom u radu sa decom
+                Jelena Skvorcova, defektolog – logoped sa višegodišnjim
+                iskustvom u radu sa decom
               </p>
             </CardContent>
           </Card>
@@ -195,18 +162,18 @@ export default function MontesoriProgramPage() {
         subtitle="Razvijte potencijale vašeg deteta kroz Montesori metodologiju"
         primaryButton={{
           text: "0653237267",
-          link: "/kontakt"
+          link: "/kontakt",
         }}
         secondaryButton={{
           text: "0113237267",
-          link: "/kontakt"
+          link: "/kontakt",
         }}
         workingHours="od 7h do 18h"
         addressLink={{
           text: "Krunska 40, Vračar",
-          url: "https://maps.google.com/?q=Krunska+40+Beograd+Serbia"
+          url: "https://maps.google.com/?q=Krunska+40+Beograd+Serbia",
         }}
       />
     </div>
-  )
-} 
+  );
+}

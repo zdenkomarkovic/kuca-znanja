@@ -1,50 +1,33 @@
-import Image from 'next/image'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Palette, Calendar, Users, Star, DollarSign, Target } from 'lucide-react'
-import SectionHeader from '@/components/ui/SectionHeader'
-import CTASection from '@/components/ui/CTASection'
+import Image from "next/image";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Palette,
+  Calendar,
+  Users,
+  Star,
+  DollarSign,
+  Target,
+} from "lucide-react";
+import SectionHeader from "@/components/ui/SectionHeader";
+import CTASection from "@/components/ui/CTASection";
+import HeroProgrami from "@/components/HeroProgrami";
 
 export default function SkolaSlikanjaPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-white via-[#f1f1f1] to-[#e0e0e0]">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
-                <span className="text-primary">ŠKOLA SLIKANJA</span>
-              </h1>
-              <div className="space-y-4">
-                <p className="text-lg leading-relaxed">
-                  Škola slikanja počinje 15. septembra, a završava se u junu sledeće godine.
-                </p>
-                <p className="text-lg leading-relaxed">
-                  Prijave su do kraja avgusta tekuće godine.
-                </p>
-              </div>
-            </div>
-            <div className="relative">
-              <Image
-                src="/Skola slikanja 1.jpg"
-                alt="Škola slikanja"
-                width={600}
-                height={400}
-                className="rounded-lg shadow-2xl"
-                priority
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
+      <HeroProgrami
+        Hero01={"/skola slikanja.jpg"}
+        word={"ŠKOLA SLIKANJA"}
+        text={[
+          "Škola slikanja počinje 15. septembra, a završava se u junu sledeće godine.",
+          "Prijave su do kraja avgusta tekuće godine.",
+        ]}
+      />
       {/* Organizacija */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <SectionHeader 
-            title="Organizacija časova"
-            icon={Calendar}
-          />
+          <SectionHeader title="Organizacija časova" icon={Calendar} />
           <div className="grid md:grid-cols-2 gap-8">
             <Card className="border-2 border-primary/20">
               <CardHeader>
@@ -52,10 +35,12 @@ export default function SkolaSlikanjaPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p>
-                  Časovi se održavaju dva puta nedeljno: jedan čas tokom radne nedelje, a drugi čas subotom.
+                  Časovi se održavaju dva puta nedeljno: jedan čas tokom radne
+                  nedelje, a drugi čas subotom.
                 </p>
                 <p>
-                  Tačno vreme održavanja časa preciziraćemo nakon razgovora sa roditeljima i prema školskim obavezama polaznika.
+                  Tačno vreme održavanja časa preciziraćemo nakon razgovora sa
+                  roditeljima i prema školskim obavezama polaznika.
                 </p>
               </CardContent>
             </Card>
@@ -65,10 +50,12 @@ export default function SkolaSlikanjaPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p>
-                  Časove vodi profesorka metodike likovne kulture na Učiteljskom fakultetu Milena Stojanović.
+                  Časove vodi profesorka metodike likovne kulture na Učiteljskom
+                  fakultetu Milena Stojanović.
                 </p>
                 <p>
-                  Želja profesorke je da grupe budu manje, kako bi se svakom detetu posvetila.
+                  Želja profesorke je da grupe budu manje, kako bi se svakom
+                  detetu posvetila.
                 </p>
               </CardContent>
             </Card>
@@ -79,34 +66,32 @@ export default function SkolaSlikanjaPage() {
       {/* Nivoi */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <SectionHeader 
-            title="Program smo podelili na 4 nivoa"
-            icon={Users}
-          />
+          <SectionHeader title="Program smo podelili na 4 nivoa" icon={Users} />
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 title: "Predškolci",
-                icon: <Palette className="h-8 w-8 text-primary" />
+                icon: <Palette className="h-8 w-8 text-primary" />,
               },
               {
                 title: "7 – 9 godina",
-                icon: <Target className="h-8 w-8 text-primary" />
+                icon: <Target className="h-8 w-8 text-primary" />,
               },
               {
                 title: "10 – 12 godina",
-                icon: <Star className="h-8 w-8 text-primary" />
+                icon: <Star className="h-8 w-8 text-primary" />,
               },
               {
                 title: "13 – 15 godina",
-                icon: <Users className="h-8 w-8 text-primary" />
-              }
+                icon: <Users className="h-8 w-8 text-primary" />,
+              },
             ].map((nivo, index) => (
-              <Card key={index} className="border-2 border-primary/20 text-center">
+              <Card
+                key={index}
+                className="border-2 border-primary/20 text-center"
+              >
                 <CardContent className="p-6">
-                  <div className="flex justify-center mb-4">
-                    {nivo.icon}
-                  </div>
+                  <div className="flex justify-center mb-4">{nivo.icon}</div>
                   <h3 className="font-semibold">{nivo.title}</h3>
                 </CardContent>
               </Card>
@@ -125,7 +110,8 @@ export default function SkolaSlikanjaPage() {
               </CardHeader>
               <CardContent>
                 <p>
-                  Materijal kojim se radi je kvalitetan i svakoj temi prilagođen.
+                  Materijal kojim se radi je kvalitetan i svakoj temi
+                  prilagođen.
                 </p>
               </CardContent>
             </Card>
@@ -157,10 +143,7 @@ export default function SkolaSlikanjaPage() {
       {/* Izložbe */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <SectionHeader 
-            title="Izložbe radova"
-            icon={Palette}
-          />
+          <SectionHeader title="Izložbe radova" icon={Palette} />
           <Card className="border-2 border-primary/20">
             <CardContent className="p-8 text-center">
               <div className="flex justify-center mb-4">
@@ -177,10 +160,7 @@ export default function SkolaSlikanjaPage() {
       {/* Pripremni program */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <SectionHeader 
-            title="PRIPREMNI PROGRAM"
-            icon={Target}
-          />
+          <SectionHeader title="PRIPREMNI PROGRAM" icon={Target} />
           <div className="grid md:grid-cols-2 gap-6">
             <Card className="border-2 border-primary/20">
               <CardContent className="p-6">
@@ -208,18 +188,18 @@ export default function SkolaSlikanjaPage() {
         subtitle="Razvijte umetničke talente vašeg deteta i pripremite ga za umetničke škole"
         primaryButton={{
           text: "0653237267",
-          link: "/kontakt"
+          link: "/kontakt",
         }}
         secondaryButton={{
           text: "0113237267",
-          link: "/kontakt"
+          link: "/kontakt",
         }}
         workingHours="od 7h do 18h"
         addressLink={{
           text: "Krunska 40, Vračar",
-          url: "https://maps.google.com/?q=Krunska+40+Beograd+Serbia"
+          url: "https://maps.google.com/?q=Krunska+40+Beograd+Serbia",
         }}
       />
     </div>
-  )
-} 
+  );
+}

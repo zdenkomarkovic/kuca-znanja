@@ -4,7 +4,7 @@ import Image from "next/image";
 import Logo from "../public/kuca-znanja-logo.png";
 import Link from "next/link";
 import { ChevronDownIcon, MenuIcon, PhoneIcon } from "lucide-react";
-
+import { useEffect, useState } from "react";
 import {
   Sheet,
   SheetContent,
@@ -26,7 +26,16 @@ import { HoverCard, HoverCardTrigger, HoverCardContent } from "./ui/hover-card";
 
 const mobTitleStyles = "text-lg py-2";
 
-const MobileMenu = () => (
+interface NavItem {
+  title: string;
+  link: string;
+  dropdown?: Array<{
+    title: string;
+    link: string;
+  }>;
+}
+
+const MobileMenu = ({ navigation }: { navigation: NavItem[] }) => (
   <Sheet>
     <SheetTrigger className="lg:hidden">
       <MenuIcon className="text-primary cursor-pointer" />
@@ -36,7 +45,7 @@ const MobileMenu = () => (
         <SheetTitle></SheetTitle>
         <SheetContent>
           <ul>
-            {navList.map((item, index) => {
+            {navigation.map((item, index) => {
               if (item.dropdown)
                 return (
                   <Fragment key={index}>
@@ -88,9 +97,9 @@ const MobileMenu = () => (
   </Sheet>
 );
 
-const DesktopNav = () => (
+const DesktopNav = ({ navigation }: { navigation: NavItem[] }) => (
   <ul className="hidden gap-8 lg:flex  text-xl">
-    {navList.map((item, index) => {
+    {navigation.map((item, index) => {
       if (item.dropdown)
         return (
           <HoverCard key={index} openDelay={0} closeDelay={50}>
@@ -135,20 +144,25 @@ const DesktopNav = () => (
 );
 
 export default function Header() {
-  // const [scrolled, setScrolled] = useState(false);
+  const [navigation, setNavigation] = useState<NavItem[]>(navList);
 
-  // useEffect(() => {
-  //   const HandleScroll = () => {
-  //     if (window.scrollY > 0) setScrolled(true);
-  //     else setScrolled(false);
-  //   };
+  useEffect(() => {
+    const fetchNavigation = async () => {
+      try {
+        const response = await fetch('/api/navigation');
+        if (response.ok) {
+          const data = await response.json();
+          setNavigation(data);
+        }
+      } catch (error) {
+        console.error('Error fetching navigation:', error);
+        // Fallback na statičku navigaciju
+        setNavigation(navList);
+      }
+    };
 
-  //   document.addEventListener("scroll", HandleScroll);
-
-  //   return () => {
-  //     document.removeEventListener("scroll", HandleScroll);
-  //   };
-  // }, []);
+    fetchNavigation();
+  }, []);
 
   return (
     <header
@@ -167,8 +181,8 @@ export default function Header() {
             <h1 className="text-lg font-bold ">KUĆA ZNANJA</h1>
           </div>
         </Link>
-        <DesktopNav />
-        <Link href="tel:+381603456309">
+        <DesktopNav navigation={navigation} />
+        <Link href="tel:+381653237267">
           <motion.button
             whileHover={{
               color: "hsl(var(--foreground))",
@@ -177,10 +191,10 @@ export default function Header() {
             className="items-center justify-center rounded-full text-primary border-primary border-2 text-sm md:text-lg py-1 px-2 md:py-2 md:px-4 transition-colors flex"
           >
             <PhoneIcon />
-            <p className="">+38160 3456309</p>
+            <p className="">065 323 7267</p>
           </motion.button>
         </Link>
-        <MobileMenu />
+        <MobileMenu navigation={navigation} />
       </nav>
     </header>
   );

@@ -1,51 +1,26 @@
-import Image from 'next/image'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Calculator, Target, Users, BookOpen, Star, Clock } from 'lucide-react'
-import SectionHeader from '@/components/ui/SectionHeader'
-import CTASection from '@/components/ui/CTASection'
+import Image from "next/image";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Calculator, Target, Users, BookOpen, Star, Clock } from "lucide-react";
+import SectionHeader from "@/components/ui/SectionHeader";
+import CTASection from "@/components/ui/CTASection";
+import HeroProgrami from "@/components/HeroProgrami";
 
 export default function SkolaMatematikePage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-white via-[#f1f1f1] to-[#e0e0e0]">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
-                <span className="text-primary">ŠKOLA MATEMATIKE</span>
-              </h1>
-              <div className="space-y-4">
-                <p className="text-lg leading-relaxed">
-                  Kuća znanja posebnu pažnju posvećuje talentovanoj deci u matematici.
-                </p>
-                <p className="text-lg leading-relaxed">
-                  Celokupna organizacija je usmerena na pripremu učenika za učešće na takmičenjima, ali
-                  se prate i individualna interesovanja učenika.
-                </p>
-              </div>
-            </div>
-            <div className="relative">
-              <Image
-                src="/Skola slikanja 1.jpg"
-                alt="Škola matematike"
-                width={600}
-                height={400}
-                className="rounded-lg shadow-2xl"
-                priority
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
+      <HeroProgrami
+        Hero01={"/skola matematike.jpg"}
+        word={"ŠKOLA MATEMATIKE"}
+        text={[
+          "Kuća znanja posebnu pažnju posvećuje talentovanoj deci u matematici.",
+          "Celokupna organizacija je usmerena na pripremu učenika za učešće na takmičenjima, ali se prate i individualna interesovanja učenika.",
+        ]}
+      />
       {/* Organizacija */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <SectionHeader 
-            title="Organizacija škole"
-            icon={Clock}
-          />
+          <SectionHeader title="Organizacija škole" icon={Clock} />
           <div className="grid md:grid-cols-3 gap-6">
             <Card className="border-2 border-primary/20 text-center">
               <CardContent className="p-6">
@@ -87,7 +62,7 @@ export default function SkolaMatematikePage() {
       {/* Grupe */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <SectionHeader 
+          <SectionHeader
             title="ŠKOLA MATEMATIKE je podeljena u 4 grupe"
             icon={Users}
           />
@@ -96,31 +71,39 @@ export default function SkolaMatematikePage() {
               {
                 title: "Grupa 1",
                 subtitle: "predškolska grupa",
-                description: "zadaci koji razvijaju logiku, pažnju, brzinu rezonovanja i maštu"
+                description:
+                  "zadaci koji razvijaju logiku, pažnju, brzinu rezonovanja i maštu",
               },
               {
                 title: "Grupa 2",
                 subtitle: "1. i 2. razred osnovne škole",
-                description: "Misliša, Kengur, individualna interesovanja"
+                description: "Misliša, Kengur, individualna interesovanja",
               },
               {
                 title: "Grupa 3",
                 subtitle: "3. i 4. razred osnovne škole",
-                description: "Misliša, Kengur, školsko, opštinsko, gradsko"
+                description: "Misliša, Kengur, školsko, opštinsko, gradsko",
               },
               {
                 title: "Grupa 4",
                 subtitle: "5 – 8 razreda",
-                description: "Misliša, Kengur, školsko, opštinsko, gradsko, republičko, olimpijada"
-              }
+                description:
+                  "Misliša, Kengur, školsko, opštinsko, gradsko, republičko, olimpijada",
+              },
             ].map((group, index) => (
               <Card key={index} className="border-2 border-primary/20">
                 <CardHeader>
-                  <CardTitle className="text-center text-lg">{group.title}</CardTitle>
-                  <p className="text-center text-sm font-medium text-primary">{group.subtitle}</p>
+                  <CardTitle className="text-center text-lg">
+                    {group.title}
+                  </CardTitle>
+                  <p className="text-center text-sm font-medium text-primary">
+                    {group.subtitle}
+                  </p>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground text-center">{group.description}</p>
+                  <p className="text-sm text-muted-foreground text-center">
+                    {group.description}
+                  </p>
                 </CardContent>
               </Card>
             ))}
@@ -131,17 +114,15 @@ export default function SkolaMatematikePage() {
       {/* Predavači */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <SectionHeader 
-            title="Predavači"
-            icon={Star}
-          />
+          <SectionHeader title="Predavači" icon={Star} />
           <Card className="border-2 border-primary/20">
             <CardContent className="p-8 text-center">
               <div className="flex justify-center mb-4">
                 <BookOpen className="h-12 w-12 text-primary" />
               </div>
               <p className="text-lg font-semibold">
-                Predavači su nastavnici matematike sa nizom uspešnih generacija matematičara!
+                Predavači su nastavnici matematike sa nizom uspešnih generacija
+                matematičara!
               </p>
             </CardContent>
           </Card>
@@ -151,10 +132,7 @@ export default function SkolaMatematikePage() {
       {/* Program */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <SectionHeader 
-            title="Program"
-            icon={Calculator}
-          />
+          <SectionHeader title="Program" icon={Calculator} />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               "Prebrojavanje, presipanje, premeravanje",
@@ -168,7 +146,7 @@ export default function SkolaMatematikePage() {
               "Zadaci sa mernim jedinicama (vreme, dužina, masa, površina, zapremina)",
               "Geometrijski oblici: osnovni geometrijski oblici, ugao, trougao, pravougaonik, kvadrat, krug",
               "Zanimljivi zadaci",
-              "Zadaci sa takmičenja"
+              "Zadaci sa takmičenja",
             ].map((topic, index) => (
               <Card key={index} className="border-2 border-primary/20">
                 <CardContent className="p-6">
@@ -191,18 +169,18 @@ export default function SkolaMatematikePage() {
         subtitle="Razvijte matematičke talente vašeg deteta i pripremite ga za takmičenja"
         primaryButton={{
           text: "0653237267",
-          link: "/kontakt"
+          link: "/kontakt",
         }}
         secondaryButton={{
           text: "0113237267",
-          link: "/kontakt"
+          link: "/kontakt",
         }}
         workingHours="od 7h do 18h"
         addressLink={{
           text: "Krunska 40, Vračar",
-          url: "https://maps.google.com/?q=Krunska+40+Beograd+Serbia"
+          url: "https://maps.google.com/?q=Krunska+40+Beograd+Serbia",
         }}
       />
     </div>
-  )
-} 
+  );
+}

@@ -1,6 +1,3 @@
-import CTASection from "@/components/ui/CTASection";
-import Cilj from "@/components/Cilj";
-import Testemonials from "@/components/Testimonials";
 import Hero2 from "@/components/Hero2";
 
 export default function Home() {
@@ -9,8 +6,8 @@ export default function Home() {
       {/* <Hero /> */}
       <Hero2 />
       {/* Hero Image Section */}
-      <Cilj />
-      <CTASection
+      {/* <Cilj /> */}
+      {/* <CTASection
         title="Prijavite svoje dete u program"
         subtitle="Kontaktirajte nas za više informacija o programima"
         primaryButton={{
@@ -26,9 +23,9 @@ export default function Home() {
           text: "Krunska 40, Vračar",
           url: "https://maps.google.com/?q=Krunska+40+Beograd+Serbia",
         }}
-      />
+      /> */}
 
-      <Testemonials />
+      {/* <Testemonials /> */}
     </div>
   );
 }

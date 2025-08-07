@@ -1,53 +1,33 @@
-import Image from 'next/image'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { GraduationCap, BookOpen, Users, Clock, Target, Star } from 'lucide-react'
-import SectionHeader from '@/components/ui/SectionHeader'
-import CTASection from '@/components/ui/CTASection'
+import Image from "next/image";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  GraduationCap,
+  BookOpen,
+  Users,
+  Clock,
+  Target,
+  Star,
+} from "lucide-react";
+import SectionHeader from "@/components/ui/SectionHeader";
+import CTASection from "@/components/ui/CTASection";
+import HeroProgrami from "@/components/HeroProgrami";
 
 export default function BudiVazanSpremiMaturuPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 px-4  bg-gradient-to-r from-white to-[#f1f1f1]">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
-                <span className="text-primary">BUDI VAŽAN</span>
-                <br />
-                <span className="text-2xl lg:text-3xl">spremi maturu sa osmehom!</span>
-              </h1>
-              <div className="space-y-4">
-                <p className="text-xl leading-relaxed">
-                  Neka ti <strong>Mala matura</strong> bude zadovoljstvo!
-                </p>
-                <p className="text-lg leading-relaxed">
-                  Ovde ćeš korigovati propušteno i utvrditi već usvojeno gradivo. 
-                  Bez opterećenja se spremi za završni ispit!
-                </p>
-                <div className="bg-primary/10 p-4 rounded-lg">
-                  <p className="text-xl font-bold text-primary">Budi važan!</p>
-                </div>
-              </div>
-            </div>
-            <div className="relative">
-              <Image
-                src="/Završni ispit (1).png"
-                alt="Priprema za malu maturu"
-                width={600}
-                height={400}
-                className="hover:scale-105 transition-all duration-300"
-                priority
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
+      <HeroProgrami
+        Hero01={"/Budi vazan.jpg"}
+        word={"BUDI VAŽAN"}
+        text={[
+          "Neka ti Mala matura bude zadovoljstvo!",
+          "BUDI VAŽAN ~  spremi maturu sa osmehom!",
+        ]}
+      />
       {/* Celokupna priprema */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <SectionHeader 
+          <SectionHeader
             title="Celokupna priprema za Malu maturu"
             icon={GraduationCap}
           />
@@ -55,31 +35,34 @@ export default function BudiVazanSpremiMaturuPage() {
             {[
               {
                 title: "Srpski jezik",
-                icon: <BookOpen className="h-8 w-8 text-primary" />
+                icon: <BookOpen className="h-8 w-8 text-primary" />,
               },
               {
                 title: "Matematika",
-                icon: <Target className="h-8 w-8 text-primary" />
+                icon: <Target className="h-8 w-8 text-primary" />,
               },
               {
                 title: "Izborni predmet",
                 description: "istorija, geografija, biologija, fizika, hemija",
-                icon: <Star className="h-8 w-8 text-primary" />
+                icon: <Star className="h-8 w-8 text-primary" />,
               },
               {
                 title: "Individualni pristup",
                 description: "Moguće pohađanje časova i pojedinačnih oblasti!",
-                icon: <Users className="h-8 w-8 text-primary" />
-              }
+                icon: <Users className="h-8 w-8 text-primary" />,
+              },
             ].map((subject, index) => (
-              <Card key={index} className="border-2 border-primary/20 text-center">
+              <Card
+                key={index}
+                className="border-2 border-primary/20 text-center"
+              >
                 <CardContent className="p-6">
-                  <div className="flex justify-center mb-4">
-                    {subject.icon}
-                  </div>
+                  <div className="flex justify-center mb-4">{subject.icon}</div>
                   <h3 className="font-semibold mb-2">{subject.title}</h3>
                   {subject.description && (
-                    <p className="text-sm text-muted-foreground">{subject.description}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {subject.description}
+                    </p>
                   )}
                 </CardContent>
               </Card>
@@ -91,10 +74,7 @@ export default function BudiVazanSpremiMaturuPage() {
       {/* Način rada */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <SectionHeader 
-            title="Način rada"
-            icon={Clock}
-          />
+          <SectionHeader title="Način rada" icon={Clock} />
           <div className="grid lg:grid-cols-2 gap-8">
             <Card className="border-2 border-primary/20">
               <CardHeader>
@@ -102,11 +82,14 @@ export default function BudiVazanSpremiMaturuPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p>
-                  Rad je koncipiran tako da polaznik jedan deo časa sluša predavanje, a zatim
-                  na pripremljenom listiću radi vežbu. Nakon svake celine sledi provera.
+                  Rad je koncipiran tako da polaznik jedan deo časa sluša
+                  predavanje, a zatim na pripremljenom listiću radi vežbu. Nakon
+                  svake celine sledi provera.
                 </p>
                 <div className="bg-primary/5 p-4 rounded-lg">
-                  <h4 className="font-semibold mb-2">Polaznik dobija sav materijal za rad:</h4>
+                  <h4 className="font-semibold mb-2">
+                    Polaznik dobija sav materijal za rad:
+                  </h4>
                   <div className="grid grid-cols-2 gap-2 text-sm">
                     <p>• svesku</p>
                     <p>• štampani materijal</p>
@@ -126,11 +109,16 @@ export default function BudiVazanSpremiMaturuPage() {
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    <p>Pripremni časovi su organizovani vikendom u manjim grupama</p>
+                    <p>
+                      Pripremni časovi su organizovani vikendom u manjim grupama
+                    </p>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    <p>Organizujemo i individualne časove za pripremu završnog ispita u terminu, koji polazniku odgovara</p>
+                    <p>
+                      Organizujemo i individualne časove za pripremu završnog
+                      ispita u terminu, koji polazniku odgovara
+                    </p>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-primary rounded-full"></div>
@@ -156,12 +144,10 @@ export default function BudiVazanSpremiMaturuPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p>
-                  Da bi upisao ono što voliš da učiš, treba dobro da se pripremiš za završni
-                  ispit. To je tvoj prvi test zrelosti!
+                  Da bi upisao ono što voliš da učiš, treba dobro da se
+                  pripremiš za završni ispit. To je tvoj prvi test zrelosti!
                 </p>
-                <p>
-                  Završni ispit te čeka u junu.
-                </p>
+                <p>Završni ispit te čeka u junu.</p>
                 <div className="bg-primary/10 p-4 rounded-lg">
                   <p className="font-semibold text-primary">
                     Potrudi se da ti MALA MATURA bude zadovoljstvo.
@@ -178,8 +164,9 @@ export default function BudiVazanSpremiMaturuPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p>
-                  Da bi Vaše dete izabralo školu koju voli, pomozite mu da sa osmehom
-                  pripremi gradivo za MALU MATURU i da bez straha ode na završni ispit.
+                  Da bi Vaše dete izabralo školu koju voli, pomozite mu da sa
+                  osmehom pripremi gradivo za MALU MATURU i da bez straha ode na
+                  završni ispit.
                 </p>
                 <div className="bg-primary/10 p-4 rounded-lg">
                   <p className="font-semibold text-primary">
@@ -198,18 +185,18 @@ export default function BudiVazanSpremiMaturuPage() {
         subtitle="Kontaktirajte nas da organizujemo pripremu za završni ispit vašeg deteta"
         primaryButton={{
           text: "0653237267",
-          link: "/kontakt"
+          link: "/kontakt",
         }}
         secondaryButton={{
           text: "0113237267",
-          link: "/kontakt"
+          link: "/kontakt",
         }}
         workingHours="od 7h do 18h"
         addressLink={{
           text: "Krunska 40, Vračar",
-          url: "https://maps.google.com/?q=Krunska+40+Beograd+Serbia"
+          url: "https://maps.google.com/?q=Krunska+40+Beograd+Serbia",
         }}
       />
     </div>
-  )
-} 
+  );
+}

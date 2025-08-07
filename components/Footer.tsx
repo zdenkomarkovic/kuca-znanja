@@ -16,27 +16,19 @@ export default function Footer() {
           <div>
             <ul className="pb-5 flex justify-around items-center md:pb-0 md:block md:space-y-2 text-center">
               <li className=" transform-origin-center transition-transform duration-300 hover:scale-105 ">
-                <Link href="/" >
-                  Početna
-                </Link>
+                <Link href="/">Početna</Link>
               </li>
 
               <li className=" transform-origin-center transition-transform duration-300 hover:scale-105 ">
-                <Link href="/o-nama" >
-                  O nama
-                </Link>
+                <Link href="/o-nama">O nama</Link>
               </li>
 
               <li className=" transform-origin-center transition-transform duration-300 hover:scale-105 ">
-                <Link href="/#programi" >
-                  Program
-                </Link>
+                <Link href="/#programi">Program</Link>
               </li>
 
               <li className=" transform-origin-center transition-transform duration-300 hover:scale-105 ">
-                <Link href="/kontakt" >
-                  Kontakt
-                </Link>
+                <Link href="/kontakt">Kontakt</Link>
               </li>
             </ul>
           </div>
@@ -44,14 +36,18 @@ export default function Footer() {
           <div className="space-y-3 pb-5 md:pb-0 text-center">
             <div>
               {" "}
-              <a href="tel:+381603456309">
-                <p className=" transform-origin-center transition-transform duration-300 hover:scale-105">Mobilni: +381 60 34 56 309</p>
+              <a href="tel:+381653237267">
+                <p className=" transform-origin-center transition-transform duration-300 hover:scale-105">
+                  Mobilni: 065 323 7267
+                </p>
               </a>
             </div>
             <div>
               {" "}
               <a href="tel:+381113237267">
-                <p className=" transform-origin-center transition-transform duration-300 hover:scale-105">Fiksni: +381 11 3237 267</p>
+                <p className=" transform-origin-center transition-transform duration-300 hover:scale-105">
+                  Fiksni: +381 11 3237 267
+                </p>
               </a>
             </div>
             <div>
@@ -62,10 +58,18 @@ export default function Footer() {
               </a>
             </div>
             <div className="flex space-x-4 justify-center ">
-              <a href="#" target={"_blank"} className=" transform-origin-center transition-transform duration-300 hover:scale-110">
+              <a
+                href="#"
+                target={"_blank"}
+                className=" transform-origin-center transition-transform duration-300 hover:scale-110"
+              >
                 <Facebook />
               </a>
-              <a href="#" target={"_blank"} className=" transform-origin-center transition-transform duration-300 hover:scale-110">
+              <a
+                href="#"
+                target={"_blank"}
+                className=" transform-origin-center transition-transform duration-300 hover:scale-110"
+              >
                 <Instagram />
               </a>
             </div>
@@ -76,9 +80,9 @@ export default function Footer() {
             </h3>
 
             <p className=" font-bold ">Centar za kreativnu edukaciju</p>
-            <a 
-              href="https://maps.google.com/?q=Krunska+40+Beograd+Serbia" 
-              target="_blank" 
+            <a
+              href="https://maps.google.com/?q=Krunska+40+Beograd+Serbia"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-lg mt-2 flex items-center justify-center gap-2 hover:scale-105 transition-transform duration-300"
             >
@@ -90,11 +94,16 @@ export default function Footer() {
 
         <div className="flex flex-col md:flex-row justify-center text-center gap-2 md:gap-10 border-t-[1px] border-cool-green mt-10 pt-5">
           <p>&copy; 2025 Kuća znanja Ručnov. Sva prava zadržana.</p>
-          <p> izrada sajta:{" "}<a href="https://www.manikamwebsolutions.com/" target="_blank">
-           
-            <span className="font-bold  hover:scale-105 transition-transform duration-300"> ManikamWebSolutions</span>
-          </a>{" "}
-            </p>
+          <p>
+            {" "}
+            izrada sajta:{" "}
+            <a href="https://www.manikamwebsolutions.com/" target="_blank">
+              <span className="font-bold  hover:scale-105 transition-transform duration-300">
+                {" "}
+                ManikamWebSolutions
+              </span>
+            </a>{" "}
+          </p>
         </div>
       </div>
     </motion.footer>

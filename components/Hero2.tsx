@@ -77,14 +77,14 @@ const Hero2 = () => {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <Link href="tel:+381603456309">
+            <Link href="tel:+381653237267">
               <Button
                 size="lg"
                 variant="outline"
                 className="border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 text-lg"
               >
                 <Phone className="mr-2 h-5 w-5" />
-                +38160 3456309
+                065 323 7267
               </Button>
             </Link>
           </div>

@@ -1,48 +1,24 @@
-import Image from 'next/image'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { CheckCircle, Clock } from 'lucide-react'
-import SectionHeader from '@/components/ui/SectionHeader'
-import CTASection from '@/components/ui/CTASection'
-import MotionComponent2 from '@/components/MotionComponent2'
-import MotionComponent1 from '@/components/MotionComponent1'
-import MotionComponent3 from '@/components/MotionComponent3'
+import Image from "next/image";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { CheckCircle, Clock } from "lucide-react";
+import SectionHeader from "@/components/ui/SectionHeader";
+import CTASection from "@/components/ui/CTASection";
+import MotionComponent2 from "@/components/MotionComponent2";
+import MotionComponent1 from "@/components/MotionComponent1";
+import MotionComponent3 from "@/components/MotionComponent3";
+import HeroProgrami from "@/components/HeroProgrami";
+import Hero2Programi from "@/components/Hero2Programi";
+import Mudresovice from "@/components/Mudresovice";
 
 export default function MudreSovePage() {
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative py-20 px-4 bg-gradient-to-r from-white to-[#f1f1f1]">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h1 className="text-4xl lg:text-5xl font-bold text-primary text-center md:text-left leading-tight">
-                <span className="">MUDRE SOVE</span>
-              </h1>
-              <p className="text-xl text-gray-700 text-center md:text-left leading-relaxed">
-                Pravo mesto za decu osnovce u Beogradu, gde na kreativan način mogu da ispune svoje vreme pre i posle škole!
-              </p>
-              <div className="bg-primary text-white px-3 md:px-6 mx-auto md:mx-0 py-2 md:py-3 rounded-lg w-fit">
-                <p className="text-sm md:text-lg font-semibold">Namenjeno je deci uzrasta od 7 do 15 godina</p>
-              </div>
-            </div>
-            <div className="relative">
-              <Image
-                src="/Mudre sove.png"
-                alt="Mudre sove program"
-                width={600}
-                height={400}
-                className=" hover:scale-105 transition-all duration-300"
-                priority
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+    <div className="">
+      <Hero2Programi Hero01={"/Mudre sove.jpg"} Hero02={"/Mudre  sovice.jpg"} />
 
       {/* Karakteristike programa */}
-      <section className="py-16 px-4 bg-gradient-to-br from-white to-[#f1f1f1] ">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-5">
+      <section className="px-2 bg-gradient-to-br from-white to-[#f1f1f1] ">
+        <div className="container px-2 md:px-4 py-12 mx-auto">
+          <div className="grid md:grid-cols-2 gap-4">
             {[
               "Boravak pre i posle škole",
               "Odvođenje u školu i dovođenje iz škole",
@@ -56,17 +32,20 @@ export default function MudreSovePage() {
               "Boravak u prirodi (park, izleti, posete)",
               "Obilazak kulturno – istorijskih spomenika i kulturnih manifestacija",
               "Posebno osmišljeni zimski i letnji raspust",
-              "Obezbeđen obrok (doručak, užina, ručak)"
+              "Obezbeđen obrok (doručak, užina, ručak)",
             ].map((feature, index) => (
-             <MotionComponent2 key={index}>
-    <div className=" border-2 border-blue-100 h-full flex items-center space-x-3 p-4 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300">   
-              <CheckCircle className="h-6 w-6 text-primary flex-shrink-0" />
-              <p className="">{feature}</p>
-        
-        </div>
-              
-             </MotionComponent2> 
-         
+              <MotionComponent2 key={index}>
+                <div className=" border-2 border-blue-100 h-full flex items-center space-x-3 px-4 py-2 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300">
+                  <Image
+                    src="/Mudre sove.png"
+                    width={50}
+                    height={50}
+                    alt="mudre sove"
+                    className=""
+                  />
+                  <p className="">{feature}</p>
+                </div>
+              </MotionComponent2>
             ))}
           </div>
         </div>
@@ -74,34 +53,47 @@ export default function MudreSovePage() {
 
       {/* Raspored dana */}
       <section className="py-16 px-4 bg-gradient-to-br from-white to-[#f1f1f1] ">
-        <div className="max-w-6xl mx-auto">
-          <SectionHeader 
-            title="Raspored dana"
-            icon={Clock}
-          />
-          
-          <div className="grid lg:grid-cols-2 gap-12 mt-12">
+        <div className="container px-2 md:px-12 mx-auto">
+          <SectionHeader title="Raspored dana" icon={Clock} />
+
+          <div className="grid lg:grid-cols-2 gap-4 mt-12">
             {/* PRE PODNE SEKCIJA */}
             <div>
-              <h3 className="text-2xl font-bold text-primary text-center mb-6">PRE PODNE</h3>
+              <h3 className="text-2xl font-bold text-primary text-center mb-6">
+                PRE PODNE
+              </h3>
               <div className="space-y-3">
                 {[
-                  { time: "7 - 8", activity: "Otvaranje i dolazak dece u boravak" },
-                  { time: "8 - 9", activity: "Slobodne aktivnosti (gimnastika, muzička radionica, poruka dana)" },
+                  {
+                    time: "7 - 8",
+                    activity: "Otvaranje i dolazak dece u boravak",
+                  },
+                  {
+                    time: "8 - 9",
+                    activity:
+                      "Slobodne aktivnosti (gimnastika, muzička radionica, poruka dana)",
+                  },
                   { time: "9 - 11", activity: "Izrada domaćeg zadatka" },
                   { time: "11 - 12", activity: "Aktivnosti po izboru učenika" },
                   { time: "12 - 13", activity: "Čas stranog jezika" },
                   { time: "13 - 13:30", activity: "Ručak" },
-                  { time: "13:30 - 13:45", activity: "Odlazak u školu" }
+                  { time: "13:30 - 13:45", activity: "Odlazak u školu" },
                 ].map((item, index) => (
-                  <MotionComponent1 key={index}>  <Card key={index} className="shadow-lg hover:shadow-2xl transition-all duration-300">
-                    <CardContent className="p-4">
-                      <div className="flex items-start space-x-4">
-                        <div className="font-bold text-primary min-w-[80px]">{item.time}</div>  
-                        <div className="flex-1">{item.activity}</div>
-                      </div>
-                    </CardContent>
-                  </Card>
+                  <MotionComponent1 key={index}>
+                    {" "}
+                    <Card
+                      key={index}
+                      className="shadow-lg hover:shadow-2xl transition-all duration-300"
+                    >
+                      <CardContent className="p-4">
+                        <div className="flex items-start space-x-4">
+                          <div className="font-bold text-primary">
+                            {item.time}
+                          </div>
+                          <div className="flex-1">{item.activity}</div>
+                        </div>
+                      </CardContent>
+                    </Card>
                   </MotionComponent1>
                 ))}
               </div>
@@ -109,26 +101,34 @@ export default function MudreSovePage() {
 
             {/* POSLE PODNE SEKCIJA */}
             <div>
-              <h3 className="text-2xl font-bold text-primary text-center mb-6">POSLE PODNE</h3>
+              <h3 className="text-2xl font-bold text-primary text-center mb-6">
+                POSLE PODNE
+              </h3>
               <div className="space-y-3">
                 {[
-                  { time: "12 - 13", activity: "Dolazak dece sa časova u boravak, ručak" },
+                  {
+                    time: "12 - 13",
+                    activity: "Dolazak dece sa časova u boravak, ručak",
+                  },
                   { time: "13 - 14", activity: "Čas stranog jezika" },
                   { time: "14 - 16", activity: "Izrada domaćeg zadatka" },
                   { time: "16 - 17", activity: "Aktivnosti po izboru učenika" },
-                  { time: "17 - 17:30", activity: "Odlazak dece i zatvaranje boravka" }
+                  {
+                    time: "17 - 17:30",
+                    activity: "Odlazak dece i zatvaranje boravka",
+                  },
                 ].map((item, index) => (
-                
-<MotionComponent3 key={index}>
-
-                  <Card className=" shadow-lg hover:shadow-2xl transition-all duration-300">
-                    <CardContent className="p-4">
-                      <div className="flex items-start space-x-4">
-                        <div className="font-bold text-primary min-w-[80px]">{item.time}</div>
-                        <div className="flex-1">{item.activity}</div>
-                      </div>
-                    </CardContent>
-                  </Card> 
+                  <MotionComponent3 key={index}>
+                    <Card className=" shadow-lg hover:shadow-2xl transition-all duration-300">
+                      <CardContent className="p-4">
+                        <div className="flex items-start space-x-4">
+                          <div className="font-bold text-primary">
+                            {item.time}
+                          </div>
+                          <div className="flex-1">{item.activity}</div>
+                        </div>
+                      </CardContent>
+                    </Card>
                   </MotionComponent3>
                 ))}
               </div>
@@ -141,47 +141,51 @@ export default function MudreSovePage() {
         subtitle="Obezbedite svojoj deci kvalitetno vreme pre i posle škole u kreativnom i sigurnom okruženju"
         primaryButton={{
           text: "0653237267",
-          link: "/kontakt"
+          link: "/kontakt",
         }}
         secondaryButton={{
           text: "0113237267",
-          link: "/kontakt"
+          link: "/kontakt",
         }}
         workingHours="od 7h do 18h"
         addressLink={{
           text: "Krunska 40, Vračar",
-          url: "https://maps.google.com/?q=Krunska+40+Beograd+Serbia"
+          url: "https://maps.google.com/?q=Krunska+40+Beograd+Serbia",
         }}
       />
       {/* Tim koji radi sa decom */}
       <section className="py-16 px-4 bg-gradient-to-br from-white to-[#f1f1f1] text-white">
         <div className="max-w-6xl mx-auto">
-          <SectionHeader 
-            title="Sa decom rade"
-            iconColor="text-white"
-          />
+          <SectionHeader title="Sa decom rade" iconColor="text-white" />
           <div className="grid md:grid-cols-2 gap-6">
             {[
               {
                 title: "Učitelji",
-                description: "Sa bogatim iskustvom i nizom kvalitetnih generacija iza sebe"
+                description:
+                  "Sa bogatim iskustvom i nizom kvalitetnih generacija iza sebe",
               },
               {
                 title: "Profesori stranih jezika",
-                description: "Francuski, engleski, nemački, ruski"
+                description: "Francuski, engleski, nemački, ruski",
               },
               {
                 title: "Defektolog",
-                description: "Grafomotorika, izgovor glasova, poremećaj pažnje, poremećaj u ponašanju"
+                description:
+                  "Grafomotorika, izgovor glasova, poremećaj pažnje, poremećaj u ponašanju",
               },
               {
                 title: "Lekar",
-                description: "Stručno medicinsko praćenje dece"
-              }
+                description: "Stručno medicinsko praćenje dece",
+              },
             ].map((member, index) => (
-              <Card key={index} className=" text-center shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
+              <Card
+                key={index}
+                className=" text-center shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
+              >
                 <CardHeader>
-                  <CardTitle className="text-xl text-primary">{member.title}</CardTitle>
+                  <CardTitle className="text-xl text-primary">
+                    {member.title}
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">{member.description}</p>
@@ -191,9 +195,8 @@ export default function MudreSovePage() {
           </div>
         </div>
       </section>
-
+      <Mudresovice />
       {/* CTA Section */}
-    
     </div>
-  )
-} 
+  );
+}

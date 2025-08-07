@@ -1,53 +1,28 @@
-import Image from 'next/image'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { BookOpen, Palette, Gift } from 'lucide-react'
-import SectionHeader from '@/components/ui/SectionHeader'
-import CTASection from '@/components/ui/CTASection'
+import Image from "next/image";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { BookOpen, Palette, Gift } from "lucide-react";
+import SectionHeader from "@/components/ui/SectionHeader";
+import CTASection from "@/components/ui/CTASection";
+import HeroProgrami from "@/components/HeroProgrami";
 
 export default function MojDanaPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-white to-[#f1f1f1]">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
-                <span className="text-primary">MOJ DAN</span>
-              </h1>
-              <div className="space-y-4">
-                <p className="text-xl leading-relaxed">
-                  MOJ DAN je dan kada proslavljam svoj rođendan.
-                </p>
-                <p className="text-xl leading-relaxed">
-                  MOJ DAN je prezentacija moje knjige.
-                </p>
-                <p className="text-xl leading-relaxed">
-                  MOJ DAN je organizacija izložbe mojih radova.
-                </p>
-              </div>
-            </div>
-            <div className="relative">
-              <Image
-                src="/Moj dan.png"
-                alt="Moj dan program"
-                width={600}
-                height={400}
-                className=" hover:scale-105 transition-all duration-300"
-                priority
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroProgrami
+        Hero01={"/Moj dan.jpg"}
+        word={"MOJ DAN"}
+        text={[
+          "MOJ DAN je dan kada proslavljam svoj rođendan.",
+          "MOJ DAN je prezenzacijа moje knjige.",
+          "MOJ DAN je organizacija izložbe mojih radova",
+        ]}
+      />
 
       {/* Organizacija rođendana */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <SectionHeader 
-            title="Organizacija rođendana"
-            icon={Gift}
-          />
+          <SectionHeader title="Organizacija rođendana" icon={Gift} />
           <div className="grid lg:grid-cols-3 gap-8">
             <Card className="border-2 border-primary/20">
               <CardHeader>
@@ -65,7 +40,9 @@ export default function MojDanaPage() {
                   </div>
                   <div>
                     <p className="font-medium">Mesto:</p>
-                    <p className="text-muted-foreground">naše prostorije ili posebno odabran ambijent</p>
+                    <p className="text-muted-foreground">
+                      naše prostorije ili posebno odabran ambijent
+                    </p>
                   </div>
                   <div>
                     <p className="font-medium">Broj:</p>
@@ -85,7 +62,7 @@ export default function MojDanaPage() {
                     "Zabavno-interaktivni program za decu: motoričke igre, igre iznenađenja, pesme",
                     "Predstava + animacija",
                     "Potraga za blagom",
-                    "Dopunski program: oslikavanje, baloni, sapunica, karaoke"
+                    "Dopunski program: oslikavanje, baloni, sapunica, karaoke",
                   ].map((item, index) => (
                     <div key={index} className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -110,7 +87,8 @@ export default function MojDanaPage() {
               Kuća znanja se obavezuje da pripremi zabavni deo.
             </p>
             <p className="text-center text-muted-foreground mt-2">
-              Ukoliko je potrebno, a uz dogovor sa roditeljem naši organizatori mogu da obezbede i: posluženje, piće i tortu.
+              Ukoliko je potrebno, a uz dogovor sa roditeljem naši organizatori
+              mogu da obezbede i: posluženje, piće i tortu.
             </p>
           </div>
         </div>
@@ -119,20 +97,19 @@ export default function MojDanaPage() {
       {/* Prezentacija knjige */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <SectionHeader 
-            title="Prezentacija knjige"
-            icon={BookOpen}
-          />
+          <SectionHeader title="Prezentacija knjige" icon={BookOpen} />
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div className="space-y-6">
               <p className="text-lg leading-relaxed">
-                Pedagozi Kuće znanja se trude da podrže talente naših polaznika. Decu podstičemo da pišu: pesme, priče, strip, dnevnik i sl.
+                Pedagozi Kuće znanja se trude da podrže talente naših polaznika.
+                Decu podstičemo da pišu: pesme, priče, strip, dnevnik i sl.
               </p>
               <p className="text-lg leading-relaxed">
                 Zajedno pripremamo knjigu za izdavanje.
               </p>
               <p className="text-lg leading-relaxed">
-                Organizujemo prezentaciju knjige u našem prostoru ili u odabranom ambijentu.
+                Organizujemo prezentaciju knjige u našem prostoru ili u
+                odabranom ambijentu.
               </p>
             </div>
             <Card className="border-2 border-primary/20">
@@ -141,7 +118,8 @@ export default function MojDanaPage() {
                   <BookOpen className="h-16 w-16 text-primary mx-auto" />
                   <h3 className="text-xl font-semibold">Podržavamo talente</h3>
                   <p className="text-muted-foreground">
-                    Svako dete ima priču za pričanje. Mi im pomažemo da je napišu i objave.
+                    Svako dete ima priču za pričanje. Mi im pomažemo da je
+                    napišu i objave.
                   </p>
                 </div>
               </CardContent>
@@ -153,10 +131,7 @@ export default function MojDanaPage() {
       {/* Organizacija izložbe slika */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <SectionHeader 
-            title="Organizacija izložbe slika"
-            icon={Palette}
-          />
+          <SectionHeader title="Organizacija izložbe slika" icon={Palette} />
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <Card className="border-2 border-primary/20">
               <CardContent className="p-6">
@@ -164,19 +139,22 @@ export default function MojDanaPage() {
                   <Palette className="h-16 w-16 text-primary mx-auto" />
                   <h3 className="text-xl font-semibold">Škola slikanja</h3>
                   <p className="text-muted-foreground">
-                    U okviru Škole slikanja organizujemo izložbu slika najuspešnijih učenika.
+                    U okviru Škole slikanja organizujemo izložbu slika
+                    najuspešnijih učenika.
                   </p>
                 </div>
               </CardContent>
             </Card>
             <div className="space-y-6">
               <p className="text-lg leading-relaxed">
-                Za organizaciju izložbe slika se mogu javiti i svi zainteresovani, koji ne pohađaju naše časove.
+                Za organizaciju izložbe slika se mogu javiti i svi
+                zainteresovani, koji ne pohađaju naše časove.
               </p>
               <div className="p-6 bg-primary/5 rounded-lg">
                 <h4 className="font-semibold mb-2">Otvoreno za sve</h4>
                 <p className="text-muted-foreground">
-                  Naše izložbe su otvorene za sve talente, bez obzira da li pohađaju naše časove ili ne.
+                  Naše izložbe su otvorene za sve talente, bez obzira da li
+                  pohađaju naše časove ili ne.
                 </p>
               </div>
             </div>
@@ -190,18 +168,18 @@ export default function MojDanaPage() {
         subtitle="Kontaktirajte nas da organizujemo rođendan, prezentaciju knjige ili izložbu za vaše dete"
         primaryButton={{
           text: "0653237267",
-          link: "/kontakt"
+          link: "/kontakt",
         }}
         secondaryButton={{
           text: "0113237267",
-          link: "/kontakt"
+          link: "/kontakt",
         }}
         workingHours="od 7h do 18h"
         addressLink={{
           text: "Krunska 40, Vračar",
-          url: "https://maps.google.com/?q=Krunska+40+Beograd+Serbia"
+          url: "https://maps.google.com/?q=Krunska+40+Beograd+Serbia",
         }}
       />
     </div>
-  )
-} 
+  );
+}
