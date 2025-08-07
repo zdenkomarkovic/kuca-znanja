@@ -1,4 +1,4 @@
-export type PortableTextValue = any[]; // PortableText array type
+export type PortableTextValue = unknown[]; // PortableText array type
 
 export interface Category {
   _id: string;
