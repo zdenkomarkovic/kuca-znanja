@@ -75,7 +75,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <CardContent>
               {post.body && (
                 <div className="prose prose-lg max-w-none">
-                  <PortableText value={post.body as any} />
+                  {/* @ts-ignore */}
+                  <PortableText value={post.body} />
                 </div>
               )}
             </CardContent>
