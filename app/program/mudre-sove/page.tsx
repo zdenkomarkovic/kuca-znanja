@@ -1,12 +1,11 @@
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle, Clock } from "lucide-react";
+import { Clock } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import CTASection from "@/components/ui/CTASection";
 import MotionComponent2 from "@/components/MotionComponent2";
 import MotionComponent1 from "@/components/MotionComponent1";
 import MotionComponent3 from "@/components/MotionComponent3";
-import HeroProgrami from "@/components/HeroProgrami";
 import Hero2Programi from "@/components/Hero2Programi";
 import Mudresovice from "@/components/Mudresovice";
 

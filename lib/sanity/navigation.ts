@@ -9,7 +9,10 @@ export async function getNavigationWithCategories() {
         "slug": title
       }
     `);
-
+    type Category = {
+      title: string;
+      slug: string;
+    };
     const baseNav = [
       {
         title: "Početna",
@@ -105,7 +108,7 @@ export async function getNavigationWithCategories() {
         title: "Blog",
         link: "/blog",
         dropdown: [
-          ...categories.map((cat: any) => ({
+          ...categories.map((cat: Category) => ({
             title: cat.title,
             link: `/blog/kategorija/${cat.slug.toLowerCase().replace(/\s+/g, "-")}`,
           })),
