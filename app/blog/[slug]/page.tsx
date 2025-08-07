@@ -3,22 +3,13 @@ import { PortableText } from "@portabletext/react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
+import { Post } from "@/lib/types";
 
 interface BlogPostPageProps {
   params: {
     slug: string;
   };
-}
-
-interface Post {
-  _id: string;
-  title: string;
-  slug: { current: string };
-  body: any;
-  publishedAt: string;
-  image: string;
-  author: string;
-  categories: string[];
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
@@ -46,9 +37,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <Card className="mb-8">
             {post.image && (
               <div className="aspect-video overflow-hidden rounded-t-lg">
-                <img 
+                <Image 
                   src={post.image} 
                   alt={post.title}
+                  width={800}
+                  height={450}
                   className="w-full h-full object-cover"
                 />
               </div>

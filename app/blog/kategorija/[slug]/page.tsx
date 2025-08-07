@@ -5,23 +5,8 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import { BookOpen } from "lucide-react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-
-interface Category {
-  _id: string;
-  title: string;
-  slug: string;
-}
-
-interface Post {
-  _id: string;
-  title: string;
-  slug: { current: string };
-  body: any;
-  publishedAt: string;
-  image: string;
-  author: string;
-  categories: string[];
-}
+import Image from "next/image";
+import { Category, Post } from "@/lib/types";
 
 interface CategoryPageProps {
   params: {
@@ -93,9 +78,11 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
               <Card key={post._id} className="hover:shadow-lg transition-shadow">
                 {post.image && (
                   <div className="aspect-video overflow-hidden rounded-t-lg">
-                    <img 
+                    <Image 
                       src={post.image} 
                       alt={post.title}
+                      width={800}
+                      height={450}
                       className="w-full h-full object-cover"
                     />
                   </div>
