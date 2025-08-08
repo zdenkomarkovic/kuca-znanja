@@ -18,20 +18,20 @@ export default async function BlogPage() {
     const [posts, categories] = await Promise.all([
       client.fetch(`
         *[_type == "post"] | order(publishedAt desc) {
-          _id,
-          title,
-          slug,
+      _id,
+      title,
+      slug,
           body,
           publishedAt,
           "image": mainImage.asset->url,
           "author": author->name,
           "categories": categories[]->title
-        }
+    }
       `),
       getCategories(),
     ]);
 
-    return (
+  return (
       <div className="container mx-auto px-4 py-8 pt-20">
         <SectionHeader title="Blog" icon={BookOpen} />
 
@@ -148,7 +148,7 @@ export default async function BlogPage() {
             </code>
           </div>
         </div>
-      </div>
-    );
+    </div>
+  );
   }
 }
