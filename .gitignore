@@ -27,3 +27,10 @@
 
 # Dotenv and similar local-only files
 *.local
+
+# Next.js
+/.next/
+/out/
+
+# Production
+/build
