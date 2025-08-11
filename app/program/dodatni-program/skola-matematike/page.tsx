@@ -164,8 +164,8 @@ export default function SkolaMatematikePage() {
 
       {/* CTA Section */}
       <CTASection
-        title="Prijavite svoje dete u Školu matematike"
-        subtitle="Razvijte matematičke talente vašeg deteta i pripremite ga za takmičenja"
+        title="Prijavite svoje dete u Školu matematike!"
+        subtitle="Mi razvijamo matematički talenat vašeg deteta i pripremamo za takmičenja."
         primaryButton={{
           text: "0653237267",
           link: "/kontakt",

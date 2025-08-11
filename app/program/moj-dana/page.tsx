@@ -87,8 +87,8 @@ export default function MojDanaPage() {
               Kuća znanja se obavezuje da pripremi zabavni deo.
             </p>
             <p className="text-center text-muted-foreground mt-2">
-              Ukoliko je potrebno, a uz dogovor sa roditeljem naši organizatori
-              mogu da obezbede i: posluženje, piće i tortu.
+              Ukoliko je potrebno, a uz dogovor sa roditeljem, naši organizatori
+              mogu da obezbede: posluženje, piće i tortu.
             </p>
           </div>
         </div>

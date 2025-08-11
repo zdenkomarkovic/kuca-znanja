@@ -168,7 +168,7 @@ export default function Header() {
     <header
       className={`flex justify-center bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-md fixed top-0 left-0 right-0 z-[30] transition-colors`}
     >
-      <nav className="flex items-center justify-between px-4 md:px-8 py-2 container w-full text-primary font-bold">
+      <nav className="flex items-center justify-between px-4 md:px-16 py-2 container w-full text-primary font-bold">
         <Link href="/" className="flex items-center space-x-3">
           <Image
             src={Logo}
@@ -182,18 +182,7 @@ export default function Header() {
           </div>
         </Link>
         <DesktopNav navigation={navigation} />
-        <Link href="tel:+381653237267">
-          <motion.button
-            whileHover={{
-              color: "hsl(var(--foreground))",
-              backgroundColor: "hsl(var(--primary))",
-            }}
-            className="items-center justify-center rounded-full text-primary border-primary border-2 text-sm md:text-lg py-1 px-2 md:py-2 md:px-4 transition-colors flex"
-          >
-            <PhoneIcon />
-            <p className="">065 323 7267</p>
-          </motion.button>
-        </Link>
+       
         <MobileMenu navigation={navigation} />
       </nav>
     </header>

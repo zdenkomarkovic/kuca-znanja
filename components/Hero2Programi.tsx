@@ -61,21 +61,12 @@ const Hero2Programi = ({
             </h1>
 
             <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto">
-              Pravo mesto za decu osnovce u Beogradu, gde na kreativan način
-              mogu da ispune svoje vreme pre i posle škole!
+              Produzeni boravak za decu od 7 do 15 godina
             </p>
           </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-primary w-fit mx-auto hover:bg-primary/90 text-white hover:text-primary hover:border-primary border-2 border-primary px-4 md:px-8 py-3 text-base md:text-lg"
-            >
-              Namenjeno je deci uzrasta od 7 do 15 godina
-              <ArrowRight className=" h-5 w-5" />
-            </Button>
-
             <Link href="tel:+381653237267">
               <Button
                 size="lg"

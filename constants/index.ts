@@ -22,7 +22,11 @@ export const navList = [
         link: "/o-nama/rec-osnivaca",
       },
       {
-        title: "Misija",
+        title: "Misija i Vizija",
+        link: "/o-nama/misija",
+      },
+      {
+        title: "Ciljevi",
         link: "/o-nama/misija",
       },
       {

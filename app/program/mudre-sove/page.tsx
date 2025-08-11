@@ -136,8 +136,8 @@ export default function MudreSovePage() {
         </div>
       </section>
       <CTASection
-        title="Prijavite svoje dete u program 'Mudre sove'"
-        subtitle="Obezbedite svojoj deci kvalitetno vreme pre i posle škole u kreativnom i sigurnom okruženju"
+        title="Pravo mesto za decu osnovce u Beogradu, gde na kreativan nacin mogu da ispune svoje vreme pre i posle skole!"
+        subtitle=""
         primaryButton={{
           text: "0653237267",
           link: "/kontakt",

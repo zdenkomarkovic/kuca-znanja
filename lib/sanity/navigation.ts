@@ -3,10 +3,13 @@ import { client } from "./client";
 export async function getNavigationWithCategories() {
   try {
     // Proveri da li je Sanity konfigurisan
-    if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID === "demo-project") {
+    if (
+      !process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ||
+      process.env.NEXT_PUBLIC_SANITY_PROJECT_ID === "demo-project"
+    ) {
       throw new Error("Sanity not configured");
     }
-    
+
     const categories = await client.fetch(`
       *[_type == "category"] {
         _id,
@@ -32,7 +35,11 @@ export async function getNavigationWithCategories() {
             link: "/o-nama/rec-osnivaca",
           },
           {
-            title: "Misija",
+            title: "Misija i Vizija",
+            link: "/o-nama/misija",
+          },
+          {
+            title: "Ciljevi",
             link: "/o-nama/misija",
           },
           {
@@ -232,4 +239,3 @@ export async function getNavigationWithCategories() {
     ];
   }
 }
- 

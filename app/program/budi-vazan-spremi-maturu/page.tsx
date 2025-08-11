@@ -30,7 +30,7 @@ export default function BudiVazanSpremiMaturuPage() {
             title="Celokupna priprema za Malu maturu"
             icon={GraduationCap}
           />
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
                 title: "Srpski jezik",
@@ -44,11 +44,6 @@ export default function BudiVazanSpremiMaturuPage() {
                 title: "Izborni predmet",
                 description: "istorija, geografija, biologija, fizika, hemija",
                 icon: <Star className="h-8 w-8 text-primary" />,
-              },
-              {
-                title: "Individualni pristup",
-                description: "Moguće pohađanje časova i pojedinačnih oblasti!",
-                icon: <Users className="h-8 w-8 text-primary" />,
               },
             ].map((subject, index) => (
               <Card
@@ -144,12 +139,12 @@ export default function BudiVazanSpremiMaturuPage() {
               <CardContent className="space-y-4">
                 <p>
                   Da bi upisao ono što voliš da učiš, treba dobro da se
-                  pripremiš za završni ispit. To je tvoj prvi test zrelosti!
+                  pripremiš za Završni ispit. To je tvoj prvi test zrelosti!
                 </p>
-                <p>Završni ispit te čeka u junu.</p>
+                <p> Završni ispit te čeka u junu.</p>
                 <div className="bg-primary/10 p-4 rounded-lg">
                   <p className="font-semibold text-primary">
-                    Potrudi se da ti MALA MATURA bude zadovoljstvo.
+                    Potrudi se da ti Završni ispit bude zadovoljstvo.
                   </p>
                 </div>
               </CardContent>
@@ -164,12 +159,11 @@ export default function BudiVazanSpremiMaturuPage() {
               <CardContent className="space-y-4">
                 <p>
                   Da bi Vaše dete izabralo školu koju voli, pomozite mu da sa
-                  osmehom pripremi gradivo za MALU MATURU i da bez straha ode na
-                  završni ispit.
+                  osmehom pripremi gradivo i da bez straha ode na Završni ispit.
                 </p>
                 <div className="bg-primary/10 p-4 rounded-lg">
                   <p className="font-semibold text-primary">
-                    Sama priprema za završni ispit je i Vaša odgovornost!
+                    Sama priprema za Završni ispit je i Vaša odgovornost!
                   </p>
                 </div>
               </CardContent>
@@ -180,8 +174,8 @@ export default function BudiVazanSpremiMaturuPage() {
 
       {/* CTA Section */}
       <CTASection
-        title="Spremite se za malu maturu bez stresa"
-        subtitle="Kontaktirajte nas da organizujemo pripremu za završni ispit vašeg deteta"
+        title="Spremite se za Završni ispit bez stresa!"
+        subtitle="Kontaktirajte nas da organizujemo pripremu za Završni ispit vašeg deteta."
         primaryButton={{
           text: "0653237267",
           link: "/kontakt",

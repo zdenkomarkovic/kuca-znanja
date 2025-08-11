@@ -159,8 +159,8 @@ export default function RoditeljUTrenduPage() {
 
       {/* CTA Section */}
       <CTASection
-        title="Budite roditelj u trendu"
-        subtitle="Pridružite se našem programu i postanite informisan i edukovan roditelj"
+        title="Budite roditelj u trendu!"
+        subtitle="Pridružite se našem programu i postanite informisan i edukovan roditelj."
         primaryButton={{
           text: "0653237267",
           link: "/kontakt",

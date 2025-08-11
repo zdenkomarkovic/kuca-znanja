@@ -24,7 +24,7 @@ import { Button } from "./ui/button";
 const words = "KUĆA ZNANJA".split(" ");
 const Hero2 = () => {
   return (
-    <div className="grid md:grid-cols-2 items-center ">
+    <div className="grid md:grid-cols-2 items-center pt-20">
       <div className="text-center flex flex-col justify-center bg-gradient-to-br from-white to-[#f1f1f1] h-full py-5 px-2 order-2 lg:order-1">
         <motion.div
           initial={{ opacity: 0 }}
@@ -59,7 +59,7 @@ const Hero2 = () => {
               ))}
             </h1>
 
-            <h2 className="">Centar za kreativnu edukaciju dece</h2>
+            <h2 className="">Centar za kreativnu edukaciju</h2>
             <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto">
               Pravo mesto za decu osnovce u Beogradu, gde na kreativan način
               mogu da ispune svoje vreme pre i posle škole!
@@ -68,15 +68,7 @@ const Hero2 = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/#programi">
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-white hover:text-primary hover:border-primary border-2 border-primary px-8 py-3 text-lg"
-              >
-                Pogledajte programe
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
+        
             <Link href="tel:+381653237267">
               <Button
                 size="lg"

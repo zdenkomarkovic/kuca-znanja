@@ -183,8 +183,8 @@ export default function SkolaSlikanjaPage() {
 
       {/* CTA Section */}
       <CTASection
-        title="Prijavite svoje dete u Školu slikanja"
-        subtitle="Razvijte umetničke talente vašeg deteta i pripremite ga za umetničke škole"
+        title="Prijavite svoje dete u Školu slikanja!"
+        subtitle="Razvijte umetničke talente vašeg deteta i pripremite ga za umetničke škole."
         primaryButton={{
           text: "0653237267",
           link: "/kontakt",
