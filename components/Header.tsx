@@ -138,7 +138,7 @@ const DesktopNav = ({ navigation }: { navigation: NavItem[] }) => (
     {navigation.map((item, index) => {
       if (item.dropdown)
         return (
-          <HoverCard key={index} openDelay={0} closeDelay={50}>
+          <HoverCard key={index} openDelay={100} closeDelay={300}>
             <HoverCardTrigger>
               <motion.div
                 whileHover={{ color: "hsl(var(--primary))", scale: 1.1 }}
@@ -148,7 +148,7 @@ const DesktopNav = ({ navigation }: { navigation: NavItem[] }) => (
                 <ChevronDownIcon className="w-[18px]" />
               </motion.div>
             </HoverCardTrigger>
-            <HoverCardContent className="p-0">
+            <HoverCardContent className="p-0" side="bottom" align="start">
               {item.dropdown.map((link, index2) => (
                 <motion.li
                   key={`${index}.${index2}`}
@@ -158,14 +158,14 @@ const DesktopNav = ({ navigation }: { navigation: NavItem[] }) => (
                   }}
                 >
                   {link.dropdown ? (
-                    <HoverCard openDelay={0} closeDelay={50}>
+                    <HoverCard openDelay={100} closeDelay={300}>
                       <HoverCardTrigger>
                         <div className="px-2 py-2 block flex items-center justify-between">
                           {link.title}
                           <ChevronDownIcon className="w-3 h-3 ml-2" />
                         </div>
                       </HoverCardTrigger>
-                      <HoverCardContent className="p-0 ml-2">
+                      <HoverCardContent className="p-0 ml-2" side="right" align="start">
                         {link.dropdown.map((subLink, index3) => (
                           <motion.li
                             key={`${index}.${index2}.${index3}`}
@@ -230,7 +230,7 @@ export default function Header() {
     <header
       className={`flex justify-center bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-md fixed top-0 left-0 right-0 z-[30] transition-colors`}
     >
-      <nav className="flex items-center justify-between px-4 md:px-16 py-2 container w-full text-primary font-bold">
+      <nav className="flex items-center justify-between px-4 md:px-16 md:pr-64 py-2 container w-full text-primary font-bold">
         <Link href="/" className="flex items-center space-x-3">
           <Image
             src={Logo}

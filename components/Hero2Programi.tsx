@@ -11,7 +11,7 @@ import Autoplay from "embla-carousel-autoplay";
 import { motion } from "framer-motion";
 
 import Image from "next/image";
-import { ArrowRight, Phone, MapPin } from "lucide-react";
+import { Phone, MapPin } from "lucide-react";
 
 import Link from "next/link";
 import { Button } from "./ui/button";
@@ -25,7 +25,7 @@ const Hero2Programi = ({
   Hero02: string;
 }) => {
   return (
-    <div className="grid md:grid-cols-2 items-center ">
+    <div className="grid md:grid-cols-2 items-center pt-[73px]">
       <div className="text-center flex flex-col justify-center bg-gradient-to-br from-white to-[#f1f1f1] h-full py-5 px-2 order-2 lg:order-1">
         <motion.div
           initial={{ opacity: 0 }}
