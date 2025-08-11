@@ -44,62 +44,68 @@ export const navList = [
     ],
   },
   {
-    title: "Osnovni program",
+    title: "Programi",
     link: "/program",
     dropdown: [
       {
-        title: "Mudre sove",
-        link: "/program/mudre-sove",
+        title: "Osnovni program",
+        link: "/program",
+        dropdown: [
+          {
+            title: "Mudre sove",
+            link: "/program/mudre-sove",
+          },
+          {
+            title: "Moj dan",
+            link: "/program/moj-dana",
+          },
+          {
+            title: "Budi važan - spremi maturu",
+            link: "/program/budi-vazan-spremi-maturu",
+          },
+          {
+            title: "Roditelj u trendu",
+            link: "/program/roditelj-u-trendu",
+          },
+        ],
       },
       {
-        title: "Moj dan",
-        link: "/program/moj-dana",
-      },
-      {
-        title: "Budi važan - spremi maturu",
-        link: "/program/budi-vazan-spremi-maturu",
-      },
-      {
-        title: "Roditelj u trendu",
-        link: "/program/roditelj-u-trendu",
-      },
-    ],
-  },
-  {
-    title: "Dopunski program",
-    link: "/program",
-    dropdown: [
-      {
-        title: "Škola matematike",
-        link: "/program/dodatni-program/skola-matematike",
-      },
-      {
-        title: "Škola slikanja",
-        link: "/program/dodatni-program/skola-slikanja",
-      },
-      {
-        title: "Škola stranih jezika",
-        link: "/program/dodatni-program/skola-stranih-jezika",
-      },
-      {
-        title: "Srpski jezik za strance",
-        link: "/program/dodatni-program/srpski-jezik-za-strance",
-      },
-      {
-        title: "Čuvanje dece",
-        link: "/program/dodatni-program/cuvanje-dece",
-      },
-      {
-        title: "Škola skijanja",
-        link: "/program/dodatni-program/skola-skijanja",
-      },
-      {
-        title: "Jezički kamp",
-        link: "/program/dodatni-program/jezicki-kamp",
-      },
-      {
-        title: "Montesori program",
-        link: "/program/dodatni-program/montesori-program",
+        title: "Dopunski program",
+        link: "/program",
+        dropdown: [
+          {
+            title: "Škola matematike",
+            link: "/program/dodatni-program/skola-matematike",
+          },
+          {
+            title: "Škola slikanja",
+            link: "/program/dodatni-program/skola-slikanja",
+          },
+          {
+            title: "Škola stranih jezika",
+            link: "/program/dodatni-program/skola-stranih-jezika",
+          },
+          {
+            title: "Srpski jezik za strance",
+            link: "/program/dodatni-program/srpski-jezik-za-strance",
+          },
+          {
+            title: "Čuvanje dece",
+            link: "/program/dodatni-program/cuvanje-dece",
+          },
+          {
+            title: "Škola skijanja",
+            link: "/program/dodatni-program/skola-skijanja",
+          },
+          {
+            title: "Jezički kamp",
+            link: "/program/dodatni-program/jezicki-kamp",
+          },
+          {
+            title: "Montesori program",
+            link: "/program/dodatni-program/montesori-program",
+          },
+        ],
       },
     ],
   },

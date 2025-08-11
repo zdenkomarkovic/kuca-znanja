@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Logo from "../public/kuca-znanja-logo.png";
 import Link from "next/link";
-import { ChevronDownIcon, MenuIcon, PhoneIcon } from "lucide-react";
+import { ChevronDownIcon, MenuIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 import {
   Sheet,
@@ -32,6 +32,10 @@ interface NavItem {
   dropdown?: Array<{
     title: string;
     link: string;
+    dropdown?: Array<{
+      title: string;
+      link: string;
+    }>;
   }>;
 }
 
@@ -62,17 +66,49 @@ const MobileMenu = ({ navigation }: { navigation: NavItem[] }) => (
                         </motion.div>
                         <AccordionContent>
                           {item.dropdown.map((link, index2) => (
-                            <Link
-                              className="pl-6 block font-light py-2"
-                              key={`${index}.${index2}`}
-                              href={link.link}
-                            >
-                              <motion.li
-                                whileHover={{ color: "hsl(var(--primary))" }}
-                              >
-                                <SheetTrigger>{link.title}</SheetTrigger>
-                              </motion.li>
-                            </Link>
+                            <div key={`${index}.${index2}`}>
+                              {link.dropdown ? (
+                                <Accordion type="single" collapsible>
+                                  <AccordionItem className="border-none" value={`item-${index}-${index2}`}>
+                                    <motion.div
+                                      whileHover={{ color: "hsl(var(--primary))" }}
+                                    >
+                                      <AccordionTrigger
+                                        className={`${mobTitleStyles} hover:no-underline pl-6`}
+                                      >
+                                        {link.title}
+                                      </AccordionTrigger>
+                                    </motion.div>
+                                    <AccordionContent>
+                                      {link.dropdown.map((subLink, index3) => (
+                                        <Link
+                                          className="pl-12 block font-light py-2"
+                                          key={`${index}.${index2}.${index3}`}
+                                          href={subLink.link}
+                                        >
+                                          <motion.li
+                                            whileHover={{ color: "hsl(var(--primary))" }}
+                                          >
+                                            <SheetTrigger>{subLink.title}</SheetTrigger>
+                                          </motion.li>
+                                        </Link>
+                                      ))}
+                                    </AccordionContent>
+                                  </AccordionItem>
+                                </Accordion>
+                              ) : (
+                                <Link
+                                  className="pl-6 block font-light py-2"
+                                  href={link.link}
+                                >
+                                  <motion.li
+                                    whileHover={{ color: "hsl(var(--primary))" }}
+                                  >
+                                    <SheetTrigger>{link.title}</SheetTrigger>
+                                  </motion.li>
+                                </Link>
+                              )}
+                            </div>
                           ))}
                         </AccordionContent>
                       </AccordionItem>
@@ -121,9 +157,35 @@ const DesktopNav = ({ navigation }: { navigation: NavItem[] }) => (
                     color: "hsl(var(--primary-foreground))",
                   }}
                 >
-                  <Link className="px-2 py-2 block" href={link.link}>
-                    {link.title}
-                  </Link>
+                  {link.dropdown ? (
+                    <HoverCard openDelay={0} closeDelay={50}>
+                      <HoverCardTrigger>
+                        <div className="px-2 py-2 block flex items-center justify-between">
+                          {link.title}
+                          <ChevronDownIcon className="w-3 h-3 ml-2" />
+                        </div>
+                      </HoverCardTrigger>
+                      <HoverCardContent className="p-0 ml-2">
+                        {link.dropdown.map((subLink, index3) => (
+                          <motion.li
+                            key={`${index}.${index2}.${index3}`}
+                            whileHover={{
+                              backgroundColor: "hsl(var(--primary))",
+                              color: "hsl(var(--primary-foreground))",
+                            }}
+                          >
+                            <Link className="px-2 py-2 block" href={subLink.link}>
+                              {subLink.title}
+                            </Link>
+                          </motion.li>
+                        ))}
+                      </HoverCardContent>
+                    </HoverCard>
+                  ) : (
+                    <Link className="px-2 py-2 block" href={link.link}>
+                      {link.title}
+                    </Link>
+                  )}
                 </motion.li>
               ))}
             </HoverCardContent>

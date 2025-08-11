@@ -16,7 +16,7 @@ import Hero03 from "../public/istraživacki-duh.jpg";
 import Hero04 from "../public/ucimo-kroz-igru.jpg";
 
 import Image from "next/image";
-import { ArrowRight, Phone, MapPin } from "lucide-react";
+import { Phone, MapPin } from "lucide-react";
 
 import Link from "next/link";
 import { Button } from "./ui/button";
@@ -24,7 +24,7 @@ import { Button } from "./ui/button";
 const words = "KUĆA ZNANJA".split(" ");
 const Hero2 = () => {
   return (
-    <div className="grid md:grid-cols-2 items-center pt-20">
+    <div className="grid md:grid-cols-2 items-center pt-[73px]">
       <div className="text-center flex flex-col justify-center bg-gradient-to-br from-white to-[#f1f1f1] h-full py-5 px-2 order-2 lg:order-1">
         <motion.div
           initial={{ opacity: 0 }}
