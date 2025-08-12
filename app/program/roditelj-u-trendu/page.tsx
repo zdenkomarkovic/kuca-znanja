@@ -22,6 +22,7 @@ export default function RoditeljUTrenduPage() {
           "Tamo gde su deca, tu su i roditelji!",
           "Posebnu pažnju posvećujemo roditeljima. Danas je izazov biti roditelj. I zato, RODITELJ ispisujemo velikim slovom.",
         ]}
+        imgtext={"Roditelj u trendu"}
       />
 
       {/* Oblici saradnje */}

@@ -15,6 +15,7 @@ export default function SkolaMatematikePage() {
           "Kuća znanja posebnu pažnju posvećuje talentovanoj deci u matematici.",
           "Celokupna organizacija je usmerena na pripremu učenika za učešće na takmičenjima, ali se prate i individualna interesovanja učenika.",
         ]}
+        imgtext={"Škola matematike"}
       />
       {/* Organizacija */}
       <section className="py-16 px-4 bg-white">

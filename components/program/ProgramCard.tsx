@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card } from '@/components/ui/card'
 import { LucideIcon } from 'lucide-react'
 
 interface ProgramCardProps {
@@ -35,33 +35,17 @@ export default function ProgramCard({
             alt={title}
             width={1000}
             height={1000}
-            className="object-cover w-full aspect-[16/13]"
+            className="object-cover w-full "
           />
-        </div>
-      )}
-      <CardHeader>
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <Icon className={`h-8 w-8 ${isPrimary ? 'text-primary' : 'text-muted-foreground'}`} />
-            <div>
-              <CardTitle className=" text-primary">{title}</CardTitle>
-              
-            </div>
-          </div>
-        </div>
-      </CardHeader>
-      <CardContent className="flex-1">
-        <p className="text-sm md:text-lg">{description}</p>
-      </CardContent>
-      {isPrimary && (
-        <CardFooter>
-          <Link href={link} className="w-full">
-            <button className="w-full bg-primary hover:bg-blue-500/70 text-primary-foreground font-semibold py-3 px-6 rounded-lg transition-colors">
-              Saznaj više
+           <Link href={link} className="w-full">
+            <button className=" absolute bottom-0 right-0 text-primary font-semibold py-3 px-6">
+              Saznaj više...
             </button>
           </Link>
-        </CardFooter>
+        </div>
       )}
+
+
 
     </Card>
   )

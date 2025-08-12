@@ -2,14 +2,14 @@ import HeroProgrami from "@/components/HeroProgrami";
 
 export default function RecOsnivacaPage() {
   return (
-    <div className="container mx-auto px-4 pb-20">
+    <div className="">
       <HeroProgrami
         Hero01={"/rec osnivaca.jpg"}
         word={"Reč osnivača"}
         text={[""]}
       />
 
-      <div className="max-w-4xl mx-auto mt-8">
+      <div className="max-w-4xl mx-auto mt-8 pb-10">
         <div className="prose prose-lg max-w-none">
           <p className="mb-6">
             U vremenu u kojem živimo pregalaštvo u obrazovanju je posebno

@@ -12,6 +12,7 @@ export default function MontesoriProgramPage() {
         Hero01={"/Montesori program.jpg"}
         word={"MONTESORI PROGRAM"}
         text={[]}
+        imgtext={"Montesori program"}
       />
       {/* Osnova metode */}
       <section className="py-16 px-4 bg-white">

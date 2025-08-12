@@ -115,6 +115,7 @@ const Hero2 = () => {
                 alt="kuca-znanja"
                 className="w-full h-[60dvh] md:h-[100dvh] object-cover"
               />
+              <p className="absolute top-[70%] text-center left-0 right-0 px-12 text-white font-bold text-5xl">Partner porodici u vaspitanju i obrazovanju dece</p>
             </CarouselItem>
             <CarouselItem>
               <Image
@@ -122,6 +123,7 @@ const Hero2 = () => {
                 alt="kuca-znanja"
                 className="w-full h-[60dvh] md:h-[100dvh] object-cover"
               />
+              <p className="absolute top-[70%] text-center left-0 right-0 px-12 text-white font-bold text-5xl">Naš moto je kreativno dete!</p>
             </CarouselItem>
             <CarouselItem>
               <Image
@@ -129,6 +131,7 @@ const Hero2 = () => {
                 alt="kuca-znanja"
                 className="w-full h-[60dvh] md:h-[100dvh] object-cover"
               />
+              <p className="absolute top-[70%] text-center px-12 text-white font-bold text-5xl"> Razvijamo istraživački duh!</p>
             </CarouselItem>
             <CarouselItem>
               <Image
@@ -136,6 +139,7 @@ const Hero2 = () => {
                 alt="kuca-znanja"
                 className="w-full h-[60dvh] md:h-[100dvh] object-cover"
               />
+              <p className="absolute top-[70%] text-center left-0 right-0 px-12 text-white font-bold text-5xl">Učimo kroz igru!</p>
             </CarouselItem>
           </CarouselContent>
         </Carousel>

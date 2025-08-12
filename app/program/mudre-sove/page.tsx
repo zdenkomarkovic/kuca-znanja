@@ -182,7 +182,7 @@ export default function MudreSovePage() {
                 className=" text-center shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
               >
                 <CardHeader>
-                  <CardTitle className="text-xl text-primary">
+                  <CardTitle className="text-primary">
                     {member.title}
                   </CardTitle>
                 </CardHeader>

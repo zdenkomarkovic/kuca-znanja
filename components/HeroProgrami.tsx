@@ -12,12 +12,13 @@ type Props = {
   word: string;
   Hero01: string;
   text?: string[];
+  imgtext: string;
 };
 
-const HeroProgrami = ({ word, Hero01, text }: Props) => {
+const HeroProgrami = ({ word, Hero01, text, imgtext }: Props) => {
   const words = word.split(" ");
   return (
-    <div className="grid md:grid-cols-2 items-center ">
+    <div className="grid md:grid-cols-2 items-center pt-[73px]">
       <div className="text-center flex flex-col justify-center bg-gradient-to-br from-white to-[#f1f1f1] h-full py-5 px-2 order-2 lg:order-1">
         <motion.div
           initial={{ opacity: 0 }}
@@ -92,7 +93,8 @@ const HeroProgrami = ({ word, Hero01, text }: Props) => {
           height={1000}
           alt="kuca-znanja"
           className=" w-full h-[60dvh] md:h-[100dvh] object-cover"
-        />
+        /> 
+        <p className="absolute z-10 top-[70%] text-center left-0 right-0 px-12 text-white font-bold text-5xl">{imgtext}</p>
       </div>
     </div>
   );

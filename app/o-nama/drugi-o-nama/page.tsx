@@ -7,7 +7,7 @@ export default function DrugiONamaPage() {
     <div className="container mx-auto px-4 py-8 pt-20">
       <SectionHeader
         title="Drugi o nama"
-        subtitle="Utisci đaka i roditelja i medija"
+        subtitle="Utisci đaka, roditelja i medija"
         icon={MessageCircle}
       />
 

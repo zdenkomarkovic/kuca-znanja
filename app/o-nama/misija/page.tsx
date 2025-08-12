@@ -2,7 +2,7 @@ import HeroProgrami from "@/components/HeroProgrami";
 
 export default function MisijaPage() {
   return (
-    <div className="container mx-auto px-4 py-8 pt-20">
+    <div className="">
       <HeroProgrami
         Hero01={"/istraživački duh.jpg"}
         word={"Misija"}
@@ -11,7 +11,7 @@ export default function MisijaPage() {
         ]}
       />
 
-      <div className="max-w-4xl mx-auto mt-8 space-y-8">
+      <div className="max-w-4xl mx-auto mt-8 space-y-8 pb-10">
         <h2>VIZIJA</h2>
         <p>
           Svojim jedinstvenim programom želimo da stvorimo najbolje uslove za

@@ -40,7 +40,7 @@ export async function getNavigationWithCategories() {
           },
           {
             title: "Ciljevi",
-            link: "/o-nama/misija",
+            link: "/o-nama/ciljevi",
           },
           {
             title: "Drugi o nama",
@@ -70,7 +70,7 @@ export async function getNavigationWithCategories() {
               },
               {
                 title: "Moj dan",
-                link: "/program/moj-dana",
+                link: "/program/moj-dan",
               },
               {
                 title: "Budi važan - spremi maturu",

@@ -8,6 +8,7 @@ const page = () => {
         Hero01={"/Srpski jezik za strance.jpg"}
         word={"Srpski jezik za strance"}
         text={[]}
+        imgtext={"Srpski jezik za strance"}
       />
     </div>
   );

@@ -1,44 +1,47 @@
-import Cilj from "@/components/Cilj";
+
 import Hero2 from "@/components/Hero2";
+import ProgramCard from "@/components/program/ProgramCard";
+import SectionHeader from "@/components/ui/SectionHeader";
+import { BookOpen, GraduationCap, Heart, Users } from "lucide-react";
 
 export default function Home() {
-  // const programs = [
-  //   {
-  //     title: "Mudre sove",
-  //     description:
-  //       "Pravo mesto za decu osnovce u Beogradu, gde na kreativan način mogu da ispune svoje vreme pre i posle škole! Namenjeno je deci uzrasta od 7 do 15 godina.",
+  const programs = [
+    {
+      title: "Mudre sove",
+      description:
+        "Pravo mesto za decu osnovce u Beogradu, gde na kreativan način mogu da ispune svoje vreme pre i posle škole! Namenjeno je deci uzrasta od 7 do 15 godina.",
 
-  //     icon: BookOpen,
-  //     link: "/program/mudre-sove",
-  //     image: "/Mudre sove.png",
-  //   },
-  //   {
-  //     title: "Moj dan",
-  //     description:
-  //       "MOJ DAN je dan kada proslavljam svoj rođendan. MOJ DAN je prezentacija moje knjige. MOJ DAN je organizacija izložbe mojih radova.",
+      icon: BookOpen,
+      link: "/program/mudre-sove",
+      image: "/Mudre sove.png",
+    },
+    {
+      title: "Moj dan",
+      description:
+        "MOJ DAN je dan kada proslavljam svoj rođendan. MOJ DAN je prezentacija moje knjige. MOJ DAN je organizacija izložbe mojih radova.",
 
-  //     icon: Heart,
-  //     link: "/program/moj-dana",
-  //     image: "/Moj dan.png",
-  //   },
-  //   {
-  //     title: "Budi važan - spremi maturu",
-  //     description:
-  //       "Neka ti Mala matura bude zadovoljstvo! Ovde ćeš korigovati propušteno i utvrditi već usvojeno gradivo. Bez opterećenja se spremi za završni ispit!",
+      icon: Heart,
+      link: "/program/moj-dana",
+      image: "/Moj dan.png",
+    },
+    {
+      title: "Budi važan - spremi maturu",
+      description:
+        "Neka ti Mala matura bude zadovoljstvo! Ovde ćeš korigovati propušteno i utvrditi već usvojeno gradivo. Bez opterećenja se spremi za završni ispit!",
 
-  //     icon: GraduationCap,
-  //     link: "/program/budi-vazan-spremi-maturu",
-  //     image: "/Završni ispit (1).png",
-  //   },
-  //   {
-  //     title: "Roditelj u trendu",
-  //     description:
-  //       "Tamo gde su deca, tu su i roditelji! Posebnu pažnju posvećujemo roditeljima. Danas je izazov biti roditelj.",
-  //     icon: Users,
-  //     link: "/program/roditelj-u-trendu",
-  //     image: "/Roditelj u trendu.jpg",
-  //   },
-  // ];
+      icon: GraduationCap,
+      link: "/program/budi-vazan-spremi-maturu",
+      image: "/Završni ispit (1).png",
+    },
+    {
+      title: "Roditelj u trendu",
+      description:
+        "Tamo gde su deca, tu su i roditelji! Posebnu pažnju posvećujemo roditeljima. Danas je izazov biti roditelj.",
+      icon: Users,
+      link: "/program/roditelj-u-trendu",
+      image: "/Roditelj u trendu.jpg",
+    },
+  ];
 
   // const additionalPrograms = [
   //   {
@@ -106,17 +109,17 @@ export default function Home() {
       </section> */}
 
       {/* Osnovni programi */}
-      {/* <section className="py-16 px-4 bg-gradient-to-br from-white to-[#f1f1f1] ">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-16 px-4 bg-gradient-to-br from-white to-[#f1f1f1] ">
+        <div className="container px-2 md:px-4 mx-auto">
           <SectionHeader
             title="Osnovni programi"
             subtitle="Naši glavni programi prilagođeni različitim uzrastima dece"
           />
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-4 gap-4">
             {programs.map((program, index) => (
               <ProgramCard
                 key={index}
-                title={program.title}
+        
                 description={program.description}
                 icon={program.icon}
                 link={program.link}
@@ -126,7 +129,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* Dodatni programi */}
       {/* <section className="py-16 px-4 bg-gradient-to-br from-white to-[#f1f1f1]">
@@ -167,7 +170,7 @@ export default function Home() {
           url: "https://maps.google.com/?q=Krunska+40+Beograd+Serbia",
         }}
       /> */}
-      <Cilj />
+      {/* <Cilj /> */}
       {/* <Testemonials /> */}
     </div>
   );

@@ -22,10 +22,11 @@ export default function BudiVazanSpremiMaturuPage() {
           "Neka ti Mala matura bude zadovoljstvo!",
           "BUDI VAŽAN ~  spremi maturu sa osmehom!",
         ]}
+        imgtext={"Budi važan spremi maturu"}
       />
       {/* Celokupna priprema */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-16 px-4 bg-gradient-to-br from-white to-[#f1f1f1]">
+        <div className="max-w-8xl mx-auto">
           <SectionHeader
             title="Celokupna priprema za Malu maturu"
             icon={GraduationCap}
@@ -48,13 +49,13 @@ export default function BudiVazanSpremiMaturuPage() {
             ].map((subject, index) => (
               <Card
                 key={index}
-                className="border-2 border-primary/20 text-center"
+                className="border-2 border-primary shadow-lg hover:shadow-xl shadow-primary transition-shadow duration-300 text-center"
               >
                 <CardContent className="p-6">
                   <div className="flex justify-center mb-4">{subject.icon}</div>
                   <h3 className="font-semibold mb-2">{subject.title}</h3>
                   {subject.description && (
-                    <p className="text-sm text-muted-foreground">
+                    <p className="">
                       {subject.description}
                     </p>
                   )}
@@ -66,11 +67,11 @@ export default function BudiVazanSpremiMaturuPage() {
       </section>
 
       {/* Način rada */}
-      <section className="py-16 px-4">
+      <section className="py-16 px-4 bg-gradient-to-br from-white to-[#f1f1f1]">
         <div className="max-w-6xl mx-auto">
           <SectionHeader title="Način rada" icon={Clock} />
           <div className="grid lg:grid-cols-2 gap-8">
-            <Card className="border-2 border-primary/20">
+            <Card className="border-2 border-primary shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardHeader>
                 <CardTitle>Metodologija</CardTitle>
               </CardHeader>
@@ -84,7 +85,7 @@ export default function BudiVazanSpremiMaturuPage() {
                   <h4 className="font-semibold mb-2">
                     Polaznik dobija sav materijal za rad:
                   </h4>
-                  <div className="grid grid-cols-2 gap-2 text-sm">
+                  <div className="grid grid-cols-2 gap-2 ">
                     <p>• svesku</p>
                     <p>• štampani materijal</p>
                     <p>• olovku</p>
@@ -95,7 +96,7 @@ export default function BudiVazanSpremiMaturuPage() {
                 </div>
               </CardContent>
             </Card>
-            <Card className="border-2 border-primary/20">
+            <Card className="border-2 border-primary shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardHeader>
                 <CardTitle>Organizacija časova</CardTitle>
               </CardHeader>
@@ -126,10 +127,10 @@ export default function BudiVazanSpremiMaturuPage() {
       </section>
 
       {/* Poruke */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-16 px-4 bg-gradient-to-br from-white to-[#f1f1f1]">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="border-2 border-primary/20">
+            <Card className="border-2 border-primary shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
                   <GraduationCap className="h-6 w-6 text-primary" />
@@ -149,7 +150,7 @@ export default function BudiVazanSpremiMaturuPage() {
                 </div>
               </CardContent>
             </Card>
-            <Card className="border-2 border-primary/20">
+              <Card className="border-2 border-primary shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
                   <Users className="h-6 w-6 text-primary" />

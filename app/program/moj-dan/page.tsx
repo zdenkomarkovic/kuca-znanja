@@ -17,46 +17,47 @@ export default function MojDanaPage() {
           "MOJ DAN je prezenzacijа moje knjige.",
           "MOJ DAN je organizacija izložbe mojih radova",
         ]}
+        imgtext={"Moj dan"}
       />
 
       {/* Organizacija rođendana */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-16 px-4 bg-gradient-to-br from-white to-[#f1f1f1] ">
         <div className="max-w-6xl mx-auto">
           <SectionHeader title="Organizacija rođendana" icon={Gift} />
-          <div className="grid lg:grid-cols-3 gap-8">
-            <Card className="border-2 border-primary/20">
+          <div className="grid lg:grid-cols-2 gap-8">
+            <Card className="border-2 border-primary shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardHeader>
-                <CardTitle>Detalji programa</CardTitle>
+                <CardTitle className="text-center text-primary">Detalji programa</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-4 text-center">
                   <div>
-                    <p className="font-medium">Uzrast:</p>
-                    <p className="text-muted-foreground">5 – 15 godina</p>
+                    <p className="font-bold">Uzrast:</p>
+                    <p className="">5 – 15 godina</p>
                   </div>
                   <div>
-                    <p className="font-medium">Vreme:</p>
-                    <p className="text-muted-foreground">2 – 4 časa</p>
+                    <p className="font-bold">Vreme:</p>
+                    <p className="">2 – 4 časa</p>
                   </div>
                   <div>
-                    <p className="font-medium">Mesto:</p>
-                    <p className="text-muted-foreground">
+                    <p className="font-bold">Mesto:</p>
+                    <p className="">
                       naše prostorije ili posebno odabran ambijent
                     </p>
                   </div>
                   <div>
-                    <p className="font-medium">Broj:</p>
-                    <p className="text-muted-foreground">do 20 dece</p>
+                    <p className="font-bold">Broj:</p>
+                    <p className="">do 20 dece</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
-            <Card className="border-2 border-primary/20">
+            <Card className="border-2 border-primary shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardHeader>
-                <CardTitle>Zabavno – edukativni program</CardTitle>
+                <CardTitle className="text-center text-primary">Zabavno – edukativni program</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-3">
+                <div className="space-y-1">
                   {[
                     "Predstava",
                     "Zabavno-interaktivni program za decu: motoričke igre, igre iznenađenja, pesme",
@@ -66,36 +67,44 @@ export default function MojDanaPage() {
                   ].map((item, index) => (
                     <div key={index} className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                      <p className="text-sm">{item}</p>
+                      <p className="">{item}</p>
                     </div>
                   ))}
                 </div>
               </CardContent>
             </Card>
-            <div className="flex items-center justify-center">
-              <Image
-                src="/rodjendan.jpg"
-                alt="Organizacija rođendana"
-                width={400}
-                height={300}
-                className="rounded-lg shadow-lg"
-              />
-            </div>
+          
           </div>
           <div className="mt-8 p-6 bg-primary/5 rounded-lg">
             <p className="text-center font-medium">
               Kuća znanja se obavezuje da pripremi zabavni deo.
             </p>
-            <p className="text-center text-muted-foreground mt-2">
+            <p className="text-center mt-2">
               Ukoliko je potrebno, a uz dogovor sa roditeljem, naši organizatori
               mogu da obezbede: posluženje, piće i tortu.
             </p>
           </div>
         </div>
       </section>
-
+      <CTASection
+        title="Organizujte svoj poseban dan!"
+        subtitle="Kontaktirajte nas da organizujemo rođendan, prezentaciju knjige ili izložbu za vaše dete."
+        primaryButton={{
+          text: "0653237267",
+          link: "/kontakt",
+        }}
+        secondaryButton={{
+          text: "0113237267",
+          link: "/kontakt",
+        }}
+        workingHours="od 7h do 18h"
+        addressLink={{
+          text: "Krunska 40, Vračar",
+          url: "https://maps.google.com/?q=Krunska+40+Beograd+Serbia",
+        }}
+      />
       {/* Prezentacija knjige */}
-      <section className="py-16 px-4">
+      <section className="py-16 px-4 bg-gradient-to-br from-white to-[#f1f1f1]">
         <div className="max-w-6xl mx-auto">
           <SectionHeader title="Prezentacija knjige" icon={BookOpen} />
           <div className="grid lg:grid-cols-2 gap-8 items-center">
@@ -112,7 +121,7 @@ export default function MojDanaPage() {
                 odabranom ambijentu.
               </p>
             </div>
-            <Card className="border-2 border-primary/20">
+            <Card className="border-2 border-primary shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardContent className="p-6">
                 <div className="text-center space-y-4">
                   <BookOpen className="h-16 w-16 text-primary mx-auto" />
@@ -129,11 +138,11 @@ export default function MojDanaPage() {
       </section>
 
       {/* Organizacija izložbe slika */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-16 px-4 bg-gradient-to-br from-white to-[#f1f1f1]">
         <div className="max-w-6xl mx-auto">
           <SectionHeader title="Organizacija izložbe slika" icon={Palette} />
           <div className="grid lg:grid-cols-2 gap-8 items-center">
-            <Card className="border-2 border-primary/20">
+            <Card className="border-2 border-primary shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardContent className="p-6">
                 <div className="text-center space-y-4">
                   <Palette className="h-16 w-16 text-primary mx-auto" />
@@ -163,23 +172,7 @@ export default function MojDanaPage() {
       </section>
 
       {/* CTA Section */}
-      <CTASection
-        title="Organizujte svoj poseban dan"
-        subtitle="Kontaktirajte nas da organizujemo rođendan, prezentaciju knjige ili izložbu za vaše dete"
-        primaryButton={{
-          text: "0653237267",
-          link: "/kontakt",
-        }}
-        secondaryButton={{
-          text: "0113237267",
-          link: "/kontakt",
-        }}
-        workingHours="od 7h do 18h"
-        addressLink={{
-          text: "Krunska 40, Vračar",
-          url: "https://maps.google.com/?q=Krunska+40+Beograd+Serbia",
-        }}
-      />
+    
     </div>
   );
 }

@@ -115,6 +115,7 @@ const Hero2Programi = ({
                 alt="kuca-znanja"
                 className="w-full h-[60dvh] md:h-[100dvh] object-cover"
               />
+               <p className="absolute top-[70%] text-center left-0 right-0 px-12 text-white font-bold text-5xl">Mudre sove</p>
             </CarouselItem>
             <CarouselItem>
               <Image
@@ -124,6 +125,7 @@ const Hero2Programi = ({
                 alt="kuca-znanja"
                 className="w-full h-[60dvh] md:h-[100dvh] object-cover"
               />
+              <p className="absolute top-[70%] text-center left-0 right-0 px-12 text-white font-bold text-5xl">Mudre sovice</p>
             </CarouselItem>
           </CarouselContent>
         </Carousel>

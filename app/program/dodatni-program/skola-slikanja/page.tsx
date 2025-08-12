@@ -22,6 +22,7 @@ export default function SkolaSlikanjaPage() {
           "Škola slikanja počinje 15. septembra, a završava se u junu sledeće godine.",
           "Prijave su do kraja avgusta tekuće godine.",
         ]}
+        imgtext={"Škola slikanja"}
       />
       {/* Organizacija */}
       <section className="py-16 px-4 bg-white">

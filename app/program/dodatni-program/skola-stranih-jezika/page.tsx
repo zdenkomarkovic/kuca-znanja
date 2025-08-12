@@ -8,6 +8,7 @@ const page = () => {
         Hero01={"/Škola stranih jezika.jpg"}
         word={"Škola stranih jezika"}
         text={[]}
+        imgtext={"Škola stranih jezika"}
       />
     </div>
   );

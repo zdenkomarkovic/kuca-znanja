@@ -11,7 +11,7 @@ export default function FransizaPage() {
         icon={Building2}
       />
 
-      <div className="max-w-4xl mx-auto mt-8 space-y-8">
+      <div className="max-w-6xl mx-auto mt-8 space-y-8">
         <Card>
           <CardContent className="p-6">
             <div className="prose prose-lg max-w-none">
@@ -40,11 +40,7 @@ export default function FransizaPage() {
               </p>
 
               <p className="mb-6">
-                <strong>Naš moto je kreativno dete!</strong>
-              </p>
-
-              <p className="mb-6">
-                Detetu je potrebna podrška za jedan mali korak, koji daje veliki
+              <strong className="text-primary">Naš moto je kreativno dete!</strong> Detetu je potrebna podrška za jedan mali korak, koji daje veliki
                 učinak u stvaralaštvu. Probuditi kreativni moment kod deteta,
                 probuditi emocije, koje će poneti svu složenost stvaralaštva,
                 pronaći motiv na putu do uspeha – jesu načela rada tima
