@@ -3,6 +3,7 @@ import { Calculator, Target, Users, BookOpen, Star, Clock } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import CTASection from "@/components/ui/CTASection";
 import HeroProgrami from "@/components/HeroProgrami";
+import MotionComponent2 from "@/components/MotionComponent2";
 
 export default function SkolaMatematikePage() {
   return (
@@ -18,49 +19,55 @@ export default function SkolaMatematikePage() {
         imgtext={"Škola matematike"}
       />
       {/* Organizacija */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-16 px-4 bg-gradient-to-br from-white to-[#f1f1f1]">
         <div className="max-w-6xl mx-auto">
           <SectionHeader title="Organizacija škole" icon={Clock} />
           <div className="grid md:grid-cols-3 gap-6">
-            <Card className="border-2 border-primary/20 text-center">
-              <CardContent className="p-6">
+            <MotionComponent2>
+            <Card className="border shadow-md shadow-primary hover:shadow-xl transition-shadow duration-300 border-primary text-center">
+              <CardContent className="p-3">
                 <div className="flex justify-center mb-4">
                   <Clock className="h-8 w-8 text-primary" />
                 </div>
                 <h3 className="font-semibold mb-2">Trajanje</h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-muted-foreground">
                   od oktobra do kraja aprila meseca
                 </p>
               </CardContent>
             </Card>
-            <Card className="border-2 border-primary/20 text-center">
-              <CardContent className="p-6">
+            </MotionComponent2>
+            <MotionComponent2>
+            <Card className="border shadow-md shadow-primary hover:shadow-xl transition-shadow duration-300 border-primary text-center">
+              <CardContent className="p-3">
                 <div className="flex justify-center mb-4">
                   <Users className="h-8 w-8 text-primary" />
                 </div>
                 <h3 className="font-semibold mb-2">Časovi</h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-muted-foreground">
                   dva puta nedeljno u manjim grupama
                 </p>
               </CardContent>
             </Card>
-            <Card className="border-2 border-primary/20 text-center">
-              <CardContent className="p-6">
+            </MotionComponent2>
+            <MotionComponent2>
+              <Card className="border shadow-md shadow-primary hover:shadow-xl transition-shadow duration-300 border-primary text-center">
+              <CardContent className="p-3">
                 <div className="flex justify-center mb-4">
                   <Target className="h-8 w-8 text-primary" />
                 </div>
                 <h3 className="font-semibold mb-2">Individualna nastava</h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-muted-foreground">
                   organizovana je i individualna nastava
                 </p>
               </CardContent>
             </Card>
+            </MotionComponent2>
           </div>
         </div>
       </section>
 
       {/* Grupe */}
-      <section className="py-16 px-4">
+      <section className="py-16 px-4 bg-gradient-to-br from-white to-[#f1f1f1]">
         <div className="max-w-6xl mx-auto">
           <SectionHeader
             title="ŠKOLA MATEMATIKE je podeljena u 4 grupe"
@@ -91,31 +98,33 @@ export default function SkolaMatematikePage() {
                   "Misliša, Kengur, školsko, opštinsko, gradsko, republičko, olimpijada",
               },
             ].map((group, index) => (
-              <Card key={index} className="border-2 border-primary/20">
-                <CardHeader>
-                  <CardTitle className="text-center text-lg">
+              <MotionComponent2 key={index}>
+              <Card className="border  shadow-md shadow-primary hover:shadow-xl transition-shadow duration-300 border-primary">
+                <CardHeader className="p-3">
+                  <CardTitle className="text-center text-primary">
                     {group.title}
                   </CardTitle>
-                  <p className="text-center text-sm font-medium text-primary">
+                  <p className="text-center font-medium">
                     {group.subtitle}
                   </p>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground text-center">
+                <CardContent className="p-3 pt-0">
+                  <p className="text-muted-foreground text-center">
                     {group.description}
                   </p>
                 </CardContent>
               </Card>
+              </MotionComponent2>
             ))}
           </div>
         </div>
       </section>
 
       {/* Predavači */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-16 px-4 bg-gradient-to-br from-white to-[#f1f1f1]">
         <div className="max-w-4xl mx-auto">
           <SectionHeader title="Predavači" icon={Star} />
-          <Card className="border-2 border-primary/20">
+          <Card className="border shadow-md shadow-primary hover:shadow-xl transition-shadow duration-300 border-primary">
             <CardContent className="p-8 text-center">
               <div className="flex justify-center mb-4">
                 <BookOpen className="h-12 w-12 text-primary" />
@@ -126,40 +135,6 @@ export default function SkolaMatematikePage() {
               </p>
             </CardContent>
           </Card>
-        </div>
-      </section>
-
-      {/* Program */}
-      <section className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <SectionHeader title="Program" icon={Calculator} />
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              "Prebrojavanje, presipanje, premeravanje",
-              "Prirodni brojevi: numeracija, računske operacije, dešifrovanje",
-              "Metoda duži",
-              "Metod pravougaonika",
-              "Rešavanje zadataka putem grafikona",
-              "Rešavanje zadataka pomoću jednačine",
-              "Magični kvadrat i druge šeme",
-              "Logički i kombinatorni zadaci",
-              "Zadaci sa mernim jedinicama (vreme, dužina, masa, površina, zapremina)",
-              "Geometrijski oblici: osnovni geometrijski oblici, ugao, trougao, pravougaonik, kvadrat, krug",
-              "Zanimljivi zadaci",
-              "Zadaci sa takmičenja",
-            ].map((topic, index) => (
-              <Card key={index} className="border-2 border-primary/20">
-                <CardContent className="p-6">
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
-                      {index + 1}
-                    </div>
-                    <p className="text-sm">{topic}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -181,6 +156,40 @@ export default function SkolaMatematikePage() {
           url: "https://maps.google.com/?q=Krunska+40+Beograd+Serbia",
         }}
       />
+      {/* Program */}
+      <section className="py-16 px-4 bg-gradient-to-br from-white to-[#f1f1f1] ">
+        <div className="max-w-6xl mx-auto">
+          <SectionHeader title="Program" icon={Calculator} />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              "Prebrojavanje, presipanje, premeravanje",
+              "Prirodni brojevi: numeracija, računske operacije, dešifrovanje",
+              "Metoda duži",
+              "Metod pravougaonika",
+              "Rešavanje zadataka putem grafikona",
+              "Rešavanje zadataka pomoću jednačine",
+              "Magični kvadrat i druge šeme",
+              "Logički i kombinatorni zadaci",
+              "Zadaci sa mernim jedinicama (vreme, dužina, masa, površina, zapremina)",
+              "Geometrijski oblici: osnovni geometrijski oblici, ugao, trougao, pravougaonik, kvadrat, krug",
+              "Zanimljivi zadaci",
+              "Zadaci sa takmičenja",
+            ].map((topic, index) => (
+              <Card key={index} className="border shadow-md shadow-primary hover:shadow-xl transition-shadow duration-300 border-primary">
+                <CardContent className="p-3">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
+                      {index + 1}
+                    </div>
+                    <p className="">{topic}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }

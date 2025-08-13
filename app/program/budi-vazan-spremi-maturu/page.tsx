@@ -31,7 +31,7 @@ export default function BudiVazanSpremiMaturuPage() {
             title="Celokupna priprema za Malu maturu"
             icon={GraduationCap}
           />
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="container mx-auto px-2 md:px-4 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
                 title: "Srpski jezik",
@@ -65,7 +65,23 @@ export default function BudiVazanSpremiMaturuPage() {
           </div>
         </div>
       </section>
-
+      <CTASection
+        title="Spremite se za Završni ispit bez stresa!"
+        subtitle="Kontaktirajte nas da organizujemo pripremu za Završni ispit vašeg deteta."
+        primaryButton={{
+          text: "0653237267",
+          link: "/kontakt",
+        }}
+        secondaryButton={{
+          text: "0113237267",
+          link: "/kontakt",
+        }}
+        workingHours="od 7h do 18h"
+        addressLink={{
+          text: "Krunska 40, Vračar",
+          url: "https://maps.google.com/?q=Krunska+40+Beograd+Serbia",
+        }}
+      />
       {/* Način rada */}
       <section className="py-16 px-4 bg-gradient-to-br from-white to-[#f1f1f1]">
         <div className="max-w-6xl mx-auto">
@@ -73,7 +89,7 @@ export default function BudiVazanSpremiMaturuPage() {
           <div className="grid lg:grid-cols-2 gap-8">
             <Card className="border-2 border-primary shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardHeader>
-                <CardTitle>Metodologija</CardTitle>
+                <CardTitle className="text-center text-primary">Metodologija</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p>
@@ -98,7 +114,7 @@ export default function BudiVazanSpremiMaturuPage() {
             </Card>
             <Card className="border-2 border-primary shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardHeader>
-                <CardTitle>Organizacija časova</CardTitle>
+                <CardTitle className="text-center text-primary" >Organizacija časova</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="space-y-3">
@@ -132,8 +148,8 @@ export default function BudiVazanSpremiMaturuPage() {
           <div className="grid md:grid-cols-2 gap-8">
             <Card className="border-2 border-primary shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardHeader>
-                <CardTitle className="flex items-center space-x-2">
-                  <GraduationCap className="h-6 w-6 text-primary" />
+                <CardTitle className="flex items-center space-x-2 text-center text-primary justify-center">
+                  <GraduationCap className="h-6 w-6 " />
                   <span>Đacima</span>
                 </CardTitle>
               </CardHeader>
@@ -152,8 +168,8 @@ export default function BudiVazanSpremiMaturuPage() {
             </Card>
               <Card className="border-2 border-primary shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardHeader>
-                <CardTitle className="flex items-center space-x-2">
-                  <Users className="h-6 w-6 text-primary" />
+                <CardTitle className="flex items-center space-x-2 text-center text-primary justify-center">
+                  <Users className="h-6 w-6 " />
                   <span>Roditeljima</span>
                 </CardTitle>
               </CardHeader>
@@ -174,23 +190,7 @@ export default function BudiVazanSpremiMaturuPage() {
       </section>
 
       {/* CTA Section */}
-      <CTASection
-        title="Spremite se za Završni ispit bez stresa!"
-        subtitle="Kontaktirajte nas da organizujemo pripremu za Završni ispit vašeg deteta."
-        primaryButton={{
-          text: "0653237267",
-          link: "/kontakt",
-        }}
-        secondaryButton={{
-          text: "0113237267",
-          link: "/kontakt",
-        }}
-        workingHours="od 7h do 18h"
-        addressLink={{
-          text: "Krunska 40, Vračar",
-          url: "https://maps.google.com/?q=Krunska+40+Beograd+Serbia",
-        }}
-      />
+
     </div>
   );
 }
