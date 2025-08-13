@@ -1,31 +1,22 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Card } from '@/components/ui/card'
-import { LucideIcon } from 'lucide-react'
 
 interface ProgramCardProps {
   title: string
-  icon: LucideIcon
   link: string
-  variant?: 'primary' | 'secondary'
   image?: string
 }
 
 export default function ProgramCard({ 
   title, 
-
-  icon: Icon, 
   link, 
-
-  variant = 'primary',
   image
 }: ProgramCardProps) {
-  const isPrimary = variant === 'primary'
+
   
   return (
-    <Card className={`hover:shadow-xl h-full transition-shadow duration-300 flex flex-col ${
-      isPrimary ? 'border-2 border-blue-100' : 'border-2 border-gray-100'
-    }`}>
+    <Card className={`hover:shadow-xl h-full transition-shadow duration-300 flex flex-col border-2 border-blue-100`}>
       {image && (
         <div className="relative  w-full  rounded-t-lg">
           <Image
