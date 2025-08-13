@@ -1,4 +1,5 @@
-import Image from "next/image";
+
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BookOpen, Palette, Gift } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";

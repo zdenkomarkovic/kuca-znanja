@@ -5,7 +5,6 @@ import { LucideIcon } from 'lucide-react'
 
 interface ProgramCardProps {
   title: string
-  description: string
   icon: LucideIcon
   link: string
   variant?: 'primary' | 'secondary'
@@ -14,7 +13,6 @@ interface ProgramCardProps {
 
 export default function ProgramCard({ 
   title, 
-  description, 
 
   icon: Icon, 
   link, 

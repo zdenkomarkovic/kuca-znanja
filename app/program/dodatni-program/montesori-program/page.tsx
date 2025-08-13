@@ -76,9 +76,9 @@ export default function MontesoriProgramPage() {
               "Mašta",
               "Motorika",
             ].map((skill, index) => (
-              <MotionComponent2>
+              <MotionComponent2 key={index}>
               <Card
-                key={index}
+               
                 className="border h-full shadow-md shadow-primary hover:shadow-xl transition-shadow duration-300 border-primary text-center"
               >
                 <CardContent className="p-6">
