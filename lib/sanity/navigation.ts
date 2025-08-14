@@ -1,4 +1,4 @@
-import { client } from "./client";
+
 
 export async function getNavigationWithCategories() {
   try {
