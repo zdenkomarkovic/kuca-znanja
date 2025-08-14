@@ -12,7 +12,7 @@ type Props = {
   word: string;
   Hero01: string;
   text?: string[];
-  imgtext: string;
+  imgtext?: string;
 };
 
 const HeroProgrami = ({ word, Hero01, text, imgtext }: Props) => {
