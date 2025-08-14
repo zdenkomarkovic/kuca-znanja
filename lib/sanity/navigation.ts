@@ -10,17 +10,8 @@ export async function getNavigationWithCategories() {
       throw new Error("Sanity not configured");
     }
 
-    const categories = await client.fetch(`
-      *[_type == "category"] {
-        _id,
-        title,
-        "slug": title
-      }
-    `);
-    type Category = {
-      title: string;
-      slug: string;
-    };
+
+
     const baseNav = [
       {
         title: "Početna",
