@@ -3,13 +3,11 @@ import Image from 'next/image'
 import { Card } from '@/components/ui/card'
 
 interface ProgramCardProps {
-  title: string
   link: string
   image?: string
 }
 
 export default function ProgramCard({ 
-  title, 
   link, 
   image
 }: ProgramCardProps) {
@@ -21,7 +19,7 @@ export default function ProgramCard({
         <div className="relative  w-full  rounded-t-lg">
           <Image
             src={image}
-            alt={title}
+            alt={"kuca znanja"}
             width={1000}
             height={1000}
             className="object-cover w-full "

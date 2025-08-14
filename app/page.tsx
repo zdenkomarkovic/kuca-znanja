@@ -119,11 +119,7 @@ export default function Home() {
             {programs.map((program, index) => (
               <ProgramCard
                 key={index}
-        
-                description={program.description}
-                icon={program.icon}
                 link={program.link}
-                variant="primary"
                 image={program.image}
               />
             ))}
