@@ -125,12 +125,6 @@ export async function getNavigationWithCategories() {
       {
         title: "Blog",
         link: "/blog",
-        dropdown: [
-          ...categories.map((cat: Category) => ({
-            title: cat.title,
-            link: `/blog/kategorija/${cat.slug.toLowerCase().replace(/\s+/g, "-")}`,
-          })),
-        ],
       },
       {
         title: "Kontakt",
