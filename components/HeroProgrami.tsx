@@ -94,7 +94,7 @@ const HeroProgrami = ({ word, Hero01, text, imgtext }: Props) => {
           alt="kuca-znanja"
           className=" w-full h-[60dvh] md:h-[100dvh] object-cover"
         /> 
-        <p className="absolute z-10 top-[70%] text-center left-0 right-0 px-12 text-white font-bold text-5xl">{imgtext}</p>
+        <p className="absolute z-10 top-[70%] text-center left-0 right-0 px-12 text-white font-bold text-3xl md:text-5xl">{imgtext}</p>
       </div>
     </div>
   );
