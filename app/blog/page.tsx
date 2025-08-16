@@ -8,6 +8,25 @@ import { getCategories } from "@/lib/sanity/categories";
 import Link from "next/link";
 import Image from "next/image";
 import { Category, Post } from "@/lib/types";
+
+// Funkcija za generisanje slug-a bez srpskih slova
+function generateSlug(text: string): string {
+  const serbianChars: { [key: string]: string } = {
+    'č': 'c', 'ć': 'c', 'š': 's', 'đ': 'd', 'ž': 'z',
+    'Č': 'C', 'Ć': 'C', 'Š': 'S', 'Đ': 'D', 'Ž': 'Z'
+  };
+  
+  let slug = text;
+  
+  // Zameni srpska slova
+  Object.entries(serbianChars).forEach(([serbian, latin]) => {
+    slug = slug.replace(new RegExp(serbian, 'g'), latin);
+  });
+  
+  // Konvertuj u lowercase i zameni razmake sa crticama
+  return slug.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+}
+
 export default async function BlogPage() {
   try {
     // Proveri da li je Sanity konfigurisan
@@ -79,7 +98,7 @@ export default async function BlogPage() {
           {categories.map((category: Category) => (
             <Button key={category._id} variant="outline" size="sm" asChild>
               <Link
-                href={`/blog/kategorija/${category.slug.toLowerCase().replace(/\s+/g, "-")}`}
+                href={`/blog/kategorija/${generateSlug(category.title)}`}
               >
                 {category.title}
               </Link>

@@ -8,6 +8,24 @@ import Link from "next/link";
 import Image from "next/image";
 import { Category, Post } from "@/lib/types";
 
+// Funkcija za generisanje slug-a bez srpskih slova
+function generateSlug(text: string): string {
+  const serbianChars: { [key: string]: string } = {
+    'č': 'c', 'ć': 'c', 'š': 's', 'đ': 'd', 'ž': 'z',
+    'Č': 'C', 'Ć': 'C', 'Š': 'S', 'Đ': 'D', 'Ž': 'Z'
+  };
+  
+  let slug = text;
+  
+  // Zameni srpska slova
+  Object.entries(serbianChars).forEach(([serbian, latin]) => {
+    slug = slug.replace(new RegExp(serbian, 'g'), latin);
+  });
+  
+  // Konvertuj u lowercase i zameni razmake sa crticama
+  return slug.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+}
+
 interface CategoryPageProps {
   params: Promise<{
     slug: string;
@@ -33,7 +51,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
     // Pronađi kategoriju koja odgovara slug-u
     const category = categories.find((cat: Category) => 
-      cat.slug.toLowerCase().replace(/\s+/g, '-') === slug
+      generateSlug(cat.title) === slug
     );
     
     if (!category) {
