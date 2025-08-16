@@ -82,7 +82,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         
         {/* Debug info */}
         <div className="text-center mb-4 text-sm text-muted-foreground">
-          Pronađeno {posts.length} članaka u kategoriji "{categoryTitle}"
+          Pronađeno {posts.length} članaka u kategoriji &ldquo;{categoryTitle}&rdquo;
         </div>
         
         {posts.length === 0 ? (
