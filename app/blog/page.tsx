@@ -15,9 +15,9 @@ export default async function BlogPage() {
       throw new Error("Sanity not configured");
     }
     
-    // Prvo probaj sa published filterom
+    // Prvo probaj sa published filterom - povećavam limit na 1000
     let posts = await client.fetch(`
-      *[_type == "post" && published == true] | order(publishedAt desc) [0...100] {
+      *[_type == "post" && published == true] | order(publishedAt desc) [0...1000] {
       _id,
       title,
       slug,
@@ -30,12 +30,13 @@ export default async function BlogPage() {
       `);
     
     console.log('Postovi sa published filterom:', posts?.length || 0);
+    console.log('Svi postovi:', posts);
     
     // Ako nema postova sa published filterom, probaj bez njega
     if (!posts || posts.length === 0) {
       console.log('Nema postova sa published filterom, probajem bez njega...');
       posts = await client.fetch(`
-        *[_type == "post"] | order(publishedAt desc) [0...100] {
+        *[_type == "post"] | order(publishedAt desc) [0...1000] {
       _id,
       title,
       slug,

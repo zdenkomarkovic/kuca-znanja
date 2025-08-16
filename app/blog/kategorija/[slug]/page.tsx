@@ -42,9 +42,9 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
     const categoryTitle = category.title;
 
-    // Prvo probaj sa published filterom
+    // Prvo probaj sa published filterom - povećavam limit na 1000
     let posts: Post[] = await client.fetch(`
-      *[_type == "post" && published == true && $categoryTitle in categories[]->title] | order(publishedAt desc) [0...100] {
+      *[_type == "post" && published == true && $categoryTitle in categories[]->title] | order(publishedAt desc) [0...1000] {
         _id,
         title,
         slug,
@@ -59,7 +59,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     // Ako nema postova sa published filterom, probaj bez njega
     if (!posts || posts.length === 0) {
       posts = await client.fetch(`
-        *[_type == "post" && $categoryTitle in categories[]->title] | order(publishedAt desc) [0...100] {
+        *[_type == "post" && $categoryTitle in categories[]->title] | order(publishedAt desc) [0...1000] {
           _id,
           title,
           slug,
@@ -83,6 +83,9 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         {/* Debug info */}
         <div className="text-center mb-4 text-sm text-muted-foreground">
           Pronađeno {posts.length} članaka u kategoriji &ldquo;{categoryTitle}&rdquo;
+        </div>
+        <div className="text-center mb-2 text-xs text-muted-foreground">
+          Debug: {JSON.stringify(posts.map(p => ({ id: p._id, title: p.title })))}
         </div>
         
         {posts.length === 0 ? (
