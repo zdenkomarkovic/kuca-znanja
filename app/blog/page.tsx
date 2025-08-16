@@ -87,7 +87,7 @@ export default async function BlogPage() {
           ))}
         </div>
 
-        {/* Debug info */}
+        {/* Info */}
         <div className="text-center mb-4 text-sm text-muted-foreground">
           Pronađeno {posts.length} članaka
         </div>

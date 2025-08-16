@@ -56,6 +56,27 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       }
     `, { categoryTitle });
     
+    // Test: probaj da dohvatiš sve postove da vidiš da li je problem u kategoriji filteru
+    const allPosts = await client.fetch(`
+      *[_type == "post" && published == true] | order(publishedAt desc) [0...1000] {
+        _id,
+        title,
+        slug,
+        body,
+        publishedAt,
+        "image": mainImage.asset->url,
+        "author": author->name,
+        "categories": categories[]->title
+      }
+    `);
+    
+    console.log('Svi postovi bez kategorije filtera:', allPosts?.length || 0);
+    console.log('Svi postovi:', allPosts);
+    
+    console.log('Kategorija:', categoryTitle);
+    console.log('Postovi sa published filterom:', posts?.length || 0);
+    console.log('Svi postovi sa published filterom:', posts);
+    
     // Ako nema postova sa published filterom, probaj bez njega
     if (!posts || posts.length === 0) {
       posts = await client.fetch(`
@@ -70,6 +91,8 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           "categories": categories[]->title
         }
       `, { categoryTitle });
+      console.log('Postovi bez published filtera:', posts?.length || 0);
+      console.log('Svi postovi bez published filtera:', posts);
     }
 
     return (
@@ -80,12 +103,9 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           icon={BookOpen}
         />
         
-        {/* Debug info */}
+        {/* Info */}
         <div className="text-center mb-4 text-sm text-muted-foreground">
           Pronađeno {posts.length} članaka u kategoriji &ldquo;{categoryTitle}&rdquo;
-        </div>
-        <div className="text-center mb-2 text-xs text-muted-foreground">
-          Debug: {JSON.stringify(posts.map(p => ({ id: p._id, title: p.title })))}
         </div>
         
         {posts.length === 0 ? (
