@@ -12,6 +12,7 @@ export interface Post {
   slug: { current: string };
   body: PortableTextValue;
   publishedAt: string;
+  published?: boolean;
   image: string;
   author: string;
   categories: string[];

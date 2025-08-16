@@ -20,8 +20,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       throw new Error("Sanity not configured");
     }
     
-    const post: Post = await client.fetch(`
-      *[_type == "post" && slug.current == $slug][0] {
+    // Prvo probaj sa published filterom
+    let post: Post = await client.fetch(`
+      *[_type == "post" && published == true && slug.current == $slug][0] {
         _id,
         title,
         slug,
@@ -32,6 +33,22 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         "categories": categories[]->title
       }
     `, { slug });
+    
+    // Ako nema posta sa published filterom, probaj bez njega
+    if (!post) {
+      post = await client.fetch(`
+        *[_type == "post" && slug.current == $slug][0] {
+          _id,
+          title,
+          slug,
+          body,
+          publishedAt,
+          "image": mainImage.asset->url,
+          "author": author->name,
+          "categories": categories[]->title
+        }
+      `, { slug });
+    }
 
     if (!post) {
       notFound();

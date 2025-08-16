@@ -42,8 +42,9 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
     const categoryTitle = category.title;
 
-    const posts: Post[] = await client.fetch(`
-      *[_type == "post" && $categoryTitle in categories[]->title] | order(publishedAt desc) {
+    // Prvo probaj sa published filterom
+    let posts: Post[] = await client.fetch(`
+      *[_type == "post" && published == true && $categoryTitle in categories[]->title] | order(publishedAt desc) [0...100] {
         _id,
         title,
         slug,
@@ -54,6 +55,22 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         "categories": categories[]->title
       }
     `, { categoryTitle });
+    
+    // Ako nema postova sa published filterom, probaj bez njega
+    if (!posts || posts.length === 0) {
+      posts = await client.fetch(`
+        *[_type == "post" && $categoryTitle in categories[]->title] | order(publishedAt desc) [0...100] {
+          _id,
+          title,
+          slug,
+          body,
+          publishedAt,
+          "image": mainImage.asset->url,
+          "author": author->name,
+          "categories": categories[]->title
+        }
+      `, { categoryTitle });
+    }
 
     return (
       <div className="container mx-auto px-4 py-8 pt-20">
@@ -62,6 +79,11 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           subtitle={`Članci iz kategorije: ${categoryTitle}`}
           icon={BookOpen}
         />
+        
+        {/* Debug info */}
+        <div className="text-center mb-4 text-sm text-muted-foreground">
+          Pronađeno {posts.length} članaka u kategoriji "{categoryTitle}"
+        </div>
         
         {posts.length === 0 ? (
           <div className="text-center py-12">

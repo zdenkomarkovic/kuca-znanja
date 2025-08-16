@@ -15,9 +15,9 @@ export default async function BlogPage() {
       throw new Error("Sanity not configured");
     }
     
-    const [posts, categories] = await Promise.all([
-      client.fetch(`
-        *[_type == "post"] | order(publishedAt desc) {
+    // Prvo probaj sa published filterom
+    let posts = await client.fetch(`
+      *[_type == "post" && published == true] | order(publishedAt desc) [0...100] {
       _id,
       title,
       slug,
@@ -27,9 +27,47 @@ export default async function BlogPage() {
           "author": author->name,
           "categories": categories[]->title
     }
-      `),
-      getCategories(),
-    ]);
+      `);
+    
+    console.log('Postovi sa published filterom:', posts?.length || 0);
+    
+    // Ako nema postova sa published filterom, probaj bez njega
+    if (!posts || posts.length === 0) {
+      console.log('Nema postova sa published filterom, probajem bez njega...');
+      posts = await client.fetch(`
+        *[_type == "post"] | order(publishedAt desc) [0...100] {
+      _id,
+      title,
+      slug,
+          body,
+          publishedAt,
+          "image": mainImage.asset->url,
+          "author": author->name,
+          "categories": categories[]->title
+    }
+      `);
+      console.log('Postovi bez published filtera:', posts?.length || 0);
+    }
+    
+    // Ako i dalje nema postova, probaj sa većim limitom
+    if (!posts || posts.length === 0) {
+      console.log('Nema postova ni sa većim limitom, probajem sa 1000...');
+      posts = await client.fetch(`
+        *[_type == "post"] | order(publishedAt desc) [0...1000] {
+      _id,
+      title,
+      slug,
+          body,
+          publishedAt,
+          "image": mainImage.asset->url,
+          "author": author->name,
+          "categories": categories[]->title
+    }
+      `);
+      console.log('Postovi sa limitom 1000:', posts?.length || 0);
+    }
+
+    const categories = await getCategories();
 
   return (
       <div className="container mx-auto px-4 py-8 pt-20">
@@ -46,6 +84,11 @@ export default async function BlogPage() {
               </Link>
             </Button>
           ))}
+        </div>
+
+        {/* Debug info */}
+        <div className="text-center mb-4 text-sm text-muted-foreground">
+          Pronađeno {posts.length} članaka
         </div>
 
         {posts.length === 0 ? (
