@@ -61,12 +61,6 @@ export default {
       type: 'datetime',
     },
     {
-      name: 'published',
-      title: 'Published',
-      type: 'boolean',
-      initialValue: true,
-    },
-    {
       name: 'body',
       title: 'Body',
       type: 'blockContent',

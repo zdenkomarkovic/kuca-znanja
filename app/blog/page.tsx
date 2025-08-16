@@ -9,24 +9,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Category, Post } from "@/lib/types";
 
-// Funkcija za generisanje slug-a bez srpskih slova
-function generateSlug(text: string): string {
-  const serbianChars: { [key: string]: string } = {
-    'č': 'c', 'ć': 'c', 'š': 's', 'đ': 'd', 'ž': 'z',
-    'Č': 'C', 'Ć': 'C', 'Š': 'S', 'Đ': 'D', 'Ž': 'Z'
-  };
-  
-  let slug = text;
-  
-  // Zameni srpska slova
-  Object.entries(serbianChars).forEach(([serbian, latin]) => {
-    slug = slug.replace(new RegExp(serbian, 'g'), latin);
-  });
-  
-  // Konvertuj u lowercase i zameni razmake sa crticama
-  return slug.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
-}
-
 export default async function BlogPage() {
   try {
     // Proveri da li je Sanity konfigurisan
@@ -34,62 +16,23 @@ export default async function BlogPage() {
       throw new Error("Sanity not configured");
     }
     
-    // Prvo probaj sa published filterom - povećavam limit na 1000
-    let posts = await client.fetch(`
-      *[_type == "post" && published == true] | order(publishedAt desc) [0...1000] {
-      _id,
-      title,
-      slug,
-          body,
-          publishedAt,
-          "image": mainImage.asset->url,
-          "author": author->name,
-          "categories": categories[]->title
-    }
-      `);
-    
-    console.log('Postovi sa published filterom:', posts?.length || 0);
-    console.log('Svi postovi:', posts);
-    
-    // Ako nema postova sa published filterom, probaj bez njega
-    if (!posts || posts.length === 0) {
-      console.log('Nema postova sa published filterom, probajem bez njega...');
-      posts = await client.fetch(`
+    const [posts, categories] = await Promise.all([
+      client.fetch(`
         *[_type == "post"] | order(publishedAt desc) [0...1000] {
-      _id,
-      title,
-      slug,
+          _id,
+          title,
+          slug,
           body,
           publishedAt,
           "image": mainImage.asset->url,
           "author": author->name,
           "categories": categories[]->title
-    }
-      `);
-      console.log('Postovi bez published filtera:', posts?.length || 0);
-    }
-    
-    // Ako i dalje nema postova, probaj sa većim limitom
-    if (!posts || posts.length === 0) {
-      console.log('Nema postova ni sa većim limitom, probajem sa 1000...');
-      posts = await client.fetch(`
-        *[_type == "post"] | order(publishedAt desc) [0...1000] {
-      _id,
-      title,
-      slug,
-          body,
-          publishedAt,
-          "image": mainImage.asset->url,
-          "author": author->name,
-          "categories": categories[]->title
-    }
-      `);
-      console.log('Postovi sa limitom 1000:', posts?.length || 0);
-    }
+        }
+      `),
+      getCategories(),
+    ]);
 
-    const categories = await getCategories();
-
-  return (
+    return (
       <div className="container mx-auto px-4 py-8 pt-20">
         <SectionHeader title="Blog" icon={BookOpen} />
 
@@ -98,17 +41,12 @@ export default async function BlogPage() {
           {categories.map((category: Category) => (
             <Button key={category._id} variant="outline" size="sm" asChild>
               <Link
-                href={`/blog/kategorija/${generateSlug(category.title)}`}
+                href={`/blog/kategorija/${category.slug.toLowerCase().replace(/\s+/g, "-")}`}
               >
                 {category.title}
               </Link>
             </Button>
           ))}
-        </div>
-
-        {/* Info */}
-        <div className="text-center mb-4 text-sm text-muted-foreground">
-          Pronađeno {posts.length} članaka
         </div>
 
         {posts.length === 0 ? (
@@ -193,25 +131,24 @@ export default async function BlogPage() {
           subtitle="Dete i zdravlje"
           icon={BookOpen}
         />
-
         <div className="text-center py-12">
           <h3 className="text-xl font-semibold text-muted-foreground mb-4">
             Greška pri učitavanju bloga
           </h3>
           <p className="text-muted-foreground mb-6">
-            Trenutno ne možemo da učitamo blog članke. Molimo pokušajte kasnije.
+            Došlo je do greške pri učitavanju blog članaka.
           </p>
           <div className="bg-muted p-6 rounded-lg max-w-md mx-auto">
             <h4 className="font-medium mb-2">Da li je Sanity konfigurisan?</h4>
             <p className="text-sm text-muted-foreground">
-              Proverite da li imate pravilno konfigurisan .env.local fajl sa:
+              Proverite da li su environment varijable postavljene ispravno.
             </p>
             <code className="block text-xs bg-background p-2 rounded mt-2">
-              NEXT_PUBLIC_SANITY_PROJECT_ID=your_project_id
+              NEXT_PUBLIC_SANITY_PROJECT_ID = {process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "nije postavljen"}
             </code>
           </div>
         </div>
-    </div>
-  );
+      </div>
+    );
   }
 }

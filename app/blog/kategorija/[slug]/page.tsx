@@ -8,24 +8,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Category, Post } from "@/lib/types";
 
-// Funkcija za generisanje slug-a bez srpskih slova
-function generateSlug(text: string): string {
-  const serbianChars: { [key: string]: string } = {
-    'č': 'c', 'ć': 'c', 'š': 's', 'đ': 'd', 'ž': 'z',
-    'Č': 'C', 'Ć': 'C', 'Š': 'S', 'Đ': 'D', 'Ž': 'Z'
-  };
-  
-  let slug = text;
-  
-  // Zameni srpska slova
-  Object.entries(serbianChars).forEach(([serbian, latin]) => {
-    slug = slug.replace(new RegExp(serbian, 'g'), latin);
-  });
-  
-  // Konvertuj u lowercase i zameni razmake sa crticama
-  return slug.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
-}
-
 interface CategoryPageProps {
   params: Promise<{
     slug: string;
@@ -51,7 +33,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
     // Pronađi kategoriju koja odgovara slug-u
     const category = categories.find((cat: Category) => 
-      generateSlug(cat.title) === slug
+      cat.slug.toLowerCase().replace(/\s+/g, '-') === slug
     );
     
     if (!category) {
@@ -60,9 +42,8 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
     const categoryTitle = category.title;
 
-    // Prvo probaj sa published filterom - povećavam limit na 1000
-    let posts: Post[] = await client.fetch(`
-      *[_type == "post" && published == true && $categoryTitle in categories[]->title] | order(publishedAt desc) [0...1000] {
+    const posts: Post[] = await client.fetch(`
+      *[_type == "post" && $categoryTitle in categories[]->title] | order(publishedAt desc) [0...1000] {
         _id,
         title,
         slug,
@@ -73,45 +54,6 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         "categories": categories[]->title
       }
     `, { categoryTitle });
-    
-    // Test: probaj da dohvatiš sve postove da vidiš da li je problem u kategoriji filteru
-    const allPosts = await client.fetch(`
-      *[_type == "post" && published == true] | order(publishedAt desc) [0...1000] {
-        _id,
-        title,
-        slug,
-        body,
-        publishedAt,
-        "image": mainImage.asset->url,
-        "author": author->name,
-        "categories": categories[]->title
-      }
-    `);
-    
-    console.log('Svi postovi bez kategorije filtera:', allPosts?.length || 0);
-    console.log('Svi postovi:', allPosts);
-    
-    console.log('Kategorija:', categoryTitle);
-    console.log('Postovi sa published filterom:', posts?.length || 0);
-    console.log('Svi postovi sa published filterom:', posts);
-    
-    // Ako nema postova sa published filterom, probaj bez njega
-    if (!posts || posts.length === 0) {
-      posts = await client.fetch(`
-        *[_type == "post" && $categoryTitle in categories[]->title] | order(publishedAt desc) [0...1000] {
-          _id,
-          title,
-          slug,
-          body,
-          publishedAt,
-          "image": mainImage.asset->url,
-          "author": author->name,
-          "categories": categories[]->title
-        }
-      `, { categoryTitle });
-      console.log('Postovi bez published filtera:', posts?.length || 0);
-      console.log('Svi postovi bez published filtera:', posts);
-    }
 
     return (
       <div className="container mx-auto px-4 py-8 pt-20">
@@ -120,11 +62,6 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           subtitle={`Članci iz kategorije: ${categoryTitle}`}
           icon={BookOpen}
         />
-        
-        {/* Info */}
-        <div className="text-center mb-4 text-sm text-muted-foreground">
-          Pronađeno {posts.length} članaka u kategoriji &ldquo;{categoryTitle}&rdquo;
-        </div>
         
         {posts.length === 0 ? (
           <div className="text-center py-12">
