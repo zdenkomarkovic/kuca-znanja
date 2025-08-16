@@ -18,21 +18,20 @@ export default async function BlogPage() {
       throw new Error("Sanity not configured");
     }
     
-    const [posts, categories] = await Promise.all([
-      client.fetch(`
-        *[_type == "post"] | order(publishedAt desc) [0...1000] {
-          _id,
-          title,
-          slug,
-          body,
-          publishedAt,
-          "image": mainImage.asset->url,
-          "author": author->name,
-          "categories": categories[]->title
-        }
-      `),
-      getCategories(),
-    ]);
+    const posts = await client.fetch(`
+      *[_type == "post"] | order(publishedAt desc) [0...1000] {
+        _id,
+        title,
+        slug,
+        body,
+        publishedAt,
+        "image": mainImage.asset->url,
+        "author": author->name,
+        "categories": categories[]->title
+      }
+    `);
+    
+    const categories = await getCategories();
     
 
 
