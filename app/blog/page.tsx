@@ -9,6 +9,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Category, Post } from "@/lib/types";
 
+export const revalidate = 0;
+
 export default async function BlogPage() {
   try {
     // Proveri da li je Sanity konfigurisan
