@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Logo from "../public/kuca-znanja-logo.png";
+import Logo from "../public/android-chrome-192x192.png";
 import Link from "next/link";
 import { ChevronDownIcon, MenuIcon } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -237,7 +237,7 @@ export default function Header() {
             alt="Centar za kreativnu edukaciju dece"
             width={50}
             height={50}
-            className="rounded-full"
+            className=""
           />
           <div className="hidden md:block">
             <h1 className="text-lg font-bold ">KUĆA ZNANJA</h1>

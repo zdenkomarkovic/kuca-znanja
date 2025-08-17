@@ -1,6 +1,4 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import SectionHeader from "@/components/ui/SectionHeader";
-import { Calendar } from "lucide-react";
 
 export default function Ciljevi() {
   const posebniCiljevi = [
