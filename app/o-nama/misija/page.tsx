@@ -11,7 +11,7 @@ export default function MisijaPage() {
         ]}
       />
 
-      <div className="max-w-4xl mx-auto mt-8 space-y-8 pb-10">
+      <div className="max-w-4xl px-2 mx-auto mt-8 space-y-8 pb-10">
         <h2>VIZIJA</h2>
         <p>
           Svojim jedinstvenim programom želimo da stvorimo najbolje uslove za

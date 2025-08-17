@@ -19,9 +19,8 @@ export default function Footer() {
                 <Link href="/">Početna</Link>
               </li>
 
-              <li className=" transform-origin-center transition-transform duration-300 hover:scale-105 ">
-                <Link href="/o-nama">O nama</Link>
-              </li>
+             
+          
 
               <li className=" transform-origin-center transition-transform duration-300 hover:scale-105 ">
                 <Link href="/#programi">Program</Link>
@@ -59,14 +58,14 @@ export default function Footer() {
             </div>
             <div className="flex space-x-4 justify-center ">
               <a
-                href="#"
+                href="https://www.facebook.com/rucnovedukativnicentar"
                 target={"_blank"}
                 className=" transform-origin-center transition-transform duration-300 hover:scale-110"
               >
                 <Facebook />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/rucnovedukativnicentar/"
                 target={"_blank"}
                 className=" transform-origin-center transition-transform duration-300 hover:scale-110"
               >

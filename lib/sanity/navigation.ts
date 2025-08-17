@@ -173,7 +173,7 @@ export async function getNavigationWithCategories() {
               },
               {
                 title: "Moj dan",
-                link: "/program/moj-dana",
+                link: "/program/moj-dan",
               },
               {
                 title: "Budi važan - spremi maturu",

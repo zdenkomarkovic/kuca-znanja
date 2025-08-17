@@ -19,35 +19,7 @@ export default function Prvih10GodinaPage() {
         icon={Calendar}
       />
       
-      <div className="max-w-4xl mx-auto mt-8 space-y-8">
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-2xl text-primary">Opšti cilj</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-lg">
-              Naš cilj je da polaznicima učenje kroz neformalno obrazovanje učinimo posebnim iskustvom, oslobođenim od bilo kakvog opterećenja. Mišljenja smo da samo na taj način rezultati mogu biti konkretni i odgovarajući zahtevima globalnog tržišta rada, kao i lokalnoj zajednici.
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-2xl text-primary">Posebni ciljevi</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="grid md:grid-cols-2 gap-4">
-              {posebniCiljevi.map((cilj, index) => (
-                <Card key={index} className="border-2 border-primary/20 hover:shadow-md transition-shadow">
-                  <CardContent className="p-4">
-                    <p className="text-sm">{cilj}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-      </div>
+      
     </div>
   );
 } 

@@ -9,7 +9,7 @@ export default function RecOsnivacaPage() {
         text={[""]}
       />
 
-      <div className="max-w-4xl mx-auto mt-8 pb-10">
+      <div className="max-w-4xl px-2 mx-auto mt-8 pb-10">
         <div className="prose prose-lg max-w-none">
           <p className="mb-6">
             U vremenu u kojem živimo pregalaštvo u obrazovanju je posebno

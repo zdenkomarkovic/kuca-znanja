@@ -14,10 +14,7 @@ export default function Ciljevi() {
 
   return (
     <div className="container mx-auto px-4 py-8 pt-20">
-      <SectionHeader
-        title="Prvih 10 godina"
-        icon={Calendar}
-      />
+     
       
       <div className="max-w-5xl mx-auto mt-8 space-y-8">
         <Card>

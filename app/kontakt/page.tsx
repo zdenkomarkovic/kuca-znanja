@@ -110,7 +110,7 @@ export default function Contact() {
                 </button>
               </a>
               <a
-                href=""
+                href="https://www.instagram.com/rucnovedukativnicentar/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="py-[7px] flex border-b-[1px] border-primary "
@@ -122,7 +122,7 @@ export default function Contact() {
                 </button>
               </a>
               <a
-                href=""
+                href="https://www.facebook.com/rucnovedukativnicentar"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="py-[7px] flex border-b-[1px] border-primary "

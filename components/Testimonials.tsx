@@ -6,7 +6,7 @@ import { Heart, Star } from "lucide-react";
 
 export default function Testemonials() {
   return (
-    <section className="py-16 px-4 bg-gradient-to-br from-white to-[#f1f1f1]  ">
+    <section className="  bg-gradient-to-br from-white to-[#f1f1f1]  ">
       <div className="container px-2 md:px-4 mx-auto">
         <div className="text-center mb-12">
           <div className="flex justify-center mb-4">
