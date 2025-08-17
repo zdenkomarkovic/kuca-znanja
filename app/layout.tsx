@@ -34,7 +34,7 @@ export const metadata: Metadata = {
  "kreativno dete", 
  "obrazovanje dece vračar"],
   alternates: {
-    canonical: "https://www.kucaznanja.edu.rs/",
+    canonical: "https://www.kucaznanja.edu.rs",
   },
 };
 
