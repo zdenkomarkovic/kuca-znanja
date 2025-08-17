@@ -3,7 +3,7 @@ export type PortableTextValue = unknown[]; // PortableText array type
 export interface Category {
   _id: string;
   title: string;
-  slug: string;
+  slug: { current: string };
 }
 
 export interface Post {

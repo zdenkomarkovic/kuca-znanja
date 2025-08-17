@@ -11,15 +11,23 @@ import { Category, Post } from "@/lib/types";
 
 export const revalidate = 0;
 
-export default async function BlogPage() {
+interface BlogPageProps {
+  searchParams: { page?: string };
+}
+
+export default async function BlogPage({ searchParams }: BlogPageProps) {
+  const page = parseInt(searchParams.page || '1');
+  const postsPerPage = 9;
+  const startIndex = (page - 1) * postsPerPage;
+  const endIndex = startIndex + postsPerPage;
   try {
     // Proveri da li je Sanity konfigurisan
     if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID === "demo-project") {
       throw new Error("Sanity not configured");
     }
     
-    const posts = await client.fetch(`
-      *[_type == "post"] | order(publishedAt desc) [0...1000] {
+    const allPosts = await client.fetch(`
+      *[_type == "post"] | order(publishedAt desc) {
         _id,
         title,
         slug,
@@ -33,6 +41,11 @@ export default async function BlogPage() {
     
     const categories = await getCategories();
     
+    // Paginacija
+    const totalPosts = allPosts.length;
+    const totalPages = Math.ceil(totalPosts / postsPerPage);
+    const posts = allPosts.slice(startIndex, endIndex);
+    
 
 
     return (
@@ -41,10 +54,13 @@ export default async function BlogPage() {
 
         {/* Filter dugmad */}
         <div className="flex flex-wrap gap-2 mt-8 mb-6">
+          <div className="w-full text-center mb-4 text-sm text-muted-foreground">
+            Stranica {page} od {totalPages} • Ukupno {totalPosts} članaka
+          </div>
           {categories.map((category: Category) => (
             <Button key={category._id} variant="outline" size="sm" asChild>
               <Link
-                href={`/blog/kategorija/${category.slug.toLowerCase().replace(/\s+/g, "-")}`}
+                href={`/blog/kategorija/${category.slug.current}`}
               >
                 {category.title}
               </Link>
@@ -120,6 +136,43 @@ export default async function BlogPage() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        )}
+        
+        {/* Paginacija */}
+        {totalPages > 1 && (
+          <div className="flex justify-center items-center space-x-2 mt-8">
+            {page > 1 && (
+              <Link
+                href={`/blog?page=${page - 1}`}
+                className="px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
+              >
+                Prethodna
+              </Link>
+            )}
+            
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
+              <Link
+                key={pageNum}
+                href={`/blog?page=${pageNum}`}
+                className={`px-4 py-2 text-sm font-medium rounded-md ${
+                  pageNum === page
+                    ? 'bg-primary text-white'
+                    : 'text-gray-500 bg-white border border-gray-300 hover:bg-gray-50'
+                }`}
+              >
+                {pageNum}
+              </Link>
+            ))}
+            
+            {page < totalPages && (
+              <Link
+                href={`/blog?page=${page + 1}`}
+                className="px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
+              >
+                Sledeća
+              </Link>
+            )}
           </div>
         )}
       </div>

@@ -3,7 +3,7 @@ import { client } from "./client";
 interface Category {
   _id: string;
   title: string;
-  slug: string;
+  slug: { current: string };
 }
 
 export async function getCategories(): Promise<Category[]> {
@@ -12,7 +12,7 @@ export async function getCategories(): Promise<Category[]> {
       *[_type == "category"] {
         _id,
         title,
-        "slug": title
+        slug
       }
     `);
     

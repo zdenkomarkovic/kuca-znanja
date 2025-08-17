@@ -27,14 +27,20 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       *[_type == "category"] {
         _id,
         title,
-        "slug": title
+        slug
       }
     `);
 
+    // Debug: ispiši kategorije i slug-ove
+    console.log('Debug - Kategorije:', categories);
+    console.log('Debug - Traženi slug:', slug);
+
     // Pronađi kategoriju koja odgovara slug-u
     const category = categories.find((cat: Category) => 
-      cat.slug.toLowerCase().replace(/\s+/g, '-') === slug
+      cat.slug.current === slug
     );
+    
+    console.log('Debug - Pronađena kategorija:', category);
     
     if (!category) {
       notFound();
