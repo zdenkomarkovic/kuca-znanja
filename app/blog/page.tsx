@@ -12,13 +12,14 @@ import { Category, Post } from "@/lib/types";
 export const revalidate = 0;
 
 interface BlogPageProps {
-  searchParams: { page?: string };
+  searchParams: Promise<{ page?: string }>;
 }
 
 export default async function BlogPage({ searchParams }: BlogPageProps) {
-  const page = parseInt(searchParams.page || '1');
+  const { page } = await searchParams;
+  const pageNum = parseInt(page || '1');
   const postsPerPage = 9;
-  const startIndex = (page - 1) * postsPerPage;
+  const startIndex = (pageNum - 1) * postsPerPage;
   const endIndex = startIndex + postsPerPage;
   try {
     // Proveri da li je Sanity konfigurisan
@@ -55,7 +56,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         {/* Filter dugmad */}
         <div className="flex flex-wrap gap-2 mt-8 mb-6">
           <div className="w-full text-center mb-4 text-sm text-muted-foreground">
-            Stranica {page} od {totalPages} • Ukupno {totalPosts} članaka
+            Stranica {pageNum} od {totalPages} • Ukupno {totalPosts} članaka
           </div>
           {categories.map((category: Category) => (
             <Button key={category._id} variant="outline" size="sm" asChild>
@@ -142,9 +143,9 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         {/* Paginacija */}
         {totalPages > 1 && (
           <div className="flex justify-center items-center space-x-2 mt-8">
-            {page > 1 && (
+            {pageNum > 1 && (
               <Link
-                href={`/blog?page=${page - 1}`}
+                href={`/blog?page=${pageNum - 1}`}
                 className="px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
               >
                 Prethodna
@@ -156,7 +157,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
                 key={pageNum}
                 href={`/blog?page=${pageNum}`}
                 className={`px-4 py-2 text-sm font-medium rounded-md ${
-                  pageNum === page
+                  pageNum === parseInt(page || '1')
                     ? 'bg-primary text-white'
                     : 'text-gray-500 bg-white border border-gray-300 hover:bg-gray-50'
                 }`}
@@ -165,9 +166,9 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
               </Link>
             ))}
             
-            {page < totalPages && (
+            {pageNum < totalPages && (
               <Link
-                href={`/blog?page=${page + 1}`}
+                href={`/blog?page=${pageNum + 1}`}
                 className="px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
               >
                 Sledeća
