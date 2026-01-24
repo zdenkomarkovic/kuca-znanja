@@ -1,6 +1,6 @@
-// import ButtonToTop from "@/components/ButtonToTop";
-// import Footer from "@/components/Footer";
-// import Header from "@/components/Header";
+import ButtonToTop from "@/components/ButtonToTop";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -42,20 +42,20 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout() {
-//   {
-//   children,
-// }: Readonly<{
-//   children: React.ReactNode;
-// }>
+  {
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>
   return (
     <html lang="sr">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased text-muted-foreground bg-gradient-to-br from-white to-[#f1f1f1] text-base md:text-xl`}
       >
-        {/* <Header />
+        <Header />
         {children}
         <ButtonToTop />
-        <Footer /> */}
+        <Footer />
       </body>
     </html>
   );
