@@ -1,4 +1,3 @@
-
 import Hero2 from "@/components/Hero2";
 import ProgramCard from "@/components/program/ProgramCard";
 import SectionHeader from "@/components/ui/SectionHeader";
@@ -109,7 +108,10 @@ export default function Home() {
       </section> */}
 
       {/* Osnovni programi */}
-      <section id="programi" className="py-16 px-4 bg-gradient-to-br from-white to-[#f1f1f1] ">
+      <section
+        id="programi"
+        className="py-16 px-4 bg-gradient-to-br from-white to-[#f1f1f1] "
+      >
         <div className="container px-2 md:px-4 mx-auto">
           <SectionHeader
             title="Osnovni programi"
